@@ -12,7 +12,7 @@ export const PERSONTYPES: PersonTypes[] = [
   },
   {
     "id": 2,
-    personType: "Councillor"
+    personType: "Councillors"
   },
   {
     "id": 3,
