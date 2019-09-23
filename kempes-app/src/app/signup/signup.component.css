@@ -1,0 +1,41 @@
+/* background
+r-44;g-52;b-94
+Hue-154;sat-87;lum-65;
+
+button color;
+r-13;g-144;b-168
+Hue-126;sat-206;lum-85; */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+    height : 100vh;    
+}
+
+.signupbg {
+    padding-top: 4rem;
+    padding-bottom: 50rem;
+    position: relative;
+    height: 100%;
+    background-color:rgb(44, 52, 94);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+  }
+
+.h4 {
+    color: white;
+}
+
+.h5 {
+    color: white;
+}
+
+.col-form-label-lg {
+    color: white;
+    text-align: right
+}
+
+.navbar-text {
+    color: #fff;
+}
