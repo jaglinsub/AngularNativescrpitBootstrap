@@ -39,8 +39,16 @@ docker stop kempesdev
 docker rm kempesdev
 
 ##build and run command - DO NOT FORGOT THE DOT
+##posrt 4300 is set in default.conf, use the same port. NGINX routes to that port
 docker build -t kempesdev .
 docker run -it -p 80:4300 --name=kempesdev kempesdev
 
 ##Find the log file paths for kempesdev conatiner
 docker inspect --format='{{.LogPath}}' kempesdev
+
+##Docker machine ip
+docker-machine ip
+
+##Local host does not work so use the docker-machine ip to find the ip address and use that ip
+##For kempes home page use this
+http://192.168.99.100/
