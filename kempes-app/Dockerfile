@@ -18,3 +18,5 @@ FROM nginx:1.15
 COPY --from=build-stage /app/dist/out/ /usr/share/nginx/html
 
 COPY ./nginx/conf.d /etc/nginx/conf.d
+
+VOLUME /var/log/nginx/log
