@@ -52,3 +52,22 @@ docker-machine ip
 ##Local host does not work so use the docker-machine ip to find the ip address and use that ip
 ##For kempes home page use this
 http://192.168.99.100/
+
+##Generate component
+ng generate component my-name
+
+git init
+git add README.md
+
+git add --all
+
+git commit -m "first commit"
+git remote add origin https://github.com/jaglinsub/SpringBootMongoDBDemo.git
+git push -u origin master
+
+
+
+git remote rename upstream origin
+
+git config --global user.email "j*l*s"
+git config --global user.name "j*l*s"
