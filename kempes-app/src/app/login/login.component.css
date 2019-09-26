@@ -1,0 +1,51 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.body {
+    height : 100vh;    
+    /* background-color:rgb(44, 52, 94); */
+}
+
+.loginbg {
+    padding-top: 6rem;
+    padding-bottom: 0rem;
+    position: relative;
+    height: 100%;
+    /* background-color:rgb(44, 52, 94); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+  }
+
+.h3 {
+    color: black;
+}
+
+.h7 {
+    font-size: .85rem;
+    color: black;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+label {
+    color: black;
+}
+
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.twitter {    
+    padding-top: 2rem;
+    margin-top:0px;
+    /* position: relative; */
+    width: 60%;
+    /* height: 0%; */
+    background: url("../../img/twitter.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-size: cover; */
+    /* display: block; */
+  }

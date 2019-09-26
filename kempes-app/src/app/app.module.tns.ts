@@ -6,6 +6,8 @@ import { AppComponent } from '@src/app/app.component';
 import { HomeComponent } from '@src/app/home/home.component';
 import { NavbarComponent } from '@src/app/navbar/navbar.component';
 import { SignupComponent } from '@src/app/signup/signup.component';
+import { InterestsComponent } from '@src/app/interests/interests.component';
+import { LoginComponent } from '@src/app/login/login.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -20,6 +22,8 @@ import { SignupComponent } from '@src/app/signup/signup.component';
     HomeComponent,
     NavbarComponent,
     SignupComponent,
+    InterestsComponent,
+    LoginComponent,
   ],
   imports: [
     NativeScriptModule,

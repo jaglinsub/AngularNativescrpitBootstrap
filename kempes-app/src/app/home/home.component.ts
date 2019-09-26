@@ -19,4 +19,8 @@ export class HomeComponent implements OnInit {
   onSignUp() {
     this.router.navigate(['signup']);
   }
+
+  onLogin() {
+    this.router.navigate(['login']);
+  }
 }

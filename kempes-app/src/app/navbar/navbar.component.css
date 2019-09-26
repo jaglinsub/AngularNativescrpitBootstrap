@@ -1,0 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+nav .navbar-nav li a{
+    color: white !important;
+    }
