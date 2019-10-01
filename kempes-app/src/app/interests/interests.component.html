@@ -1,86 +1,79 @@
-<div class="body">
-    <div class="container">
-
-        <div class="">
-            <div class="interestbg">
-                <div class="card col-md-5 col-md-offset-4">
-                    <div class="">
-                        <div class="card-block">
-                            <form name="userform" method="post">
-                                <label class="form-control-plaintext h3" align="center">Almost there!</label>
-                                <label class="form-control-plaintext h7" align="center">We have a few questions to ask you so that we</label>
-                                <label class="form-control-plaintext h8" align="center">provide our best recommendations for you</label>
-
-                                <div class="form-group">
-                                        <label for="exampleInputEmail1">
-                                                <span class="badge badge-dark">1#</span>
-                                                I’m looking for more opportunities to
-                                            </label>
-                                    <select class="form-control" data-style="btn-primary" data-live-search="true" data-selectpicker>
-                                            <option value="0"></option>
-                                            <option value="1">Learn Real-World Skills</option>
-                                            <option value="2">Build A Career</option>
-                                        </select>
-                                </div>
-
-                                <div class="form-group">
-                                        <label for="exampleInputEmail1">
-                                                <span class="badge badge-dark">2#</span>
-                                                At school, when I’m given a project, I’d rather work
-                                            </label>
-                                    <select class="form-control" data-style="btn-primary" data-live-search="true" data-selectpicker>
-                                            <option value="0"></option>
-                                            <option value="1">With A Team</option>
-                                            <option value="2">Independently</option>
-                                        </select>
-                                </div>
-
-                                <div class="form-group">
-                                        <label for="exampleInputEmail1">
-                                                <span class="badge badge-dark">3#</span>
-                                                My favorite activity to do outside of school is
-                                            </label>
-                                    <select class="form-control" data-style="btn-primary" data-live-search="true" data-selectpicker>
-                                            <option value="0"></option>
-                                            <option value="1">Play Basketball</option>
-                                            <option value="2">Go To Library</option>
-                                        </select>
-                                </div>
-
-                                <div class="form-group">
-                                        <label for="exampleInputEmail1">
-                                                <span class="badge badge-dark">4#</span>
-                                                Ideally, before I graduate I want to know how to
-                                            </label>
-                                    <select class="form-control" data-style="btn-primary" data-live-search="true" data-selectpicker>
-                                            <option value="0"></option>
-                                            <option value="1">Respect Others</option>
-                                            <option value="2">Listen More and Talk Less</option>
-                                        </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">
-                                            <span class="badge badge-dark">5#</span>
-                                        After I graduate high school, I think I want to be a
-                                    </label>
-                                    <select class="form-control" data-style="btn-primary" data-live-search="true" data-selectpicker>
-                                            <option value="0"></option>
-                                            <option value="1">Nurse</option>
-                                            <option value="2">Engineer</option>
-                                        </select>
-                                </div>
-
-                                <div class="form-group" align="center">
-                                        <button type="buton" class="btn btn-primary" style="background-color:#0D90A8" (click)="signInWithEmail()" >
-                                          Complete Sign Up
-                                        </button>
-                                    </div>
-                            </form>
-                        </div>
-                    </div>
+<div class="interestbg">
+    <div class="container justify-content-center">
+            <label class="form-control-plaintext h3" align="center">Almost there!</label>
+            <label class="form-control-plaintext h7" align="center">
+                <span>We have a few questions to ask you so that we <br> provide our best recommendations for you</span>
+            </label>
+        <div class="col-sm-12 offset-sm-12">
+            <form name="userform" method="post">
+                <div class="form-group row">
+                    <label class="questionLabel" for="exampleInputEmail1">
+                        <span class="badge badge-dark">1#</span>
+                        I’m looking for more opportunities to
+                    </label>
+                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
+                        data-selectpicker>
+                        <option value="0"></option>
+                        <option value="1">Learn Real-World Skills</option>
+                        <option value="2">Build A Career</option>
+                    </select>
                 </div>
-            </div>
+
+                <div class="form-group row">
+                    <label class="questionLabel" for="exampleInputEmail1">
+                        <span class="badge badge-dark">2#</span>
+                        At school, when I’m given a project, I’d rather work
+                    </label>
+                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true" data-selectpicker>
+                        <option value="0"></option>
+                        <option value="1">With A Team</option>
+                        <option value="2">Independently</option>
+                    </select>
+                </div>
+
+                <div class="form-group row">
+                    <label class="questionLabel" for="exampleInputEmail1">
+                        <span class="badge badge-dark">3#</span>
+                        My favorite activity to do outside of school is
+                    </label>
+                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true" data-selectpicker>
+                        <option value="0"></option>
+                        <option value="1">Play Basketball</option>
+                        <option value="2">Go To Library</option>
+                    </select>
+                </div>
+
+                <div class="form-group row">
+                    <label class="questionLabel" for="exampleInputEmail1">
+                        <span class="badge badge-dark">4#</span>
+                        Ideally, before I graduate I want to know how to
+                    </label>
+                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true" data-selectpicker>
+                        <option value="0"></option>
+                        <option value="1">Respect Others</option>
+                        <option value="2">Listen More and Talk Less</option>
+                    </select>
+                </div>
+
+                <div class="form-group row">
+                    <label class="questionLabel" for="exampleInputEmail1">
+                        <span class="badge badge-dark">5#</span>
+                        After I graduate high school, I think I want to be a
+                    </label>
+                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true" data-selectpicker>
+                        <option value="0"></option>
+                        <option value="1">Nurse</option>
+                        <option value="2">Engineer</option>
+                    </select>
+                </div>
+
+                <div class="form-group" align="center">
+                    <button type="buton" class="btn btn-primary" style="background-color:#0D90A8; font-size: 24px; width: 262px; height: 49px;"
+                        (click)="signInWithEmail()">
+                        Complete Sign Up
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

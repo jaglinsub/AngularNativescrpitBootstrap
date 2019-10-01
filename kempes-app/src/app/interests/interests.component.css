@@ -1,33 +1,48 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 .body {
-    height : 100vh;    
+    height: 100vh;
     /* background-color:rgb(44, 52, 94); */
 }
 
+.offset-sm-12 {
+    margin-left: 7.5%;
+  }
+
 .interestbg {
-    padding-top: 6rem;
-    padding-bottom: 0rem;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
     position: relative;
     height: 100%;
     /* background-color:rgb(44, 52, 94); */
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
-  }
+}
 
-  .card {
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
+.card {
+    margin: 0 auto;
+    /* Added */
+    float: none;
+    /* Added */
+    margin-bottom: 10px;
+    /* Added */
+}
+
+.h3 {
+    font-family: Proxima Nova;
+    font-size: 60px;
+    color: rgba(2, 11, 62, 1);
 }
 
 .h7 {
-    font-size: .85rem;
-    color: black;
     margin-top: -20px;
     margin-bottom: 20px;
+    font-family: Proxima Nova;
+    font-size: 24px;
+    color: rgba(2, 11, 62, 1);
 }
+
 
 .h8 {
     font-size: .85rem;
@@ -36,7 +51,23 @@
     margin-bottom: 20px;
 }
 
-.badge-dark {
+.questionLabel {
+    font-family: Proxima Nova;
+    font-size: 32px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.circle {
+    height: 350px;
+    width: 350px;
     color: #fff;
     background-color: #0D90A8;
-  }
+    border-radius: 100%;
+}
+
+.badge {
+    color: #fff;
+    background-color: #0D90A8;
+    padding: 0.5em 0.5em;
+    border-radius: 1.5rem;
+}

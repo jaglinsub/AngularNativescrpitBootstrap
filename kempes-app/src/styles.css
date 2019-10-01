@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
+/* @font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/din/DINAlternateBold.otf);
+  } */
+
+body {
+  font-family: Proxima Nova;
+ }
+
 .header {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 72px);

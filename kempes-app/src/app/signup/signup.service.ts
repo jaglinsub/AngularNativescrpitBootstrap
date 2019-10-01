@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { User } from './User';
+import {HttpClient} from "@angular/common/http";
 
 export class PersonTypes {
   id: number;
@@ -25,10 +27,19 @@ export const PERSONTYPES: PersonTypes[] = [
 })
 export class SignupService {
 
-  constructor() { }
+  user: User;
+  url: string = 'http://localhost:8080/api/user/saveuser';
+
+  constructor(private http: HttpClient) { }
 
   getPersonTypes(): Observable<PersonTypes[]> {
     return of(PERSONTYPES);
   }
+
+  saveUser(user : User): Observable<User> {
+    let url = this.url;
+    return this.http.post<any>(url, user);
+  }
+
 }
 

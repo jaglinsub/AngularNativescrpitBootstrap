@@ -12,8 +12,10 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
 
-import { AuthGuard }   from './services/auth-guard.service';
+import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 
 
@@ -29,12 +31,14 @@ import { AuthService } from './services/auth.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-	AngularFireModule.initializeApp(environment.firebaseConfig, 'angular-auth-firebase'),
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-  	AuthGuard,
+    AuthGuard,
     AuthService
   ],
   bootstrap: [AppComponent]

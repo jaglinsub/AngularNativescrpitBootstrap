@@ -7,9 +7,13 @@ r-13;g-144;b-168
 Hue-126;sat-206;lum-85; */
 
 @import "~bootstrap/dist/css/bootstrap.css";
+.body {
+    height: 100vh;
+    /* background-color:rgb(44, 52, 94); */
+}
 
-body {
-    height : 100vh;    
+.offset-sm-12 {
+    margin-left: 7.5%;
 }
 
 .signupbg {
@@ -17,18 +21,24 @@ body {
     padding-bottom: 50rem;
     position: relative;
     height: 100%;
-    background-color:rgb(44, 52, 94);
+    /* background-color:rgb(44, 52, 94); */
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
-  }
-
-.h4 {
-    color: white;
 }
 
-.h5 {
-    color: white;
+.h3 {
+    font-family: Proxima Nova;
+    font-size: 60px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.h7 {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    font-family: Proxima Nova;
+    font-size: 24px;
+    color: rgba(2, 11, 62, 1);
 }
 
 .col-form-label-lg {
@@ -39,3 +49,25 @@ body {
 .navbar-text {
     color: #fff;
 }
+
+/* input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 1.2em;
+}
+
+input[type="date"]:focus:before, input[type="date"]:valid::before {
+    content: "";
+} */
+
+
+/* input[type="date"]::before { 
+    content: attr(placeholder) !important;
+    width: 100%;
+} */
+
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+/* input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none } */
