@@ -28,7 +28,8 @@ export const PERSONTYPES: PersonTypes[] = [
 export class SignupService {
 
   user: User;
-  url: string = 'http://localhost:8080/api/user/saveuser';
+  // url: string = 'http://localhost:8080/api/user/saveuser';
+  url: string = 'http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/api/user/saveuser';
 
   constructor(private http: HttpClient) { }
 
