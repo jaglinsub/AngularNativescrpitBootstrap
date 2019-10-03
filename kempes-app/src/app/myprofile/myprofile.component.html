@@ -1,0 +1,64 @@
+<div class="container-fluid justify-content-center align-items-center" id="profileContainer">
+    <form name="prevexpform" method="post">
+        <div class="form-group row">
+            <div class="col-auto">
+                <label class="col-form-label">Previous Experience</label>
+            </div>
+        </div>
+        <div class="mb-4" *ngFor="let experience of profile.experienceArr">
+            <div class="form-group row mb-0">
+                <div class="col-auto">
+                    <label for="experienceName" class="col-form-label pb-0">Experience Name</label>
+                    <input type="text" [value]="experience.experienceName"
+                        (input)="experience.experienceName=$event.target.value" class="form-control" id="experienceName"
+                        name="experienceName" placeholder="Experience">
+                </div>
+            </div>
+            <div class="form-group row mb-0 mt-0">
+                <div class="col-auto">
+                    <label for="roleName" class="col-form-label pb-0">What was your tilte/role?*</label>
+                    <input type="text" [value]="experience.roleName" (input)="experience.roleName=$event.target.value"
+                        class="form-control" id="roleName" name="roleName" placeholder="Role">
+                </div>
+                <div class="col-auto">
+                    <label for="activity" class="col-form-label pb-0">Name of Activity</label>
+                    <input type="text" [value]="experience.activity" (input)="experience.activity=$event.target.value"
+                        class="form-control" id="activity" name="activity" placeholder="Activity">
+                </div>
+            </div>
+            <div class="form-group row mb-0 mt-0">
+                <div class="col-auto">
+                    <label for="hoursspent" class="col-form-label pb-0">Hours you spend on this?</label>
+                    <input type="text" [value]="experience.hoursspent"
+                        (input)="experience.hoursspent=$event.target.value" class="form-control" id="hoursspent"
+                        name="hoursspent" placeholder="Hours Spent">
+                </div>
+                <div class="col-auto">
+                    <label for="learnings" class="col-form-label pb-0">What did you learn?*</label>
+                    <input type="text" [value]="experience.learnings" (input)="experience.learnings=$event.target.value"
+                        class="form-control" id="learnings" name="learnings" placeholder="Learnings">
+                </div>
+            </div>
+            <div class="form-group row mb-0 mt-0">
+                <div class="col-auto">
+                    <label for="startDate" class="col-form-label pb-0">Start date*</label>
+                    <input type="text" [value]="experience.startDate" (input)="experience.startDate=$event.target.value"
+                        class="form-control" id="startDate" name="startDate" placeholder="Start Date">
+                </div>
+                <div class="col-auto">
+                    <label for="endDate" class="col-form-label pb-0">End date*</label>
+                    <input type="text" [value]="experience.endDate" (input)="experience.endDate=$event.target.value"
+                        class="form-control" id="endDate" name="endDate" placeholder="End Date">
+                </div>
+            </div>
+            <div class="form-group row mt-0">
+                <div class="col-md-5">
+                    <label for="anythingElse" class="col-form-label pb-0">Anything else you’d like to share?</label>
+                    <textarea [value]="experience.anythingElse" (input)="experience.anythingElse=$event.target.value"
+                        class="form-control" id="anythingElse" name="Anything Else.."
+                        placeholder="anythingElse"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

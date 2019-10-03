@@ -6,21 +6,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#home">Home</a>
+                    <a class="nav-link js-scroll-trigger" [routerLink]="['home']">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">About Us</a>
+                    <a class="nav-link js-scroll-trigger" [routerLink]="['about']">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#services">Support</a>
+                    <a class="nav-link js-scroll-trigger" [routerLink]="['services']">Support</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">My Profile
-                        <i class="fas fa-bars"></i>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" [routerLink]="['portfolio/myprofile']">My Profile
+                        <!-- <i class="fas fa-bars"></i> -->
                     </a>
-                </li> -->
+                </li>
                 <li class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" [routerLink]="['home']" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bars"></i>
                                  <!-- DropDown -->
                         </a>

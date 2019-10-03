@@ -1,0 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+#profileContainer {
+    margin-top: 4rem;
+}
+
+.form-control {
+    height: calc(1em + 0.75rem + 2px);
+}
