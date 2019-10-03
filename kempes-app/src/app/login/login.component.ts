@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+
+export class sigupLogin {
+  showConfirmPassword: boolean;
+    loginText: string;
+    twitterText: string;
+}
 
 @Component({
   selector: 'app-login',
@@ -8,15 +15,64 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  siguplogin: sigupLogin;
 
-  user = {
-    email: '',
-    password: ''
-  };
-
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private activatedRoute: ActivatedRoute) {
+    /* this.siguplogin = new sigupLogin();
+    this.activatedRoute.params.subscribe( params => {
+      console.log("Route Params=", params);
+      if (params['id']) { (1)
+        console.log("Route Params in side=", params['id']);
+        this.siguplogin.showConfirmPassword = true;
+        this.siguplogin.loginText = "Sign up";
+      }
+      else
+      {
+        console.log("Route Params in side=", params['id']);
+        this.siguplogin.showConfirmPassword = false;
+        this.siguplogin.loginText = "Login";
+      }
+    }); */
   }
 
+  ngOnInit() {
+    this.siguplogin = new sigupLogin();
+    this.activatedRoute.paramMap.subscribe( params => {
+      
+      console.log("ngOnInit Route Params=", params);
+      if (params.get('id') == '1') { //(1)
+        
+        this.siguplogin.showConfirmPassword = true;
+        this.siguplogin.loginText = "Sign up with Email";
+        this.siguplogin.twitterText = "Sign up with Twitter";
+      }
+      else
+      {
+        this.siguplogin.showConfirmPassword = false;
+        this.siguplogin.loginText = "Login with Email";
+        this.siguplogin.twitterText = "Login with Twitter";
+      }
+      console.log("inside showConfirmPassword=", this.siguplogin.showConfirmPassword);
+    });
+    console.log("showConfirmPassword=", this.siguplogin.showConfirmPassword);
+  }
+
+  ngOnChanges() {
+    this.activatedRoute.params.subscribe( params => {
+      console.log("ngOnInit Route Params=", params);
+      if (params['id']) { (1)
+        console.log("Route Params in side=", params['id']);
+        this.siguplogin.showConfirmPassword = true;
+        this.siguplogin.loginText = "Sign up";
+      }
+      else
+      {
+        console.log("Route Params in side=", params['id']);
+        this.siguplogin.showConfirmPassword = false;
+        this.siguplogin.loginText = "Login";
+      }
+    });
+  }
 
    signInWithTwitter() {
       this.authService.signInWithTwitter()
@@ -64,7 +120,6 @@ export class LoginComponent implements OnInit {
 
 
 
-  ngOnInit() {
-  }
+  
 
 }

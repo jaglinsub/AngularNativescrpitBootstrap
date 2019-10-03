@@ -29,12 +29,14 @@
 
 label {
     color: black;
+    margin-bottom: 0;
 }
 
 .card {
     margin: 0 auto; /* Added */
     float: none; /* Added */
     margin-bottom: 10px; /* Added */
+    border: none;
 }
 
 .twitter {    
@@ -49,3 +51,38 @@ label {
     /* background-size: cover; */
     /* display: block; */
   }
+
+  #Welcome_to_Kempes__Log_in_to_k {
+    overflow: hidden;
+    text-align: center;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    color: rgba(2,11,62,1);
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+#Welcome_to_Kempes__Log_in_to_k1 {
+    overflow: hidden;
+    text-align: center;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    margin-top: -10px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    /*margin-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px; */
+}

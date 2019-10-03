@@ -27,7 +27,11 @@ export const routes: Routes = [
         component: InterestsComponent,
     },
     {
-        path: 'login',
+        path: 'login/:id',
         component: LoginComponent,
     },
+    // {
+    //     path: 'login/2',
+    //     component: LoginComponent,
+    // },
 ];

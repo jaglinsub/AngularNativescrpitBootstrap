@@ -9,11 +9,17 @@
               <div class="card-block">
 
                   <form name="userform" method="post">
-                    <label class="form-control-plaintext h3" align="center">Welcome to Kempes</label>
-                    <label class="form-control-plaintext h7" align="center">Log in to keep the fun going!</label>
+                    <!-- <label class="form-control-plaintext h3" align="center">Welcome to Kempes</label>
+                    <label class="form-control-plaintext h7" align="center">Log in to keep the fun going!</label> -->
+                    <div id="Welcome_to_Kempes__Log_in_to_k">
+                        <span>Welcome to Kempes </span>
+                      </div>
+                      <div id="Welcome_to_Kempes__Log_in_to_k1">
+                          <span>Log in to keep the fun going!</span>
+                        </div>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email</label>
+                      <label  for="exampleInputEmail1">Email</label>
                       <input type="email" class="form-control" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
@@ -21,9 +27,17 @@
                       <input type="password" class="form-control" name="password" placeholder="Password" required>
                     </div>
 
+                    <ng-container *ngIf="siguplogin.showConfirmPassword">
+                      
+                    <div class="form-group">
+                        <label for="exampleConfirmPassword1">Confirm Password</label>
+                        <input type="password" class="form-control" name="confirmpassword" placeholder=" Confirm Password" required>
+                      </div>
+                    </ng-container>
+
                     <div class="form-group" align="center">
                         <button type="buton" class="btn btn-primary" style="margin-bottom: 20px" style="background-color:#0D90A8" (click)="signInWithEmail()" >
-                          Login with Email
+                          {{ siguplogin.loginText }}
                         </button>
                     </div>                    
 

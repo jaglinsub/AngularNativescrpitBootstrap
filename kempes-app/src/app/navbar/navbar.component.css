@@ -2,8 +2,38 @@
 
 nav .navbar-nav li a {
     color: white !important;
+    font-size: 25px;
 }
 
+.navbar-nav {
+    margin-right: -4rem;
+}
 .navbar-brand {
     color: white !important;
+    margin-left:-3rem;
+    font-size: 25px;
 }
+
+/* .dropdown-menu {
+    background-color: burlywood !important;
+    min-width: 0rem;
+    padding: 0rem 0;
+    margin: 0rem 0 0;
+} */
+
+/* .dropdown-menu-left {
+    right: auto;
+    left: 30 !important;
+  } */
+
+.dropdown .dropdown-menu .dropdown-item {
+    color: #212529 !important;
+  }
+
+  .dropdown-item:hover, .dropdown-item:focus {
+    color: #16181b;
+    text-decoration: none;
+    /* background-color: #f8f9fa; */
+    background-color: rgba(13,144,168,1);
+    font-size: 25px;
+  }
