@@ -71,3 +71,54 @@ git remote rename upstream origin
 
 git config --global user.email "j*l*s"
 git config --global user.name "j*l*s"
+
+Additional Notes:
+
+mongodb+srv://jlsmdbadmin:jlsmdbadmin123@jls-mangodb-cluster-pma0b.gcp.mongodb.net/test?retryWrites=true&w=majority
+
+
+curl -H "Accept: text/event-stream" "http://192.168.99.100:8080/quotes-reactive-paged?page=0&size=50"
+
+
+curl -H "Accept: text/event-stream" "http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/quotes-reactive-paged?page=0&size=50"
+
+
+curl -H "Accept: text/event-stream" "http://18.218.102.11:80/quotes-reactive-paged?page=0&size=50"
+
+curl -H "Accept: text/event-stream" "http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:80/quotes-reactive-paged?page=0&size=50"
+
+
+18.218.102.11
+
+ec2-18-218-102-11.us-east-2.compute.amazonaws.com
+
+curl "http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/quotes-reactive-paged?page=0&size=50"
+
+chrome://view-http-cache/http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/quotes-reactive-paged?page=0&size=50
+
+http://localhost:8080/quotes-reactive-paged?page=0&size=50
+
+git remote add origin https://github.com/jaglinsub/angular2-authentication-firebase.git
+
+
+git remote add origin 
+
+npm install firebase @angular/fire --save
+
+
+npm uninstall angularfire2 firebase --save
+
+jaglinsub/kempesfronend 
+
+docker ps
+
+docker stop kempesdev
+docker rm kempesdev
+
+docker pull jaglinsub/kempesfronend
+
+docker run -it -p 80:4300 --name=kempesdev jaglinsub/kempesfronend
+
+docker run -it -p 8080:8080 --name=backend jaglinsub/testdockerrepo1
+
+docker pull jaglinsub/testdockerrepo1
