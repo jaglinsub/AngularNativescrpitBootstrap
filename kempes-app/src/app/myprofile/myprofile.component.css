@@ -1,9 +1,172 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-
 #profileContainer {
     margin-top: 4rem;
 }
 
 .form-control {
     height: calc(1em + 0.75rem + 2px);
+}
+
+#New_experience {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    /* line-height: 45px;
+    margin-top: -2.5px;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal; */
+    font-weight: bold;
+    font-size: 32px;
+    color: rgba(2, 11, 62, 1);
+    padding-left: 15px;
+}
+
+#previous_experience {
+    margin-bottom: 0;
+    padding: 0;
+    overflow: visible;
+    /* white-space: nowrap; */
+    /* text-align: left;
+        font-family: Proxima Nova;
+        font-style: normal; */
+    font-weight: bold;
+    font-size: 40px;
+    color: rgba(2, 11, 62, 1);
+    padding-left: 15px;
+}
+
+#Save_experience {
+    margin: 0;
+    margin-top: 0.5rem;
+    padding: 0;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: calc(0.75em + 0.75rem + 2px);
+}
+
+#hr {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#Total_Points {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    margin-top: -20px;
+    font-size: 16px;
+    color: rgba(13, 144, 168, 1);
+}
+
+#Your_Goal {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    margin-top: -20px;
+    font-size: 16px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#Label_Margin {
+    margin-top: -20px;
+}
+
+#User {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgba(2, 11, 62, 1);
+    padding-left: 15px;
+}
+
+#classof, #highsch {
+    margin-right: 156px;
+}
+
+#lblclassof, #lblhighsch, #lblafthighsch {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#lblexperienceName, #lblroleName, #lblanythingElse, #lblendDate, #lblstartDate, #lbllearnings, #lblhoursspent, #lblactivity {
+    margin: 0;
+    margin-bottom: -15px;
+    padding: 0;
+    overflow: hidden;
+    font-size: 24px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#hoursspent, #activity, #roleName, #experienceName, #learnings, #startDate, #endDate {
+    margin-right: 156px;
+}
+
+#saved_exp {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 32px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#saved_expname {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgba(13, 144, 168, 1);
+}
+
+#lblsvdrole, #lblsvdhrs, #lblsvdact, #lblsvdskill, #lblsvdaddinfo {
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgba(2, 11, 62, 1);
+    margin: 0;
+    padding: 0;
+    margin-right: 0.5rem;
+}
+
+#svdrole, #svdhrs, #svdact, #svdskill {
+    white-space: nowrap;
+    font-size: 24px;
+    color: rgba(2, 11, 62, 1);
+    margin: 0;
+    padding: 0;
+}
+
+#svdaddinfo {
+    /* white-space: normal; */
+    font-size: 23px;
+    color: rgba(2, 11, 62, 1);
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+}
+
+#btneditsvd {
+    background-color: transparent;
+    border: none;
+}
+
+#editIcon {
+    color: rgba(13, 144, 168, 1);
 }

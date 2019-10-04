@@ -1,62 +1,213 @@
 <div class="container-fluid justify-content-center align-items-center" id="profileContainer">
-    <form name="prevexpform" method="post">
-        <div class="form-group row">
+    <!-- Profile Form -->
+    <form name="profileform" method="post">
+        <!-- Carrer Points -->
+        <div class="form-group row mb-0" style="justify-content: flex-end;">
             <div class="col-auto">
-                <label class="col-form-label">Previous Experience</label>
+                <label class="col-form-label">Career Points</label>
+                <div class="row" style="justify-content:center;">
+                    <div class="col-auto" id="Total_Points">
+                        <div class="row" style="justify-content:center;">
+                            <label class="col-form-label">18</label>
+                        </div>
+                        <div class="row" id="Label_Margin" style="justify-content:center;">
+                            <label class="col-form-label">Total Points</label>
+                        </div>
+                    </div>
+                    <div class="col-auto mr-3"></div>
+                    <div class="col-auto" id="Your_Goal">
+                        <div class="row" style="justify-content:center;">
+                            <label class="col-form-label">20</label>
+                        </div>
+                        <div class="row" id="Label_Margin" style="justify-content:center;">
+                            <label class="col-form-label">Your Goal</label>
+                        </div>
+                    </div>
+                    <div class="col-auto mr-1"></div>
+                </div>
             </div>
         </div>
-        <div class="mb-4" *ngFor="let experience of profile.experienceArr">
-            <div class="form-group row mb-0">
-                <div class="col-auto">
-                    <label for="experienceName" class="col-form-label pb-0">Experience Name</label>
-                    <input type="text" [value]="experience.experienceName"
-                        (input)="experience.experienceName=$event.target.value" class="form-control" id="experienceName"
-                        name="experienceName" placeholder="Experience">
+        <!-- Profile -->
+        <div class="form-group row mb-0">
+            <div class="col-auto" id="User">
+                <label class="col-form-label">User's Name</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-auto" style="margin-right: 10rem">
+                <div class="form-group row mb-3">
+                    <div class="col-auto">
+                        <label for="classof" class="col-form-label pb-0" id="lblclassof">Class of</label>
+                        <input type="text" [value]="TBD" (input)="TBD=$event.target.value" class="form-control"
+                            id="classof" name="classof" placeholder="Class of">
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-auto">
+                        <label for="highsch" class="col-form-label pb-0" id="lblhighsch">High school name</label>
+                        <input type="text" [value]="TBD" (input)="TBD=$event.target.value" class="form-control"
+                            id="highsch" name="highsch" placeholder="High School Name">
+                    </div>
+                </div>
+                <div class="form-group row mb-0">
+                    <div class="col-auto">
+                        <label for="afthighsch" class="col-form-label pb-0" id="lblafthighsch">After high school, I want
+                            to be a..</label>
+                        <input type="text" [value]="TBD" (input)="TBD=$event.target.value" class="form-control"
+                            id="afthighsch" name="afthighsch" placeholder="After High School..">
+                    </div>
                 </div>
             </div>
-            <div class="form-group row mb-0 mt-0">
+            <div class="col-md-6">
+                <label for="moreAbtMe" class="col-form-label pb-0">More about me</label>
+                <textarea [value]="TBD" (input)="TBD=$event.target.value" class="form-control" id="moreAbtMe"
+                    name="More About Me.." placeholder="moreAbtMe"></textarea>
+            </div>
+        </div>
+
+    </form>
+    <!-- Line Divider Form -->
+    <div id="hr">
+    </div>
+    <!-- New Experience Form -->
+    <form name="newexpform" method="post">
+        <div class="form-group row mb-0">
+            <div class="col-auto" id="previous_experience">
+                <label class="col-form-label">User's previous experience</label>
+            </div>
+        </div>
+        <div class="form-group row mb-0">
+            <div class="col-auto" id="New_experience">
+                <label class="col-form-label">Add new experience</label>
+            </div>
+        </div>
+        <!-- <div class="mb-4" *ngFor="let experience of profile.experienceArr"> -->
+        <div class="mt-0 mb-4">
+            <div class="form-group row mb-2">
                 <div class="col-auto">
-                    <label for="roleName" class="col-form-label pb-0">What was your tilte/role?*</label>
-                    <input type="text" [value]="experience.roleName" (input)="experience.roleName=$event.target.value"
-                        class="form-control" id="roleName" name="roleName" placeholder="Role">
-                </div>
-                <div class="col-auto">
-                    <label for="activity" class="col-form-label pb-0">Name of Activity</label>
-                    <input type="text" [value]="experience.activity" (input)="experience.activity=$event.target.value"
-                        class="form-control" id="activity" name="activity" placeholder="Activity">
+                    <label for="experienceName" class="col-form-label pb-0" id="lblexperienceName">Experience
+                        Name</label>
+                    <input type="text" [value]="experienceDefault.experienceName"
+                        (input)="experienceDefault.experienceName=$event.target.value" class="form-control"
+                        id="experienceName" name="experienceName" placeholder="Experience">
                 </div>
             </div>
-            <div class="form-group row mb-0 mt-0">
+            <div class="form-group row mb-2">
                 <div class="col-auto">
-                    <label for="hoursspent" class="col-form-label pb-0">Hours you spend on this?</label>
-                    <input type="text" [value]="experience.hoursspent"
-                        (input)="experience.hoursspent=$event.target.value" class="form-control" id="hoursspent"
+                    <label for="roleName" class="col-form-label pb-0" id="lblroleName">What was your
+                        tilte/role?*</label>
+                    <input type="text" [value]="experienceDefault.roleName"
+                        (input)="experienceDefault.roleName=$event.target.value" class="form-control" id="roleName"
+                        name="roleName" placeholder="Role">
+                </div>
+                <div class="col-auto">
+                    <label for="activity" class="col-form-label pb-0" id="lblactivity">Name of Activity</label>
+                    <input type="text" [value]="experienceDefault.activity"
+                        (input)="experienceDefault.activity=$event.target.value" class="form-control" id="activity"
+                        name="activity" placeholder="Activity">
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-auto">
+                    <label for="hoursspent" class="col-form-label pb-0" id="lblhoursspent">Hours you spend on
+                        this?</label>
+                    <input type="text" [value]="experienceDefault.hoursspent"
+                        (input)="experienceDefault.hoursspent=$event.target.value" class="form-control" id="hoursspent"
                         name="hoursspent" placeholder="Hours Spent">
                 </div>
                 <div class="col-auto">
-                    <label for="learnings" class="col-form-label pb-0">What did you learn?*</label>
-                    <input type="text" [value]="experience.learnings" (input)="experience.learnings=$event.target.value"
-                        class="form-control" id="learnings" name="learnings" placeholder="Learnings">
+                    <label for="learnings" class="col-form-label pb-0" id="lbllearnings">What did you learn?*</label>
+                    <input type="text" [value]="experienceDefault.learnings"
+                        (input)="experienceDefault.learnings=$event.target.value" class="form-control" id="learnings"
+                        name="learnings" placeholder="Learnings">
                 </div>
             </div>
-            <div class="form-group row mb-0 mt-0">
+            <div class="form-group row mb-2">
                 <div class="col-auto">
-                    <label for="startDate" class="col-form-label pb-0">Start date*</label>
-                    <input type="text" [value]="experience.startDate" (input)="experience.startDate=$event.target.value"
-                        class="form-control" id="startDate" name="startDate" placeholder="Start Date">
+                    <label for="startDate" class="col-form-label pb-0" id="lblstartDate">Start date*</label>
+                    <input type="text" [value]="experienceDefault.startDate"
+                        (input)="experienceDefault.startDate=$event.target.value" class="form-control" id="startDate"
+                        name="startDate" placeholder="Start Date">
                 </div>
                 <div class="col-auto">
-                    <label for="endDate" class="col-form-label pb-0">End date*</label>
-                    <input type="text" [value]="experience.endDate" (input)="experience.endDate=$event.target.value"
-                        class="form-control" id="endDate" name="endDate" placeholder="End Date">
+                    <label for="endDate" class="col-form-label pb-0" id="lblendDate">End date*</label>
+                    <input type="text" [value]="experienceDefault.endDate"
+                        (input)="experienceDefault.endDate=$event.target.value" class="form-control" id="endDate"
+                        name="endDate" placeholder="End Date">
                 </div>
             </div>
-            <div class="form-group row mt-0">
-                <div class="col-md-5">
-                    <label for="anythingElse" class="col-form-label pb-0">Anything else you’d like to share?</label>
-                    <textarea [value]="experience.anythingElse" (input)="experience.anythingElse=$event.target.value"
-                        class="form-control" id="anythingElse" name="Anything Else.."
-                        placeholder="anythingElse"></textarea>
+            <div class="form-group row mb-1">
+                <div class="col-md-8">
+                    <label for="anythingElse" class="col-form-label pb-0" id="lblanythingElse">Anything else you’d like
+                        to share?</label>
+                    <textarea [value]="experienceDefault.anythingElse"
+                        (input)="experienceDefault.anythingElse=$event.target.value" class="form-control"
+                        id="anythingElse" name="Anything Else.." placeholder="Anything Else.."></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-8">
+                    <button class="btn btn-outline-secondary float-right" type="submit" id="Save_experience">Save
+                        Experience</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Line Divider Form -->
+    <!-- <div id="hr">
+    </div> -->
+    <!-- Saved experiences -->
+    <form name="savedexpform" method="post">
+        <div class="form-group row mb-3">
+            <div class="col-auto" id="saved_exp">
+                <label class="col-form-label">Saved experiences</label>
+            </div>
+        </div>
+        <div class="mb-4" *ngFor="let experience of profile.experienceArr">
+        <div class="form-group row mb-0">
+            <div class="col-md-12" id="saved_expname">
+                <div class="form-group row mb-0">
+                    <div class="col col align-self-start">
+                        <!-- <button ng-click="LikeComment(comment)"><i class="far fa-thumbs-up"></i></button>{{comment.like}} -->
+                        <!-- <i class="far fa-edit 10f044"></i> -->
+                        <button id="btneditsvd"><i class="far fa-edit 10f044" id="editIcon"></i></button>
+                        <label class="col-form-label">Volleyball Team</label>
+                    </div>
+                    <div class="col align-self-end">
+                        <label class="col-form-label mr-2">Dates:</label>
+                        <label class="col-form-label">9/2018 - 11/2018</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row mb-0">
+            <div class="col-auto">
+                <label class="col-form-label" id="lblsvdrole">Role:</label>
+                <label class="col-form-label" id="svdrole">JV Volleyball Team Captain</label>
+            </div>
+        </div>
+        <div class="form-group row mb-0">
+            <div class="col-auto">
+                <label class="col-form-label" id="lblsvdhrs">Hours Spent:</label>
+                <label class="col-form-label" id="svdhrs">100 hrs</label>
+            </div>
+        </div>
+        <div class="form-group row mb-0">
+            <div class="col-auto">
+                <label class="col-form-label" id="lblsvdact">Activity Name:</label>
+                <label class="col-form-label" id="svdact">Kempes High School Volleyball</label>
+            </div>
+        </div>
+        <div class="form-group row mb-0">
+            <div class="col-auto">
+                <label class="col-form-label" id="lblsvdskill">Skills learned:</label>
+                <label class="col-form-label" id="svdskill">Kempes High School Volleyball</label>
+            </div>
+        </div>
+        <div class="form-group row mb-4">
+                <div class="col-auto">
+                    <label class="col-form-label" id="lblsvdaddinfo">Additional info:</label>
+                    <label class="col-form-label" id="svdaddinfo">As the captain of my JV Volleyball team, I coordinated our team practice schedule, raised issues with our coach, and planned social events</label>
                 </div>
             </div>
         </div>
