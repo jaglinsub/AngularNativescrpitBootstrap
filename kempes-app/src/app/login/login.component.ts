@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
    signInWithTwitter() {
       this.authService.signInWithTwitter()
       .then((res) => { 
-          this.router.navigate(['interests'])
+          this.router.navigate(['signup'])
         })
       .catch((err) => console.log(err));
     }
@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
     signInWithFacebook() {
       this.authService.signInWithFacebook()
       .then((res) => {
-          this.router.navigate(['interests'])
+          this.router.navigate(['signup'])
         })
       .catch((err) => console.log(err));
     }
