@@ -7,7 +7,7 @@
             <a href="/portfolio/myprofile" class="list-group-item list-group-item-action bg-light">My Profile</a>
             <a href="/portfolio/careerchecklist" class="list-group-item list-group-item-action bg-light">Carrer
                 Checklist</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">P.O. Box</a>
+            <a href="/portfolio/pobox" class="list-group-item list-group-item-action bg-light">P.O. Box</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Saved Opportunities</a>
         </div>
     </div>
@@ -16,6 +16,34 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
+            <form name="pointsform" method="">
+                <!-- Carrer Points -->
+                <div class="form-group row mb-0" style="justify-content: flex-end;">
+                    <div class="col-auto">
+                        <label class="col-form-label">Career Points</label>
+                        <div class="row" style="justify-content:center;">
+                            <div class="col-auto" id="Total_Points">
+                                <div class="row" style="justify-content:center;">
+                                    <label class="col-form-label">18</label>
+                                </div>
+                                <div class="row" id="Label_Margin" style="justify-content:center;">
+                                    <label class="col-form-label">Total Points</label>
+                                </div>
+                            </div>
+                            <div class="col-auto mr-3"></div>
+                            <div class="col-auto" id="Your_Goal">
+                                <div class="row" style="justify-content:center;">
+                                    <label class="col-form-label">20</label>
+                                </div>
+                                <div class="row" id="Label_Margin" style="justify-content:center;">
+                                    <label class="col-form-label">Your Goal</label>
+                                </div>
+                            </div>
+                            <div class="col-auto mr-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
             <router-outlet></router-outlet>
         </div>
     </div>

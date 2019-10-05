@@ -10,6 +10,7 @@ import { InterestsComponent } from '@src/app/interests/interests.component';
 import { LoginComponent } from '@src/app/login/login.component';
 import { DashboardComponent } from '@src/app/dashboard/dashboard.component';
 import { MyprofileComponent } from '@src/app/myprofile/myprofile.component';
+import { PoboxComponent } from '@src/app/pobox/pobox.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -28,6 +29,7 @@ import { MyprofileComponent } from '@src/app/myprofile/myprofile.component';
     LoginComponent,
     DashboardComponent,
     MyprofileComponent,
+    PoboxComponent,
   ],
   imports: [
     NativeScriptModule,

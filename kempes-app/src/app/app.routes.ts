@@ -7,6 +7,7 @@ import { InterestsComponent } from '@src/app/interests/interests.component';
 import { DashboardComponent } from '@src/app/dashboard/dashboard.component';
 import { AuthGuard }   from './services/auth-guard.service';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { PoboxComponent } from './pobox/pobox.component';
 
 export const routes: Routes = [
     {
@@ -47,6 +48,10 @@ export const routes: Routes = [
             {
                 path: 'careerchecklist',
                 component: InterestsComponent,
+            },
+            {
+                path: 'pobox',
+                component: PoboxComponent,
             },
         ]
     },

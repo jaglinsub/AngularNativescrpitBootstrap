@@ -19,6 +19,7 @@ import { AuthGuard } from '@src/app/services/auth-guard.service';
 import { AuthService } from '@src/app/services/auth.service';
 import { DashboardComponent } from '@src/app/dashboard/dashboard.component';
 import { MyprofileComponent } from '@src/app/myprofile/myprofile.component';
+import { PoboxComponent } from '@src/app/pobox/pobox.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { MyprofileComponent } from '@src/app/myprofile/myprofile.component';
     LoginComponent,
     DashboardComponent,
     MyprofileComponent,
+    PoboxComponent,
   ],
   imports: [
     BrowserModule,

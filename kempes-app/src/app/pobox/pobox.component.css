@@ -1,0 +1,70 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+#poboxContainer {
+    margin-top: 0rem;
+}
+
+#explore {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    font-size: 40px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#welcome {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* margin-top: -5px; */
+    text-align: center;
+    font-size: 24px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#Union_1_A34_BooleanGroup_46, Union_1_A34_BooleanGroup_46 {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    width: 23.519px;
+    height: 23.521px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+path {
+    fill: rgb(240, 136, 115);
+    d: path("M -3059.38 -5594.48 L -3059.38 -5603.1 L -3068 -5603.1 L -3068 -5609.38 L -3059.38 -5609.38 L -3059.38 -5618 L -3053.1 -5618 L -3053.1 -5609.38 L -3044.48 -5609.38 L -3044.48 -5603.1 L -3053.1 -5603.1 L -3053.1 -5594.48 L -3059.38 -5594.48 Z");
+    margin: 0;
+    padding: 0;
+}
+
+#plusIcon {
+    color: rgb(240, 136, 115);
+    margin: 0;
+    padding: 0;
+}
+
+#oppheader {
+margin: 0;
+padding: 0;
+overflow: hidden;
+text-align: left;
+font-size: 32px;
+color: rgba(13,144,168,1);
+}
+
+#oppDesc {
+margin: 0;
+padding: 0;
+overflow: hidden;
+margin-top: -5px;
+text-align: left;
+font-size: 24px;
+color: rgba(2,11,62,1);
+
+}
+
+#btneditsvd {
+    background-color: transparent;
+    border: none;
+}

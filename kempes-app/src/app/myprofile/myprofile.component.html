@@ -1,32 +1,6 @@
 <div class="container-fluid justify-content-center align-items-center" id="profileContainer">
     <!-- Profile Form -->
     <form name="profileform" method="post">
-        <!-- Carrer Points -->
-        <div class="form-group row mb-0" style="justify-content: flex-end;">
-            <div class="col-auto">
-                <label class="col-form-label">Career Points</label>
-                <div class="row" style="justify-content:center;">
-                    <div class="col-auto" id="Total_Points">
-                        <div class="row" style="justify-content:center;">
-                            <label class="col-form-label">18</label>
-                        </div>
-                        <div class="row" id="Label_Margin" style="justify-content:center;">
-                            <label class="col-form-label">Total Points</label>
-                        </div>
-                    </div>
-                    <div class="col-auto mr-3"></div>
-                    <div class="col-auto" id="Your_Goal">
-                        <div class="row" style="justify-content:center;">
-                            <label class="col-form-label">20</label>
-                        </div>
-                        <div class="row" id="Label_Margin" style="justify-content:center;">
-                            <label class="col-form-label">Your Goal</label>
-                        </div>
-                    </div>
-                    <div class="col-auto mr-1"></div>
-                </div>
-            </div>
-        </div>
         <!-- Profile -->
         <div class="form-group row mb-0">
             <div class="col-auto" id="User">
@@ -164,50 +138,51 @@
             </div>
         </div>
         <div class="mb-4" *ngFor="let experience of profile.experienceArr">
-        <div class="form-group row mb-0">
-            <div class="col-md-12" id="saved_expname">
-                <div class="form-group row mb-0">
-                    <div class="col col align-self-start">
-                        <!-- <button ng-click="LikeComment(comment)"><i class="far fa-thumbs-up"></i></button>{{comment.like}} -->
-                        <!-- <i class="far fa-edit 10f044"></i> -->
-                        <button id="btneditsvd"><i class="far fa-edit 10f044" id="editIcon"></i></button>
-                        <label class="col-form-label">Volleyball Team</label>
-                    </div>
-                    <div class="col align-self-end">
-                        <label class="col-form-label mr-2">Dates:</label>
-                        <label class="col-form-label">9/2018 - 11/2018</label>
+            <div class="form-group row mb-0">
+                <div class="col-md-12" id="saved_expname">
+                    <div class="form-group row mb-0">
+                        <div class="col col align-self-start">
+                            <!-- <button ng-click="LikeComment(comment)"><i class="far fa-thumbs-up"></i></button>{{comment.like}} -->
+                            <!-- <i class="far fa-edit 10f044"></i> -->
+                            <button id="btneditsvd"><i class="far fa-edit 10f044" id="editIcon"></i></button>
+                            <label class="col-form-label">Volleyball Team</label>
+                        </div>
+                        <div class="col align-self-end">
+                            <label class="col-form-label mr-2">Dates:</label>
+                            <label class="col-form-label">9/2018 - 11/2018</label>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group row mb-0">
-            <div class="col-auto">
-                <label class="col-form-label" id="lblsvdrole">Role:</label>
-                <label class="col-form-label" id="svdrole">JV Volleyball Team Captain</label>
+            <div class="form-group row mb-0">
+                <div class="col-auto">
+                    <label class="col-form-label" id="lblsvdrole">Role:</label>
+                    <label class="col-form-label" id="svdrole">JV Volleyball Team Captain</label>
+                </div>
             </div>
-        </div>
-        <div class="form-group row mb-0">
-            <div class="col-auto">
-                <label class="col-form-label" id="lblsvdhrs">Hours Spent:</label>
-                <label class="col-form-label" id="svdhrs">100 hrs</label>
+            <div class="form-group row mb-0">
+                <div class="col-auto">
+                    <label class="col-form-label" id="lblsvdhrs">Hours Spent:</label>
+                    <label class="col-form-label" id="svdhrs">100 hrs</label>
+                </div>
             </div>
-        </div>
-        <div class="form-group row mb-0">
-            <div class="col-auto">
-                <label class="col-form-label" id="lblsvdact">Activity Name:</label>
-                <label class="col-form-label" id="svdact">Kempes High School Volleyball</label>
+            <div class="form-group row mb-0">
+                <div class="col-auto">
+                    <label class="col-form-label" id="lblsvdact">Activity Name:</label>
+                    <label class="col-form-label" id="svdact">Kempes High School Volleyball</label>
+                </div>
             </div>
-        </div>
-        <div class="form-group row mb-0">
-            <div class="col-auto">
-                <label class="col-form-label" id="lblsvdskill">Skills learned:</label>
-                <label class="col-form-label" id="svdskill">Kempes High School Volleyball</label>
+            <div class="form-group row mb-0">
+                <div class="col-auto">
+                    <label class="col-form-label" id="lblsvdskill">Skills learned:</label>
+                    <label class="col-form-label" id="svdskill">Kempes High School Volleyball</label>
+                </div>
             </div>
-        </div>
-        <div class="form-group row mb-4">
+            <div class="form-group row mb-4">
                 <div class="col-auto">
                     <label class="col-form-label" id="lblsvdaddinfo">Additional info:</label>
-                    <label class="col-form-label" id="svdaddinfo">As the captain of my JV Volleyball team, I coordinated our team practice schedule, raised issues with our coach, and planned social events</label>
+                    <label class="col-form-label" id="svdaddinfo">As the captain of my JV Volleyball team, I coordinated
+                        our team practice schedule, raised issues with our coach, and planned social events</label>
                 </div>
             </div>
         </div>
