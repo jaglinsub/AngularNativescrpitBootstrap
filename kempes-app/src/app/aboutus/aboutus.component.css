@@ -1,0 +1,98 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+#aboutusContainer {
+    margin-top: 5rem;
+}
+
+#about {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    font-size: 40px;
+    color: rgba(112, 112, 112, 1);
+}
+
+#aboutText {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    font-size: 28px;
+    color: rgba(112, 112, 112, 1);
+}
+
+#labelmargin {
+    margin-top: -10px !important;
+    padding: 0;
+    display: inline-block;
+}
+
+.mt-7, .my-7 {
+    margin-top: 4rem !important;
+}
+
+#problemHeader {
+    margin: 0;
+    padding: 0;
+    margin-top: 10rem;
+    overflow: hidden;
+    text-align: center;
+    font-size: 36px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#problemImage {
+    padding-top: 10rem;
+    padding-bottom: 25rem;
+    margin-top: 3rem;
+    background: url("../../img/The_Problem.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#problemDesc {
+    text-align: center;
+    color: rgba(2, 11, 62, 1);
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+#solutionHeader {
+    margin: 0;
+    padding: 0;
+    margin-top: 5rem;
+    overflow: hidden;
+    text-align: center;
+    font-size: 36px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#solutionImage {
+    padding-top: 10rem;
+    padding-bottom: 28rem;
+    margin-top: -5rem;
+    background: url("../../img/Girl_shaking_hand.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#solutionDesc {
+    text-align: center;
+    color: rgba(2, 11, 62, 1);
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+#wedolove {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 45px;
+    text-align: center;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 1);
+}

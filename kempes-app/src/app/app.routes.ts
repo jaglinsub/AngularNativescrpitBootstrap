@@ -9,6 +9,7 @@ import { AuthGuard }   from './services/auth-guard.service';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { PoboxComponent } from './pobox/pobox.component';
 import { CareerchecklistComponent } from './careerchecklist/careerchecklist.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 export const routes: Routes = [
     {
@@ -29,6 +30,10 @@ export const routes: Routes = [
         path: 'interests',
         canActivate: [AuthGuard],
         component: InterestsComponent,
+    },
+    {
+        path: 'aboutus',
+        component: AboutusComponent,
     },
     {
         path: 'login/:id',

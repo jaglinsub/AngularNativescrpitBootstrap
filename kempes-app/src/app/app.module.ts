@@ -21,6 +21,7 @@ import { DashboardComponent } from '@src/app/dashboard/dashboard.component';
 import { MyprofileComponent } from '@src/app/myprofile/myprofile.component';
 import { PoboxComponent } from '@src/app/pobox/pobox.component';
 import { CareerchecklistComponent } from '@src/app/careerchecklist/careerchecklist.component';
+import { AboutusComponent } from '@src/app/aboutus/aboutus.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { CareerchecklistComponent } from '@src/app/careerchecklist/careercheckli
     MyprofileComponent,
     PoboxComponent,
     CareerchecklistComponent,
+    AboutusComponent,
   ],
   imports: [
     BrowserModule,
