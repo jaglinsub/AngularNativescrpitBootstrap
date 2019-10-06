@@ -3,73 +3,81 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
- body {
-    overflow-x: hidden;
-  }
-  
+
+body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
   #sidebar-wrapper {
-    min-height: 100vh;
-    margin-left: -15rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
-  }
-  
-  #sidebar-wrapper .sidebar-heading {
-    padding: 0.875rem 1.25rem;
-    font-size: 1.2rem;
-  }
-  
-  #sidebar-wrapper .list-group {
-    width: 15rem;
-  }
-  
-  #page-content-wrapper {
-    min-width: 100vw;
-  }
-  
-  #wrapper.toggled #sidebar-wrapper {
     margin-left: 0;
   }
-  
-  @media (min-width: 768px) {
-    #sidebar-wrapper {
-      margin-left: 0;
-    }
-  
-    #page-content-wrapper {
-      min-width: 0;
-      width: 100%;
-      margin-top: 4rem;
-    }
-  
-    #wrapper.toggled #sidebar-wrapper {
-      margin-left: -15rem;
-    }
-
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+    margin-top: 4rem;
   }
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
 
-  #Total_Points {
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    white-space: nowrap;
-    margin-top: -20px;
-    font-size: 16px;
-    color: rgba(13, 144, 168, 1);
+#Total_Points {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  white-space: nowrap;
+  margin-top: -20px;
+  font-size: 16px;
+  color: rgba(13, 144, 168, 1);
 }
 
 #Your_Goal {
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    white-space: nowrap;
-    margin-top: -20px;
-    font-size: 16px;
-    color: rgba(2, 11, 62, 1);
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  white-space: nowrap;
+  margin-top: -20px;
+  margin-left: -10px;
+  font-size: 16px;
+  color: rgba(2, 11, 62, 1);
 }
 
 #Label_Margin {
-    margin-top: -20px;
+  margin-top: -20px;
+}
+
+#lineVertical {
+  margin: 0;
+  padding: 0;
+  margin-top: -10px;
+  margin-left: 5px;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  height: 2.25rem;
 }
