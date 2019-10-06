@@ -66,6 +66,7 @@
 		font-weight: normal;
 		font-size: 40px;
 		color: rgba(2,11,62,1);
+		visibility: hidden;
   }
   
 	#Contact_us {
@@ -76,4 +77,5 @@
 		font-weight: normal;
 		font-size: 32px;
 		color: rgba(255,255,255,1);
+		visibility: hidden;
 	}
