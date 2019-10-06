@@ -20,6 +20,7 @@ import { AuthService } from '@src/app/services/auth.service';
 import { DashboardComponent } from '@src/app/dashboard/dashboard.component';
 import { MyprofileComponent } from '@src/app/myprofile/myprofile.component';
 import { PoboxComponent } from '@src/app/pobox/pobox.component';
+import { CareerchecklistComponent } from '@src/app/careerchecklist/careerchecklist.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { PoboxComponent } from '@src/app/pobox/pobox.component';
     DashboardComponent,
     MyprofileComponent,
     PoboxComponent,
+    CareerchecklistComponent,
   ],
   imports: [
     BrowserModule,

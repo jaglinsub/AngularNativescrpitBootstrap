@@ -1,0 +1,41 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+#carchecklstContainer {
+    margin-top: 0rem;
+}
+
+#divCenter {
+    float: none;/* Overwrites float left */
+    /* display: inline-block;
+    vertical-align: top;
+    width: 25%; */
+}
+
+#center-col {
+    display: flex;
+    justify-content: center;
+}
+
+#yourcareer {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    font-size: 40px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#youhavecarpts {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* margin-top: -5px; */
+    text-align: center;
+    font-size: 24px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#labelmargin {
+    margin-top: -8px !important;
+    padding: 0;
+    display: block;
+}
