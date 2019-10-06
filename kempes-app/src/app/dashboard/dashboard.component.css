@@ -8,6 +8,9 @@ body {
   overflow-x: hidden;
 }
 
+.bg-light {
+  background-color: white !important;
+}
 #sidebar-wrapper {
   min-height: 100vh;
   margin-left: -15rem;
@@ -23,7 +26,7 @@ body {
 }
 
 #sidebar-wrapper .list-group {
-  width: 15rem;
+  width: 12rem;
 }
 
 #page-content-wrapper {
