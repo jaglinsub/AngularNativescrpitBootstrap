@@ -11,8 +11,8 @@ import { User } from '../signup/User';
 export class ProfileService {
   user: User;
   userId: string;
-  url: string = 'http://localhost:8080/api/profile';
-  //url: string = 'http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/api/profile';
+  //url: string = 'http://localhost:8080/api/profile';
+  url: string = 'http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/api/profile';
 
   constructor(private http: HttpClient, private userService: UserServiceService) {
     this.userService.user$.subscribe((usr) => {

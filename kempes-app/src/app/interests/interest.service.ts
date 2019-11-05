@@ -9,8 +9,8 @@ import { Interests } from './Interests';
 })
 export class InterestService {
   userId: string;
-  url: string = 'http://localhost:8080/api/interests';
-  //url: string = 'http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/api/interests';
+  //url: string = 'http://localhost:8080/api/interests';
+  url: string = 'http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/api/interests';
 
   constructor(private http: HttpClient, private userService: UserServiceService) {
     this.userService.user$.subscribe((usr) => {
