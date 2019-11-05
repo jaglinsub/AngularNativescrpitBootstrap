@@ -22,6 +22,10 @@ import { MyprofileComponent } from '@src/app/myprofile/myprofile.component';
 import { PoboxComponent } from '@src/app/pobox/pobox.component';
 import { CareerchecklistComponent } from '@src/app/careerchecklist/careerchecklist.component';
 import { AboutusComponent } from '@src/app/aboutus/aboutus.component';
+import { UserServiceService } from './services/user-service.service';
+import { InterestService } from './interests/interest.service';
+import { ProfileService } from './myprofile/profile.service';
+import { CurrentPointsService } from './dashboard/current-points.service';
 
 
 @NgModule({
@@ -49,7 +53,11 @@ import { AboutusComponent } from '@src/app/aboutus/aboutus.component';
   ],
   providers: [
     AuthGuard,
-    AuthService
+    AuthService,
+    UserServiceService,
+    InterestService,
+    ProfileService,
+    CurrentPointsService
   ],
   bootstrap: [AppComponent]
 })

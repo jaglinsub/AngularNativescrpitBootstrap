@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {User} from './User';
+import { Component, OnInit,NgZone,
+  ChangeDetectorRef } from '@angular/core';
+import { User } from './User';
 import { UserType } from './UserType';
-import {SignupService} from "./signup.service";
+import { SignupService } from "./signup.service";
 import { AuthService } from '../services/auth.service';
+import { UserServiceService } from '../services/user-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -13,16 +16,40 @@ import { AuthService } from '../services/auth.service';
 export class SignupComponent implements OnInit {
 
   modelPerson = new User();
-  
   modelPersonType = new UserType();
   //modelPerson = new User(0, "", "", "", new Date().getDate(), "", "", "", "", new UserType(0, "", ""));
 
-  constructor(private signupService: SignupService, private authService: AuthService) { }
+  constructor(private cd: ChangeDetectorRef,
+    private zone: NgZone, private signupService: SignupService, private authService: AuthService, private userService: UserServiceService,  private router: Router) {
 
+    this.userService.user$.subscribe((usr) => {
+      //this.modelPerson = usr;
+      this.updateModel(usr);
+      console.log("model person=" + this.modelPerson.userType.typeName);
+    });
+    console.log("model person 2=" + JSON.stringify(this.modelPerson));
+  }
+
+  updateModel(modelPerson: User) {
+    if(modelPerson)
+    {
+      this.modelPerson = modelPerson;
+      console.log("model person 3=" + JSON.stringify(this.modelPerson));
+      /* this.zone.run(() => {
+
+        this.cd.detectChanges();
+
+      }) */
+    }
+  }
   ngOnInit() {
-    //this.modelPersonType.type = "Student";
+    
+
+
     this.modelPerson.userType = this.modelPersonType;
     this.modelPerson.email = this.authService.isLoggedIn ? this.authService.userDetails.providerData[0].email : "";
+
+    //this.modelPersonType.type = "Student";
     /* this.modelPerson.firstName = "";
     this.modelPerson.lastName = "";
     
@@ -37,12 +64,14 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.modelPerson.firstName); 
+    console.log(this.modelPerson.firstName);
     console.log(this.modelPerson);
     this.signupService.saveUser(this.modelPerson).subscribe(
       data => {
-        this.modelPerson;
+        this.modelPerson = data;
         console.log("After response" + this.modelPerson.dateofBirth);
+        this.userService.setUser(data);
+        this.router.navigate(['interests']);
       }
     );
 

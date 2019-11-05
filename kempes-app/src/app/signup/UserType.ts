@@ -1,7 +1,7 @@
 export class UserType {
-    id: number
+    id: string
     typeName: string
-    typeDescription: String
+    typeDescription: string
 
     constructor() {}
 

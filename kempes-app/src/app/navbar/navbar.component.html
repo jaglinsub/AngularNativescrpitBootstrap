@@ -8,26 +8,28 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" [routerLink]="['home']">Home</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" [routerLink]="['aboutus']">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" [routerLink]="['services']">Support</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" [routerLink]="['portfolio/myprofile']">My Profile
+                    <a class="nav-link js-scroll-trigger" [routerLink]="['portfolio/myprofile']" *ngIf="authService.userDetails">My Profile
                         <!-- <i class="fas fa-bars"></i> -->
                     </a>
                 </li>
                 <li class="dropdown">
-                        <a class="nav-link dropdown-toggle" [routerLink]="['home']" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <!-- <a class="nav-link dropdown-toggle" [routerLink]="['home']" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
                                 <i class="fas fa-bars"></i>
                                  <!-- DropDown -->
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" [routerLink]="['/login', 1]">Sign up</a>
-                          <a class="dropdown-item" [routerLink]="['/login', 2]">Login</a>
-                          <a class="dropdown-item" href="#">Logout</a>
+                          <a class="dropdown-item" [routerLink]="['/login', 1]" *ngIf="!authService.userDetails">Sign up</a>
+                          <a class="dropdown-item" [routerLink]="['/login', 2]" *ngIf="!authService.userDetails">Login</a>
+                          <!-- <a class="dropdown-item" href="" (click)="logoutClicked()">Logout</a> -->
+                          <a class="dropdown-item" (click)="logoutClicked()" *ngIf="authService.userDetails">Logout</a>
                         </div>
                       </li>
                 

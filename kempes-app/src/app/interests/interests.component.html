@@ -9,27 +9,28 @@
             </span>
         </div>
         <div class="col-sm-12 offset-sm-12">
-            <form name="userform" method="post">
-                <div class="form-group row">
-                    <label class="questionLabel" for="exampleInputEmail1">
-                        <span class="badge badge-dark">1#</span>
-                        I’m looking for more opportunities to
-                    </label>
-                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                        data-selectpicker>
-                        <option value="0"></option>
-                        <option value="1">Learn Real-World Skills</option>
-                        <option value="2">Build A Career</option>
-                    </select>
+            <form (ngSubmit)="onSubmit()" #interestForm="ngForm">
+                <div class="mb-4" *ngFor="let interestOption of interests.interestOptions">
+                    <div class="form-group row">
+                        <label class="questionLabel" for="exampleInputEmail1">
+                            <span class="badge badge-dark">{{interestOption.displayOrder}}#</span>
+                            {{interestOption.interestQuestion}}
+                        </label>
+                        <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
+                            data-selectpicker [(ngModel)]="interestOption.selectedOptions"
+                            name="oppurOptions">
+                            <option *ngFor="let answers of interestOption.answerOptions" [ngValue]="answers.answerName">{{ answers.answerName }}</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                     <label class="questionLabel" for="exampleInputEmail1">
                         <span class="badge badge-dark">2#</span>
                         At school, when I’m given a project, I’d rather work
                     </label>
                     <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                        data-selectpicker>
+                        data-selectpicker [(ngModel)]="interests.projectOptions.projectTypeName" name="projectOptions">
                         <option value="0"></option>
                         <option value="1">With A Team</option>
                         <option value="2">Independently</option>
@@ -42,7 +43,7 @@
                         My favorite activity to do outside of school is
                     </label>
                     <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                        data-selectpicker>
+                        data-selectpicker [(ngModel)]="interests.outsideOptions.outsideTypeName" name="outsideOptions">
                         <option value="0"></option>
                         <option value="1">Play Basketball</option>
                         <option value="2">Go To Library</option>
@@ -55,7 +56,7 @@
                         Ideally, before I graduate I want to know how to
                     </label>
                     <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                        data-selectpicker>
+                        data-selectpicker [(ngModel)]="interests.howtoOptions.howtoTypeName" name="howtoOptions">
                         <option value="0"></option>
                         <option value="1">Respect Others</option>
                         <option value="2">Listen More and Talk Less</option>
@@ -68,17 +69,18 @@
                         After I graduate high school, I think I want to be a
                     </label>
                     <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                        data-selectpicker>
+                        data-selectpicker [(ngModel)]="interests.afterGradOptions.afterGradTypeName"
+                        name="afterGradOptions">
                         <option value="0"></option>
                         <option value="1">Nurse</option>
                         <option value="2">Engineer</option>
                     </select>
-                </div>
+                </div> -->
 
                 <div class="form-group" align="center">
-                    <button type="buton" class="btn btn-primary"
+                    <button type="submit" class="btn btn-primary"
                         style="background-color:#0D90A8; font-size: 24px; width: 262px; height: 49px;"
-                        (click)="signInWithEmail()">
+                        >
                         Complete Sign Up
                     </button>
                 </div>

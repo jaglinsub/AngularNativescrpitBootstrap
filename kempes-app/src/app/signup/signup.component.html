@@ -13,9 +13,8 @@
                         <div class="form-group">
                             <select class="form-control" data-style="btn-primary" data-live-search="true"
                                 data-selectpicker
-                                [(ngModel)]="modelPersonType.typeName" name="personType">
-                                 <!-- [(ngModel)]="modelPerson.userType.type" name="personType"> -->
-                                 
+                                 [(ngModel)]="modelPerson.userType.typeName" name="personType">
+<!-- [(ngModel)]="modelPersonType.typeName" name="personType"> -->
                                 <option hidden value="0">Type of user</option>
                                 <option value="Student">Student</option>
                                 <option value="Councillor">Councillor</option>
@@ -26,7 +25,7 @@
                             <input class="form-control" placeholder="First Name" type="text" [(ngModel)]="modelPerson.firstName" name="firstName">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="Last Name" type="text" [(ngModel)]="modelPerson.lastName" name="firstName">
+                            <input class="form-control" placeholder="Last Name" type="text" [(ngModel)]="modelPerson.lastName" name="lastName">
                         </div>
                         <div class="form-group">
                             <input class="form-control" placeholder="Email" type="text" [(ngModel)]="modelPerson.email" name="email" readonly>

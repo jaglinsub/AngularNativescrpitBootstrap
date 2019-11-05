@@ -4,14 +4,14 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Start Bootstrap </div>
         <div class="list-group list-group-flush">
-            <a href="/portfolio/myprofile" class="list-group-item list-group-item-action bg-light">My Profile</a>
-            <a href="/portfolio/careerchecklist" class="list-group-item list-group-item-action bg-light">Carrer
+            <a routerLink="/portfolio/myprofile" class="list-group-item list-group-item-action bg-light">My Profile</a>
+            <a routerLink="/portfolio/careerchecklist" class="list-group-item list-group-item-action bg-light">Carrer
                 Checklist</a>
-            <a href="/portfolio/pobox" class="list-group-item list-group-item-action bg-light">P.O. Box</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Saved Opportunities</a>
+            <a routerLink="/portfolio/pobox" class="list-group-item list-group-item-action bg-light">P.O. Box</a>
+            <a routerLink="#" class="list-group-item list-group-item-action bg-light">Saved Opportunities</a>
         </div>
     </div>
-    <!-- /#sidebar-wrapper -->
+    <!-- #sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
@@ -24,7 +24,7 @@
                         <div class="row" style="justify-content:center;">
                             <div class="col-auto" id="Total_Points">
                                 <div class="row" style="justify-content:center;">
-                                    <label class="col-form-label">18</label>
+                                    <label class="col-form-label"> {{ currentPTS }} </label>
                                 </div>
                                 <div class="row" id="Label_Margin" style="justify-content:center;">
                                     <label class="col-form-label">Total Points</label>

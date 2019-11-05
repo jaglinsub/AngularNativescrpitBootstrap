@@ -9,6 +9,7 @@ export class Experience {
     startDate: string
     endDate: string
     anythingElse: string;
+    userId: string;
 
     constructor() {
         this.experienceName = "";

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Profile } from './profile';
 import { Experience } from './experience';
+import { ProfileService } from './profile.service';
+import { User } from '../signup/User';
 
 @Component({
   selector: 'app-myprofile',
@@ -13,9 +15,10 @@ export class MyprofileComponent implements OnInit {
   experience1 = new Experience();
   experience2 = new Experience();
   experience3 = new Experience();
-
-  constructor() {
-    this.profile = new Profile();
+  user: User;
+  
+  constructor(private profileService: ProfileService) {
+    /* this.profile = new Profile();
     this.experienceDefault = new Experience();
 
     this.profile.experienceArr = [this.experienceDefault];
@@ -26,10 +29,43 @@ export class MyprofileComponent implements OnInit {
 
     this.experience1.roleName = "Role 1";
     this.experience2.roleName = "Role 2";
-    this.experience3.roleName = "Role 3";
+    this.experience3.roleName = "Role 3"; */
    }
 
   ngOnInit() {
-    this.profile.experienceArr = [this.experience1, this.experience2, this.experience3 ];
+
+    //this.profile.experienceArr = [this.experience1, this.experience2, this.experience3 ];
+    this.profileService.getProfileforUser().subscribe(profile => {
+      this.profile = profile;
+      console.log("profile=" + JSON.stringify(this.profile));
+      if(this.profile == null)
+      {
+        this.profile = new Profile();
+        // this.profile.classOf = "test class";
+        //this.experienceDefault = new Experience();
+        //this.profile.experienceArr = [this.experienceDefault];
+      }
+    });
+    this.user = this.profileService.user;
+  }
+
+  onSubmit() {
+    console.log("onSubmit=>" + JSON.stringify(this.profile));
+    console.log("onSubmit=>" + JSON.stringify(this.experienceDefault));
+    if(this.profile.experienceArr == null)
+    {
+      console.log("exp is null 1");
+      this.profile.experienceArr = [this.experienceDefault];
+    }
+    else {
+      console.log("exp is not null 1");
+      this.profile.experienceArr.push(this.experienceDefault);
+    }
+    
+    this.profileService.saveProfile(this.profile).subscribe ( data => {
+      this.profile = data;
+      this.experienceDefault = new Experience();
+      console.log("After response" + JSON.stringify(this.profile));
+    });
   }
 }

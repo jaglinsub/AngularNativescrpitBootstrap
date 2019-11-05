@@ -8,6 +8,7 @@ export class Profile {
     iWantToBe: string;
     moreAboutMe: string;
     experienceArr: Experience[];
+    userId: string;
 
     constructor() {}
 }

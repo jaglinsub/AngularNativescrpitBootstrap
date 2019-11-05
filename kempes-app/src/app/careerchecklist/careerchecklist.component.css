@@ -4,7 +4,8 @@
 }
 
 #divCenter {
-    float: none;/* Overwrites float left */
+    float: none;
+    /* Overwrites float left */
     /* display: inline-block;
     vertical-align: top;
     width: 25%; */
@@ -38,4 +39,58 @@
     margin-top: -8px !important;
     padding: 0;
     display: block;
+}
+
+.labeldiv {
+    /* vertical-align: middle; */
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: chartreuse; */
+    overflow: hidden;
+    /* display: table; */
+	
+}
+
+#hr {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.getting_started {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    /* text-align: left; */
+    vertical-align: middle;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    color: rgba(240, 136, 115, 1);
+}
+
+.checkItems {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    margin-left: .5rem;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.checkbox {
+    width: 1.75rem;
+    height: 1.75rem;
 }

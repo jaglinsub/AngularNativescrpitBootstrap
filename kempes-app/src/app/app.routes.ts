@@ -49,14 +49,17 @@ export const routes: Routes = [
         children: [
             {
                 path: 'myprofile',
+                canActivate: [AuthGuard],
                 component: MyprofileComponent,
             },
             {
                 path: 'careerchecklist',
+                canActivate: [AuthGuard],
                 component: CareerchecklistComponent,
             },
             {
                 path: 'pobox',
+                canActivate: [AuthGuard],
                 component: PoboxComponent,
             },
         ]

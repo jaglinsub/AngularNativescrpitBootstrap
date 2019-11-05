@@ -1,15 +1,15 @@
 import { UserType } from "./UserType"
 
 export class User {
-    id: number
-    firstName: String
-    lastName: String
-    email: String
+    id: string
+    firstName: string
+    lastName: string
+    email: string
     dateofBirth: string
-    grade: String
-    location: String
-    phoneNumber: String
-    organizationName: String
+    grade: string
+    location: string
+    phoneNumber: string
+    organizationName: string
     userType: UserType;
 
     constructor() {}
