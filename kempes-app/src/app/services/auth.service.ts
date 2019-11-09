@@ -6,6 +6,8 @@ import * as firebase from 'firebase/app';
 // import { Observable } from 'rxjs/Observable';
 import { Observable, of } from 'rxjs';
 import { first } from 'rxjs/operators';
+import { UserServiceService } from './user-service.service';
+import { User } from '../signup/User';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,7 @@ export class AuthService {
   public userDetails: firebase.User = null;
   public isUserLoggedIn: boolean;
 
-  constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
+  constructor(private _firebaseAuth: AngularFireAuth, private router: Router, private userService: UserServiceService) {
     this.user = _firebaseAuth.authState;
 
     this.user.subscribe(
@@ -106,6 +108,8 @@ export class AuthService {
         this._firebaseAuth.auth.setPersistence(firebase.auth.Auth.Persistence.NONE).then(() => {
 
         })
+        this.userService.setUser(new User());
+
         //this.userDetails.providerData[0]
         this.userDetails = null;
         //this.user = null;
