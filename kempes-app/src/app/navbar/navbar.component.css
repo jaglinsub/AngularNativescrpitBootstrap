@@ -2,7 +2,7 @@
 
 nav .navbar-nav li a {
     color: white !important;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .navbar-nav {
@@ -11,7 +11,7 @@ nav .navbar-nav li a {
 .navbar-brand {
     color: white !important;
     margin-left:-3rem;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 /* .dropdown-menu {

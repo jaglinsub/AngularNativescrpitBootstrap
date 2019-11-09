@@ -36,8 +36,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label for="moreAbtMe" class="col-form-label pb-0">More about me</label>
+            <div class="col-md-5">
+                <label for="moreAbtMe" class="col-form-label pb-0" id="lblmoreAbtMe">More about me</label>
                 <textarea [(ngModel)]="profile.moreAboutMe" class="form-control" id="moreAbtMe" name="More About Me.."
                     placeholder="moreAbtMe"></textarea>
             </div>
@@ -51,7 +51,7 @@
         <!-- <form name="newexpform" method="post"> -->
         <div class="form-group row mb-0">
             <div class="col-auto" id="previous_experience">
-                <label class="col-form-label">User's previous experience</label>
+                <label class="col-form-label">{{ user.firstName }}'s previous experience</label>
             </div>
         </div>
         <div class="form-group row mb-0">
@@ -185,13 +185,13 @@
                 </div>
                 <div class="form-group row mb-0">
                     <div class="col-auto">
-                        <label class="col-form-label" id="lblsvdskill">Skills learned:</label>
+                        <label class="col-form-label" id="lblsvdskill">Skills Learned:</label>
                         <label class="col-form-label" id="svdskill">{{ experience.learnings }}</label>
                     </div>
                 </div>
                 <div class="form-group row mb-4">
                     <div class="col-auto">
-                        <label class="col-form-label" id="lblsvdaddinfo">Additional info:</label>
+                        <label class="col-form-label" id="lblsvdaddinfo">Additional Info:</label>
                         <label class="col-form-label" id="svdaddinfo">{{ experience.anythingElse }}</label>
                     </div>
                 </div>

@@ -18,7 +18,7 @@
     font-family: Proxima Nova;
     font-style: normal; */
     font-weight: bold;
-    font-size: 32px;
+    font-size: 20px;
     color: rgba(2, 11, 62, 1);
     padding-left: 15px;
 }
@@ -32,7 +32,7 @@
         font-family: Proxima Nova;
         font-style: normal; */
     font-weight: bold;
-    font-size: 40px;
+    font-size: 28px;
     color: rgba(2, 11, 62, 1);
     padding-left: 15px;
 }
@@ -83,7 +83,7 @@
     overflow: visible;
     white-space: nowrap;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 32px;
     color: rgba(2, 11, 62, 1);
     padding-left: 15px;
 }
@@ -92,22 +92,26 @@
     margin-right: 156px;
 }
 
-#lblclassof, #lblhighsch, #lblafthighsch {
+#lblclassof, #lblhighsch, #lblafthighsch, #lblmoreAbtMe {
     margin: 0;
     padding: 0;
     overflow: visible;
     white-space: nowrap;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px;
     color: rgba(2, 11, 62, 1);
+}
+
+#lblmoreAbtMe {
+    color: #020B3E;
 }
 
 #lblexperienceName, #lblroleName, #lblanythingElse, #lblendDate, #lblstartDate, #lbllearnings, #lblhoursspent, #lblactivity {
     margin: 0;
-    margin-bottom: -15px;
+    margin-bottom: -10px;
     padding: 0;
     overflow: hidden;
-    font-size: 24px;
+    font-size: 18px;
     color: rgba(2, 11, 62, 1);
 }
 
@@ -138,7 +142,7 @@
 #lblsvdrole, #lblsvdhrs, #lblsvdact, #lblsvdskill, #lblsvdaddinfo {
     white-space: nowrap;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px;
     color: rgba(2, 11, 62, 1);
     margin: 0;
     padding: 0;
@@ -147,7 +151,7 @@
 
 #svdrole, #svdhrs, #svdact, #svdskill {
     white-space: nowrap;
-    font-size: 24px;
+    font-size: 18px;
     color: rgba(2, 11, 62, 1);
     margin: 0;
     padding: 0;
@@ -155,11 +159,11 @@
 
 #svdaddinfo {
     /* white-space: normal; */
-    font-size: 23px;
+    font-size: 18px;
     color: rgba(2, 11, 62, 1);
     margin: 0;
     padding: 0;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 #btneditsvd {
