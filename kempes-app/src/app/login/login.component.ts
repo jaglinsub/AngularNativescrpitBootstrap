@@ -105,7 +105,7 @@ export class LoginComponent implements OnInit {
                   this.interestService.findInterestforUser().subscribe(interests => {
                      this.interests = interests;
                     if(this.interests.userId != undefined) {
-                      this.router.navigate(['portfolio/careerchecklist']);
+                      this.router.navigate(['portfolio/pobox']);
                       // this.router.navigate(['portfolio/myprofile']);
                       // this.userService.setUser(data);
                     }
