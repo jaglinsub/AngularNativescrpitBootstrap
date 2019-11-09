@@ -40,7 +40,7 @@ export class InterestsComponent implements OnInit {
     this.interestService.saveInterests(this.interests).subscribe ( data => {
       this.interests = data;
       console.log("After response" + JSON.stringify(this.interests));
-      this.router.navigate(['portfolio/careerchecklist']);
+      this.router.navigate(['portfolio/pobox']);
     });
   }
 }

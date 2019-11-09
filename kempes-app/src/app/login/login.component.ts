@@ -8,6 +8,7 @@ import { UserServiceService } from '../services/user-service.service';
 import { Interests } from '../interests/Interests';
 import { InterestService } from '../interests/interest.service';
 import { Observable } from 'tns-core-modules/ui/core/bindable/bindable';
+import { EmailPasswordCredentials } from './EmailPasswordCredentials';
 
 export class sigupLogin {
   showConfirmPassword: boolean;
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
   siguplogin: sigupLogin;
   modelPerson: User;
   interests: Interests;
+  emailPasswordCredentials: EmailPasswordCredentials;
 
   constructor(private authService: AuthService, private userService: UserServiceService, private sigupService: SignupService, private interestService: InterestService, private router: Router, private activatedRoute: ActivatedRoute, private cd: ChangeDetectorRef,
     private zone: NgZone) {
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.siguplogin = new sigupLogin();
+    this.emailPasswordCredentials = new EmailPasswordCredentials();
     this.activatedRoute.paramMap.subscribe(params => {
 
       console.log("ngOnInit Route Params=", params);
@@ -89,6 +92,9 @@ export class LoginComponent implements OnInit {
         console.log("After routing");
       })
       .then(() => {
+        this.routeAfterLogin();
+      })
+      /* .then(() => {
         this.zone.run(async () => {
           this.cd.detectChanges();
 
@@ -101,19 +107,17 @@ export class LoginComponent implements OnInit {
                 if (data) {
                   console.log("data=" + data.firstName);
                   this.userService.setUser(data);
-                  
+
                   this.interestService.findInterestforUser().subscribe(interests => {
-                     this.interests = interests;
-                    if(this.interests.userId != undefined) {
+                    this.interests = interests;
+                    if (this.interests.userId != undefined) {
                       this.router.navigate(['portfolio/pobox']);
-                      // this.router.navigate(['portfolio/myprofile']);
-                      // this.userService.setUser(data);
                     }
                     else {
                       this.router.navigate(['interests']);
                     }
                     console.log("Interest=" + JSON.stringify(this.interests));
-                  });                  
+                  });
                 }
                 else {
                   this.router.navigate(['signup']);
@@ -124,19 +128,49 @@ export class LoginComponent implements OnInit {
 
           }
         })
-      })
-      /* .then(res => {
-        this.zone.run(() => {
-          this.router.navigate(['signup']);
-        });
-
       }) */
       .catch((err) => console.log(err));
 
     console.log("outside of signin");
   }
 
+  routeAfterLogin() {
+    this.zone.run(async () => {
+      this.cd.detectChanges();
 
+      if (this.authService.isLoggedIn) {
+        console.log("user logged in true");
+        const result = (await this.sigupService.findUserByEmail());
+        (await this.sigupService.findUserByEmail()).subscribe(
+          data => {
+            console.log("data outside = " + JSON.stringify(data));
+            if (data) {
+              console.log("data=" + data.firstName);
+              this.userService.setUser(data);
+
+              this.interestService.findInterestforUser().subscribe(interests => {
+                this.interests = interests;
+                if (this.interests.userId != undefined) {
+                  this.router.navigate(['portfolio/pobox']);
+                  // this.router.navigate(['portfolio/myprofile']);
+                  // this.userService.setUser(data);
+                }
+                else {
+                  this.router.navigate(['interests']);
+                }
+                console.log("Interest=" + JSON.stringify(this.interests));
+              });
+            }
+            else {
+              this.router.navigate(['signup']);
+            }
+
+          }
+        );
+
+      }
+    }).catch((err) => console.log(err));
+  }
   signInWithFacebook() {
     this.authService.signInWithFacebook()
       .then((res) => {
@@ -163,13 +197,26 @@ export class LoginComponent implements OnInit {
   }
 
   signInWithEmail() {
-    this.router.navigate(['interests']);
-    /* this.authService.signInRegular(this.user.email, this.user.password)
-      .then((res) => {
-        console.log(res);
-        this.router.navigate(['interests']);
-      })
-      .catch((err) => console.log('error: ' + err)); */
+    // this.router.navigate(['interests']);
+
+    if (this.siguplogin.showConfirmPassword) {
+      this.authService.createUserWithEmailAndPassword(this.emailPasswordCredentials.email, this.emailPasswordCredentials.password)
+        .then((res) => {
+          console.log(res);
+          //this.router.navigate(['interests']);
+            this.routeAfterLogin();
+        })
+        .catch((err) => console.log('error: ' + err));
+    }
+    else {
+      this.authService.signInRegular(this.emailPasswordCredentials.email, this.emailPasswordCredentials.password)
+        .then((res) => {
+          console.log(res);
+          //this.router.navigate(['interests']);
+          this.routeAfterLogin();
+        })
+        .catch((err) => console.log('error: ' + err));
+    }
   }
 
 

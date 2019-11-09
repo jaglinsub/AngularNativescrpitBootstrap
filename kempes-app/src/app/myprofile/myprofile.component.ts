@@ -41,6 +41,7 @@ export class MyprofileComponent implements OnInit {
       if(this.profile == null)
       {
         this.profile = new Profile();
+        this.profile.highSchoolName = this.user.organizationName;
         // this.profile.classOf = "test class";
         //this.experienceDefault = new Experience();
         //this.profile.experienceArr = [this.experienceDefault];
