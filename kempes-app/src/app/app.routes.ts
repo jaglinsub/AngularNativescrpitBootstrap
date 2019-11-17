@@ -10,6 +10,8 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
 import { PoboxComponent } from './pobox/pobox.component';
 import { CareerchecklistComponent } from './careerchecklist/careerchecklist.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { PoboxdetailsComponent } from './poboxdetails/poboxdetails.component';
+import { SavedoppurtunityComponent } from './savedoppurtunity/savedoppurtunity.component';
 
 export const routes: Routes = [
     {
@@ -20,16 +22,25 @@ export const routes: Routes = [
     {
         path: 'home',
         component: HomeComponent,
+        data: {
+            breadcrumb: 'Home'
+        }
     },
     {
         path: 'signup',
         canActivate: [AuthGuard],
         component: SignupComponent,
+        data: {
+            breadcrumb: 'Sign Up'
+        }
     },
     {
         path: 'interests',
         canActivate: [AuthGuard],
         component: InterestsComponent,
+        data: {
+            breadcrumb: 'Interest'
+        }
     },
     {
         path: 'aboutus',
@@ -46,21 +57,55 @@ export const routes: Routes = [
     {
         path: 'portfolio',
         component: DashboardComponent,
+        // data: {
+        //     breadcrumb: 'Portfolio'
+        // },
         children: [
             {
                 path: 'myprofile',
                 canActivate: [AuthGuard],
                 component: MyprofileComponent,
+                data: {
+                    breadcrumb: 'Profile'
+                }
             },
             {
                 path: 'careerchecklist',
                 canActivate: [AuthGuard],
                 component: CareerchecklistComponent,
+                data: {
+                    breadcrumb: 'Career Checklist'
+                }
             },
             {
                 path: 'pobox',
                 canActivate: [AuthGuard],
                 component: PoboxComponent,
+                data: {
+                    breadcrumb: 'P.O.Box'
+                },
+                children: [
+                    
+                ]
+            },
+            {
+                path: 'pobox/poboxdtls/:id',
+                canActivate: [AuthGuard],
+                component: PoboxdetailsComponent,
+            },
+
+            {
+                path: 'savedoppurtunity',
+                canActivate: [AuthGuard],
+                component: SavedoppurtunityComponent,
+                data: {
+                    breadcrumb: 'Saved Oppurtunity'
+                },
+            },
+            {
+                path: 'savedoppurtunity/poboxdtls/:id',
+                canActivate: [AuthGuard],
+                component: PoboxdetailsComponent,
             },
         ]
     },

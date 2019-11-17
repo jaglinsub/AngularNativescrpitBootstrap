@@ -13,6 +13,8 @@ import { MyprofileComponent } from '@src/app/myprofile/myprofile.component';
 import { PoboxComponent } from '@src/app/pobox/pobox.component';
 import { CareerchecklistComponent } from '@src/app/careerchecklist/careerchecklist.component';
 import { AboutusComponent } from '@src/app/aboutus/aboutus.component';
+import { PoboxdetailsComponent } from '@src/app/poboxdetails/poboxdetails.component';
+import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurtunity.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -34,6 +36,8 @@ import { AboutusComponent } from '@src/app/aboutus/aboutus.component';
     PoboxComponent,
     CareerchecklistComponent,
     AboutusComponent,
+    PoboxdetailsComponent,
+    SavedoppurtunityComponent,
   ],
   imports: [
     NativeScriptModule,

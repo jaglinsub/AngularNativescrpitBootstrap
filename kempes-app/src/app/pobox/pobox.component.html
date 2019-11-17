@@ -34,14 +34,28 @@
         <div class="mb-3" *ngFor="let opportunity of opportunities">
             <div class="form-group row mb-0">
                 <div class="col-auto" id="oppheader">
-                    <label class="col-form-label">{{ opportunity.opportunityName }}</label>
-                    <button id="btneditsvd"><i class="fas fa-plus" id="plusIcon"></i></button>
+                    <!-- <label class="col-form-label">{{ opportunity.opportunityName }}</label> -->
+                    <a [routerLink]="['poboxdtls', opportunity.id ]">{{ opportunity.opportunityName }}</a>
+                    <button id="btneditsvd" [disabled]='opportunity.isSaved' (click)="saveOppurtunity(opportunity)"><i class="fas fa-plus" id="plusIcon" *ngIf='!opportunity.isSaved'></i></button>
                 </div>
             </div>
-            <div class="form-group row mb-0">
-                <div class="col-auto" id="oppDesc">
-                    <label class="col-form-label">{{ opportunity.opportunityShortDesc }}</label>
-                </div>
+            <div class="form-group row zeroDiv">
+                <!-- <div class="col-auto" id="orgName"> -->
+                <!-- <label class="col-form-label">{{ opportunity.opportunityDetails.organizationName }}</label> -->
+                <label class="col-form-label zeroDiv orgName">{{ opportunity.organizationName }}</label>
+                <!-- </div> -->
+            </div>
+            <div class="form-group row zeroDiv">
+                <!-- <div class="col-auto" id="oppDesc"> -->
+                <!-- <label class="col-form-label">{{ opportunity.opportunityShortDesc  }}</label> -->
+                <label class="col-form-label zeroDiv oppDesc">{{ opportunity.opportunityShortDesc  }}</label>
+                <!-- </div> -->
+            </div>
+            <div class="form-group row zeroDiv">
+                <!-- <div class="col-auto" id="oppDesc"> -->
+                <!-- <label class="col-form-label posted">{{ opportunity.opportunityDetails.whenPosted }}</label> -->
+                <label class="col-form-label zeroDiv posted">{{ opportunity.whenPosted }}</label>
+                <!-- </div> -->
             </div>
         </div>
     </form>

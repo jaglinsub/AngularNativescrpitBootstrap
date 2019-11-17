@@ -22,10 +22,15 @@ import { MyprofileComponent } from '@src/app/myprofile/myprofile.component';
 import { PoboxComponent } from '@src/app/pobox/pobox.component';
 import { CareerchecklistComponent } from '@src/app/careerchecklist/careerchecklist.component';
 import { AboutusComponent } from '@src/app/aboutus/aboutus.component';
-import { UserServiceService } from './services/user-service.service';
-import { InterestService } from './interests/interest.service';
-import { ProfileService } from './myprofile/profile.service';
-import { CurrentPointsService } from './dashboard/current-points.service';
+import { UserServiceService } from '@src/app/services/user-service.service';
+import { InterestService } from '@src/app/interests/interest.service';
+import { ProfileService } from '@src/app/myprofile/profile.service';
+import { CurrentPointsService } from '@src/app/dashboard/current-points.service';
+import { PoboxdetailsComponent } from '@src/app/poboxdetails/poboxdetails.component';
+import { BreadcrumbsModule } from "ng6-breadcrumbs";
+import { PoboxService } from '@src/app/pobox/pobox.service';
+import { POBoxDetailsService } from '@src/app/poboxdetails/pobox-details.service';
+import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurtunity.component';
 
 
 @NgModule({
@@ -41,9 +46,12 @@ import { CurrentPointsService } from './dashboard/current-points.service';
     PoboxComponent,
     CareerchecklistComponent,
     AboutusComponent,
+    PoboxdetailsComponent,
+    SavedoppurtunityComponent,
   ],
   imports: [
     BrowserModule,
+    BreadcrumbsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
@@ -57,7 +65,9 @@ import { CurrentPointsService } from './dashboard/current-points.service';
     UserServiceService,
     InterestService,
     ProfileService,
-    CurrentPointsService
+    CurrentPointsService,
+    PoboxService,
+    POBoxDetailsService
   ],
   bootstrap: [AppComponent]
 })

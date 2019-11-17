@@ -1,8 +1,15 @@
+import { OpportunityDetails } from "./OpportunityDetails";
+
 export class Opportunity {
     
-    id: number
+    id: string
     opportunityName: string
     opportunityShortDesc: string;
+    organizationName: string;
+    organizationAddress: string;
+    whenPosted: string;
+    opportunityDetails: OpportunityDetails;
+    isSaved: boolean;
     
     constructor() {}
 }

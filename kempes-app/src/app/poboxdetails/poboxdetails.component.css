@@ -1,0 +1,142 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+#poboxdtlsContainer {
+    margin-top: 0rem;
+    /* margin-left: 5rem; */
+    /* margin-right: 5rem; */
+    /* padding-right: 48rem; */
+    background-color: white;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
+}
+
+#poboxdtlsContainer1 {
+    /* background-color:rgb(247, 247, 247); */
+    margin: 0;
+    padding: 0;
+}
+
+.oppurName {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    position: absolute;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.zeroDiv {
+    margin: 0;
+    padding: 0;
+}
+
+.qualDtls {
+    text-align: left;
+    font-family: Proxima Nova;
+    color: rgba(2, 11, 62, 1);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.orgName {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    justify-content: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.posted {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(155, 155, 155, 1);
+}
+
+.locimg {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+}
+
+.loclbl {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(155, 155, 155, 1);
+}
+
+.roledtl {
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(2, 11, 62, 1);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+.typeofoppurlbl {
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    color: rgba(2, 11, 62, 1);
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    border: none;
+    font-size: 16px;
+}
+
+.typeofoppur {
+    text-align: left;
+    font-family: Proxima Nova;
+    color: rgba(2, 11, 62, 1);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}

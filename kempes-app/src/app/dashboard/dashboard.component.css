@@ -33,6 +33,7 @@ body {
 
 #page-content-wrapper {
   min-width: 100vw;
+  /* background-color:rgb(247, 247, 247); */
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -51,6 +52,13 @@ body {
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+}
+
+.bdc {
+  /* background-color: chartreuse; */
+  margin: 0;
+  padding: 0;
+  margin-top: -0.5rem;
 }
 
 #Total_Points {
