@@ -16,6 +16,7 @@ export class MyprofileComponent implements OnInit {
   experience2 = new Experience();
   experience3 = new Experience();
   user: User;
+  showNewExp : boolean;
   
   constructor(private profileService: ProfileService) {
     /* this.profile = new Profile();
@@ -53,6 +54,7 @@ export class MyprofileComponent implements OnInit {
   onSubmit() {
     console.log("onSubmit=>" + JSON.stringify(this.profile));
     console.log("onSubmit=>" + JSON.stringify(this.experienceDefault));
+
     if(this.profile.experienceArr == null)
     {
       console.log("exp is null 1");
@@ -69,4 +71,24 @@ export class MyprofileComponent implements OnInit {
       console.log("After response" + JSON.stringify(this.profile));
     });
   }
+
+  editExperience(exp : Experience) {
+    exp.isEditMode = !exp.isEditMode;
+  }
+
+  showhideNewExp(exp : Experience) {
+    this.showNewExp = !this.showNewExp;
+  }
+
+  saveExperience(exp : Experience) {
+    this.profileService.saveProfile(this.profile).subscribe ( data => {
+      this.profile = data;
+      this.experienceDefault = new Experience();
+      console.log("After saving individual exp = " + JSON.stringify(this.profile));
+    });
+    exp.isEditMode = !exp.isEditMode;
+    
+  }
 }
+
+

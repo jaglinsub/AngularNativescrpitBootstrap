@@ -56,83 +56,77 @@
         </div>
         <div class="form-group row mb-0">
             <div class="col-auto" id="New_experience">
-                <label class="col-form-label">Add new experience</label>
+                <!-- <label class="col-form-label">Add new experience</label> -->
+                <button class="btn btn-primary float-right" style="background-color:#0D90A8"
+                                        type="button" id="Save_experience1" (click)="showhideNewExp()">Add new experience</button>
             </div>
         </div>
         <!-- <div class="mb-4" *ngFor="let experience of profile.experienceArr"> -->
-        <div class="mt-0 mb-6">
-            <div class="form-group row mb-2">
-                <div class="col-auto">
-                    <label for="experienceName" class="col-form-label pb-0" id="lblexperienceName">Experience
-                        Name</label>
-                    <!-- [(ngModel)]="experienceDefault.experienceName" -->
-                    <!-- <input type="text" [value]="experienceDefault.experienceName"
-                            (input)="experienceDefault.experienceName=$event.target.value" class="form-control"
-                            id="experienceName" name="experienceName" placeholder="Experience"> -->
-                    <input type="text" [(ngModel)]="experienceDefault.experienceName" class="form-control"
-                        id="experienceName" name="experienceName" placeholder="Experience">
+        <div *ngIf="showNewExp">
+            <div class="mt-0 mb-6">
+                <div class="form-group row mb-2">
+                    <div class="col-auto">
+                        <label for="experienceName" class="col-form-label pb-0" id="lblexperienceName">Experience
+                            Name</label>
+                        <input type="text" [(ngModel)]="experienceDefault.experienceName" class="form-control"
+                            id="experienceName" name="experienceName" placeholder="Experience">
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <div class="col-auto">
+                        <label for="roleName" class="col-form-label pb-0" id="lblroleName">What was your
+                            tilte/role?*</label>
+                        <input type="text" [(ngModel)]="experienceDefault.roleName" class="form-control" id="roleName"
+                            name="roleName" placeholder="Role">
+                    </div>
+                    <div class="col-auto">
+                        <label for="activity" class="col-form-label pb-0" id="lblactivity">Name of Activity</label>
+                        <input type="text" [(ngModel)]="experienceDefault.activity" class="form-control" id="activity"
+                            name="activity" placeholder="Activity">
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <div class="col-auto">
+                        <label for="hoursspent" class="col-form-label pb-0" id="lblhoursspent">Hours you spend on
+                            this?</label>
+                        <input type="text" [(ngModel)]="experienceDefault.hoursspent" class="form-control"
+                            id="hoursspent" name="hoursspent" placeholder="Hours Spent">
+                    </div>
+                    <div class="col-auto">
+                        <label for="learnings" class="col-form-label pb-0" id="lbllearnings">What did you
+                            learn?*</label>
+                        <input type="text" [(ngModel)]="experienceDefault.learnings" class="form-control" id="learnings"
+                            name="learnings" placeholder="Learnings">
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <div class="col-auto">
+                        <label for="startDate" class="col-form-label pb-0" id="lblstartDate">Start date*</label>
+                        <input type="text" [(ngModel)]="experienceDefault.startDate" class="form-control" id="startDate"
+                            name="startDate" placeholder="Start Date">
+                    </div>
+                    <div class="col-auto">
+                        <label for="endDate" class="col-form-label pb-0" id="lblendDate">End date*</label>
+                        <input type="text" [(ngModel)]="experienceDefault.endDate" class="form-control" id="endDate"
+                            name="endDate" placeholder="End Date">
+                    </div>
+                </div>
+                <div class="form-group row mb-0">
+                    <div class="col-md-8">
+                        <label for="anythingElse" class="col-form-label pb-0" id="lblanythingElse">Anything else you’d
+                            like
+                            to share?</label>
+                        <textarea [(ngModel)]="experienceDefault.anythingElse" class="form-control" id="anythingElse"
+                            name="Anything Else.." placeholder="Anything Else.."></textarea>
+                    </div>
                 </div>
             </div>
-            <div class="form-group row mb-2">
-                <div class="col-auto">
-                    <label for="roleName" class="col-form-label pb-0" id="lblroleName">What was your
-                        tilte/role?*</label>
-                    <input type="text"  [(ngModel)]="experienceDefault.roleName" class="form-control" id="roleName"
-                        name="roleName" placeholder="Role">
-                </div>
-                <div class="col-auto">
-                    <label for="activity" class="col-form-label pb-0" id="lblactivity">Name of Activity</label>
-                    <input type="text" [(ngModel)]="experienceDefault.activity" class="form-control" id="activity"
-                        name="activity" placeholder="Activity">
-                </div>
-            </div>
-            <div class="form-group row mb-2">
-                <div class="col-auto">
-                    <label for="hoursspent" class="col-form-label pb-0" id="lblhoursspent">Hours you spend on
-                        this?</label>
-                    <input type="text" [(ngModel)]="experienceDefault.hoursspent" class="form-control" id="hoursspent"
-                        name="hoursspent" placeholder="Hours Spent">
-                </div>
-                <div class="col-auto">
-                    <label for="learnings" class="col-form-label pb-0" id="lbllearnings">What did you
-                        learn?*</label>
-                    <input type="text" [(ngModel)]="experienceDefault.learnings" class="form-control" id="learnings"
-                        name="learnings" placeholder="Learnings">
-                </div>
-            </div>
-            <div class="form-group row mb-2">
-                <div class="col-auto">
-                    <label for="startDate" class="col-form-label pb-0" id="lblstartDate">Start date*</label>
-                    <input type="text" [(ngModel)]="experienceDefault.startDate" class="form-control" id="startDate"
-                        name="startDate" placeholder="Start Date">
-                </div>
-                <div class="col-auto">
-                    <label for="endDate" class="col-form-label pb-0" id="lblendDate">End date*</label>
-                    <input type="text" [(ngModel)]="experienceDefault.endDate" class="form-control" id="endDate"
-                        name="endDate" placeholder="End Date">
-                </div>
-            </div>
-            <div class="form-group row mb-0">
+            <div class="form-group row">
                 <div class="col-md-8">
-                    <label for="anythingElse" class="col-form-label pb-0" id="lblanythingElse">Anything else you’d
-                        like
-                        to share?</label>
-                    <textarea [(ngModel)]="experienceDefault.anythingElse" class="form-control"
-                        id="anythingElse" name="Anything Else.." placeholder="Anything Else.."></textarea>
-                </div>
-            </div>
-            <!-- <div class="form-group row">
-                <div class="col-md-8">
-                    <button class="btn btn-outline-secondary float-right" type="submit" id="Save_experience">Save
+                    <button class="btn btn-primary float-right" style="background-color:#0D90A8" type="submit"
+                        id="Save_experience">Save
                         Experience</button>
                 </div>
-            </div> -->
-        </div>
-        <!-- </form> -->
-        <div class="form-group row">
-            <div class="col-md-8">
-                <button class="btn btn-primary float-right" style="background-color:#0D90A8" type="submit" id="Save_experience">Save
-                    Experience</button>
             </div>
         </div>
     </form>
@@ -149,51 +143,139 @@
             </div>
 
             <div class="mb-4" *ngFor="let experience of profile.experienceArr">
-                <div class="form-group row mb-0">
-                    <div class="col-md-12" id="saved_expname">
-                        <div class="form-group row mb-0">
-                            <div class="col col align-self-start">
-                                <!-- <button ng-click="LikeComment(comment)"><i class="far fa-thumbs-up"></i></button>{{comment.like}} -->
-                                <!-- <i class="far fa-edit 10f044"></i> -->
-                                <button id="btneditsvd"><i class="far fa-edit 10f044" id="editIcon"></i></button>
-                                <label class="col-form-label">{{ experience.experienceName }}</label>
-                            </div>
-                            <div class="col align-self-end">
-                                <label class="col-form-label mr-2">Dates:</label>
-                                <label class="col-form-label">{{ experience.startDate }} - {{ experience.endDate }}</label>
+                <div *ngIf="!experience.isEditMode ; else notShow">
+                    <div class="form-group row mb-0">
+                        <div class="col-md-12 text-right" id="saved_expname1">
+                            <button id="btneditsvd" (click)="editExperience(experience)"><i class="far fa-edit 10f044"
+                                    id="editIcon"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-12" id="saved_expname">
+                            <div class="form-group row mb-0">
+                                <div class="col col align-self-start">
+                                    <!-- <button ng-click="LikeComment(comment)"><i class="far fa-thumbs-up"></i></button>{{comment.like}} -->
+                                    <!-- <i class="far fa-edit 10f044"></i> -->
+
+                                    <label class="col-form-label">{{ experience.experienceName }}</label>
+                                </div>
+                                <div class="col align-self-end">
+                                    <label class="col-form-label mr-2">Dates:</label>
+                                    <label class="col-form-label">{{ experience.startDate }} -
+                                        {{ experience.endDate }}</label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group row mb-0">
-                    <div class="col-auto">
-                        <label class="col-form-label" id="lblsvdrole">Role:</label>
-                        <label class="col-form-label" id="svdrole">{{ experience.roleName }}</label>
+                    <div class="form-group row mb-0">
+                        <div class="col-auto">
+                            <label class="col-form-label" id="lblsvdrole">Role:</label>
+                            <label class="col-form-label" id="svdrole">{{ experience.roleName }}</label>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-auto">
+                            <label class="col-form-label" id="lblsvdhrs">Hours Spent:</label>
+                            <label class="col-form-label" id="svdhrs">{{ experience.hoursspent }}</label>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-auto">
+                            <label class="col-form-label" id="lblsvdact">Activity Name:</label>
+                            <label class="col-form-label" id="svdact">{{ experience.activity }}</label>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-auto">
+                            <label class="col-form-label" id="lblsvdskill">Skills Learned:</label>
+                            <label class="col-form-label" id="svdskill">{{ experience.learnings }}</label>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-4">
+                        <div class="col-auto">
+                            <label class="col-form-label" id="lblsvdaddinfo">Additional Info:</label>
+                            <label class="col-form-label" id="svdaddinfo">{{ experience.anythingElse }}</label>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group row mb-0">
-                    <div class="col-auto">
-                        <label class="col-form-label" id="lblsvdhrs">Hours Spent:</label>
-                        <label class="col-form-label" id="svdhrs">{{ experience.hoursspent }}</label>
-                    </div>
-                </div>
-                <div class="form-group row mb-0">
-                    <div class="col-auto">
-                        <label class="col-form-label" id="lblsvdact">Activity Name:</label>
-                        <label class="col-form-label" id="svdact">{{ experience.activity }}</label>
-                    </div>
-                </div>
-                <div class="form-group row mb-0">
-                    <div class="col-auto">
-                        <label class="col-form-label" id="lblsvdskill">Skills Learned:</label>
-                        <label class="col-form-label" id="svdskill">{{ experience.learnings }}</label>
-                    </div>
-                </div>
-                <div class="form-group row mb-4">
-                    <div class="col-auto">
-                        <label class="col-form-label" id="lblsvdaddinfo">Additional Info:</label>
-                        <label class="col-form-label" id="svdaddinfo">{{ experience.anythingElse }}</label>
-                    </div>
+                <div>
+                    <ng-template #notShow>
+                        <div class="form-group row mb-0">
+                            <div class="mt-0 mb-6">
+                                <div class="form-group row mb-2">
+                                    <div class="col-auto">
+                                        <label for="experienceName" class="col-form-label pb-0"
+                                            id="lblexperienceName">Experience
+                                            Name</label>
+                                        <input type="text" [(ngModel)]="experience.experienceName" class="form-control"
+                                            id="experienceName" name="experienceName" placeholder="Experience">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <div class="col-auto">
+                                        <label for="roleName" class="col-form-label pb-0" id="lblroleName">What was your
+                                            tilte/role?*</label>
+                                        <input type="text" [(ngModel)]="experience.roleName" class="form-control"
+                                            id="roleName" name="roleName" placeholder="Role">
+                                    </div>
+                                    <div class="col-auto">
+                                        <label for="activity" class="col-form-label pb-0" id="lblactivity">Name of
+                                            Activity</label>
+                                        <input type="text" [(ngModel)]="experience.activity" class="form-control"
+                                            id="activity" name="activity" placeholder="Activity">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <div class="col-auto">
+                                        <label for="hoursspent" class="col-form-label pb-0" id="lblhoursspent">Hours you
+                                            spend on
+                                            this?</label>
+                                        <input type="text" [(ngModel)]="experience.hoursspent" class="form-control"
+                                            id="hoursspent" name="hoursspent" placeholder="Hours Spent">
+                                    </div>
+                                    <div class="col-auto">
+                                        <label for="learnings" class="col-form-label pb-0" id="lbllearnings">What did
+                                            you
+                                            learn?*</label>
+                                        <input type="text" [(ngModel)]="experience.learnings" class="form-control"
+                                            id="learnings" name="learnings" placeholder="Learnings">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <div class="col-auto">
+                                        <label for="startDate" class="col-form-label pb-0" id="lblstartDate">Start
+                                            date*</label>
+                                        <input type="text" [(ngModel)]="experience.startDate" class="form-control"
+                                            id="startDate" name="startDate" placeholder="Start Date">
+                                    </div>
+                                    <div class="col-auto">
+                                        <label for="endDate" class="col-form-label pb-0" id="lblendDate">End
+                                            date*</label>
+                                        <input type="text" [(ngModel)]="experience.endDate" class="form-control"
+                                            id="endDate" name="endDate" placeholder="End Date">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-8">
+                                        <label for="anythingElse" class="col-form-label pb-0"
+                                            id="lblanythingElse">Anything else you’d
+                                            like
+                                            to share?</label>
+                                        <textarea [(ngModel)]="experience.anythingElse" class="form-control"
+                                            id="anythingElse" name="Anything Else.."
+                                            placeholder="Anything Else.."></textarea>
+                                    </div>
+                                </div>
+                                <!-- </div>
+                                    <div class="form-group row"> -->
+                                <div class="col-md-8">
+                                    <button class="btn btn-primary float-right" style="background-color:#0D90A8"
+                                        type="button" id="Save_experience1" (click)="saveExperience(experience)">Save
+                                        Experience</button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
                 </div>
             </div>
         </div>

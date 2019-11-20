@@ -10,6 +10,7 @@ export class Experience {
     endDate: string
     anythingElse: string;
     userId: string;
+    isEditMode: boolean;
 
     constructor() {
         this.experienceName = "";
