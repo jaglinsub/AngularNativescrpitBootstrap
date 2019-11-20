@@ -1,32 +1,35 @@
-<div class="container-fluid justify-content-center align-items-center" id="profileContainer">
+<div class="container-fluid justify-content-center align-items-center col-md-8" id="profileContainer">
     <!-- Profile Form -->
     <form (ngSubmit)="onSubmit()" #ProfileExpForm="ngForm">
         <!-- <form #ProfileForm="ngForm"> -->
         <!-- Profile -->
-        <div class="form-group row mb-0">
-            <div class="col-auto" id="User">
-                <label class="col-form-label">{{ user.firstName }} {{user.lastName}}</label>
+        <div class="form-group row mb-1">
+            <div class="col-auto">
+                <br>
+                <label class="col-form-label pb-0" id="User">{{ user.firstName }} {{user.lastName}}</label>
+                <label class="col-form-label" id="lblafterhigh">"After high school, I want to be a Nurse
+                    Practitioner"</label>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-auto" style="margin-right: 10rem">
-                <div class="form-group row mb-3">
-                    <div class="col-auto">
-                        <label for="classof" class="col-form-label pb-0" id="lblclassof">Class of</label>
-                        <!-- <input type="text" [value]="TBD" (input)="TBD=$event.target.value" class="form-control"
-                            id="classof" name="classof" placeholder="Class of"> -->
-                        <input type="text" [(ngModel)]="profile.classOf" class="form-control" id="classof"
-                            name="classof" placeholder="Class of">
-                    </div>
-                </div>
-                <div class="form-group row mb-3">
-                    <div class="col-auto">
-                        <label for="highsch" class="col-form-label pb-0" id="lblhighsch">High school name</label>
-                        <input type="text" [(ngModel)]="profile.highSchoolName" class="form-control" id="highsch"
-                            name="highsch" placeholder="High School Name">
-                    </div>
-                </div>
                 <div class="form-group row mb-0">
+                    <div class="col-auto">
+                        <label for="classof" class="col-form-label pb-0" id="lblclassof">Class of
+                            {{ profile.classOf }}</label>
+                        <!-- <input type="text" [(ngModel)]="profile.classOf" class="form-control" id="classof"
+                            name="classof" placeholder="Class of"> -->
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-auto">
+                        <label for="highsch" class="col-form-label pb-0"
+                            id="lblhighsch">{{ profile.highSchoolName }}</label>
+                        <!-- <input type="text" [(ngModel)]="profile.highSchoolName" class="form-control" id="highsch"
+                            name="highsch" placeholder="High School Name"> -->
+                    </div>
+                </div>
+                <!-- <div class="form-group row mb-0">
                     <div class="col-auto">
                         <label for="afthighsch" class="col-form-label pb-0" id="lblafthighsch">After high school, I
                             want
@@ -34,34 +37,44 @@
                         <input type="text" [(ngModel)]="profile.iWantToBe" class="form-control" id="afthighsch"
                             name="afthighsch" placeholder="After High School..">
                     </div>
+                </div> -->
+                <div class="form-group row mb-3">
+                    <div class="col-12">
+                        <label for="moreAbtMe" class="col-form-label pb-0" id="lblmoreAbtMe">More about me</label>
+                        <textarea [(ngModel)]="profile.moreAboutMe" class="form-control" id="moreAbtMe"
+                            name="More About Me.." placeholder="moreAbtMe" rows="2"
+                            style="min-width: 41rem;"></textarea>
+                    </div>
+                    <div class="col-12 align-self-end mt-2">
+                        <!-- <br> -->
+                        <button class="btn btn-outline-secondary float-right" type="submit">Submit</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-5">
+            <!-- <div class="col-md-5">
                 <label for="moreAbtMe" class="col-form-label pb-0" id="lblmoreAbtMe">More about me</label>
                 <textarea [(ngModel)]="profile.moreAboutMe" class="form-control" id="moreAbtMe" name="More About Me.."
                     placeholder="moreAbtMe"></textarea>
-            </div>
+            </div> -->
         </div>
-
-        <!-- </form> -->
-        <!-- Line Divider Form -->
-        <div id="hr">
-        </div>
+    </form>
+</div>
+<!-- </form> -->
+<!-- Line Divider Form -->
+<div id="hr">
+</div>
+<div class="form-group row ml-5 mt-n4 mb-0">
+    <div class="col-auto" id="New_experience">
+        <!-- <label class="col-form-label">Add new experience</label> -->
+        <button class="btn btn-outline-warn" type="button" id="Save_experience1" (click)="showhideNewExp()"><i
+                class="fa fa-plus" id="plusIcon"></i> Add new experience</button>
+    </div>
+</div>
+<div id="hr">
+</div>
+<div class="container-fluid justify-content-center align-items-center col-md-8" id="profileContainer">
+    <form (ngSubmit)="onSubmit()" #ProfileExpForm="ngForm">
         <!-- New Experience Form -->
-        <!-- <form name="newexpform" method="post"> -->
-        <div class="form-group row mb-0">
-            <div class="col-auto" id="previous_experience">
-                <label class="col-form-label">{{ user.firstName }}'s previous experience</label>
-            </div>
-        </div>
-        <div class="form-group row mb-0">
-            <div class="col-auto" id="New_experience">
-                <!-- <label class="col-form-label">Add new experience</label> -->
-                <button class="btn btn-primary float-right" style="background-color:#0D90A8"
-                                        type="button" id="Save_experience1" (click)="showhideNewExp()">Add new experience</button>
-            </div>
-        </div>
-        <!-- <div class="mb-4" *ngFor="let experience of profile.experienceArr"> -->
         <div *ngIf="showNewExp">
             <div class="mt-0 mb-6">
                 <div class="form-group row mb-2">
@@ -130,6 +143,10 @@
             </div>
         </div>
     </form>
+</div>
+<div id="hr">
+</div>
+<div class="container-fluid justify-content-center align-items-center col-md-8" id="profileContainer">
     <!-- Line Divider Form -->
     <!-- <div id="hr">
     </div> -->
@@ -138,7 +155,7 @@
         <div *ngIf="profile.experienceArr && profile.experienceArr.length > 0">
             <div class="form-group row mb-3">
                 <div class="col-auto" id="saved_exp">
-                    <label class="col-form-label">Saved experiences</label>
+                    <label class="col-form-label">Experience</label>
                 </div>
             </div>
 
@@ -213,7 +230,8 @@
                                 </div>
                                 <div class="form-group row mb-2">
                                     <div class="col-auto">
-                                        <label for="roleName" class="col-form-label pb-0" id="lblroleName">What was your
+                                        <label for="roleName" class="col-form-label pb-0" id="lblroleName">What was
+                                            your
                                             tilte/role?*</label>
                                         <input type="text" [(ngModel)]="experience.roleName" class="form-control"
                                             id="roleName" name="roleName" placeholder="Role">
@@ -227,14 +245,16 @@
                                 </div>
                                 <div class="form-group row mb-2">
                                     <div class="col-auto">
-                                        <label for="hoursspent" class="col-form-label pb-0" id="lblhoursspent">Hours you
+                                        <label for="hoursspent" class="col-form-label pb-0" id="lblhoursspent">Hours
+                                            you
                                             spend on
                                             this?</label>
                                         <input type="text" [(ngModel)]="experience.hoursspent" class="form-control"
                                             id="hoursspent" name="hoursspent" placeholder="Hours Spent">
                                     </div>
                                     <div class="col-auto">
-                                        <label for="learnings" class="col-form-label pb-0" id="lbllearnings">What did
+                                        <label for="learnings" class="col-form-label pb-0" id="lbllearnings">What
+                                            did
                                             you
                                             learn?*</label>
                                         <input type="text" [(ngModel)]="experience.learnings" class="form-control"

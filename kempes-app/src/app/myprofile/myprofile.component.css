@@ -1,10 +1,28 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-#profileContainer {
+#profileContainer, .profileContainer {
     margin-top: 0rem;
+    margin-left: 2.25rem;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
 }
 
 .form-control {
     height: calc(1em + 0.75rem + 2px);
+}
+
+.btn-outline-secondary {
+    border-color: rgba(118, 118, 118, 1);
+    /* margin: 0; */
+    /* padding: 0; */
+    box-sizing: border-box;
+    border-width: .4px;
+}
+
+.btn-outline-warn {
+    color: rgba(240,136,115,1);
+    border: none;
 }
 
 #New_experience {
@@ -50,7 +68,7 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
     border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 #Total_Points {
@@ -80,19 +98,84 @@
 #User {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    border: none;
     overflow: visible;
     white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 24px;
     color: rgba(2, 11, 62, 1);
-    padding-left: 15px;
 }
 
 #classof, #highsch {
     margin-right: 156px;
 }
 
-#lblclassof, #lblhighsch, #lblafthighsch, #lblmoreAbtMe {
+#lblafterhigh {
+    margin: 0;
+    padding: 0;
+    margin-left: 0.5rem;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#lblclassof {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(155, 155, 155, 1);
+}
+
+#lblhighsch {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#lblmoreAbtMe {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#lblafthighsch {
     margin: 0;
     padding: 0;
     overflow: visible;
@@ -100,10 +183,6 @@
     font-weight: bold;
     font-size: 18px;
     color: rgba(2, 11, 62, 1);
-}
-
-#lblmoreAbtMe {
-    color: #020B3E;
 }
 
 #lblexperienceName, #lblroleName, #lblanythingElse, #lblendDate, #lblstartDate, #lbllearnings, #lblhoursspent, #lblactivity {
@@ -120,8 +199,8 @@
 }
 
 #saved_exp {
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     overflow: visible;
     white-space: nowrap;
     font-weight: bold;
@@ -130,8 +209,8 @@
 }
 
 #saved_expname {
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     overflow: visible;
     white-space: nowrap;
     font-weight: bold;
