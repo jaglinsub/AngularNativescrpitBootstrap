@@ -1,4 +1,5 @@
-<div class="container-fluid justify-content-center align-items-center" id="poboxContainer">
+<div class="container-fluid justify-content-center align-items-center col-md-10" id="poboxContainer">
+    <!-- <div class="container-fluid justify-content-center align-items-center" id="poboxContainer"> -->
     <!-- Profile Form -->
     <form name="poboxform" method="">
         <!-- Explore Header -->
@@ -31,31 +32,35 @@
         <!-- Specing -->
         <div class="form-group row mt-md-3"></div>
         <!-- List of opportunity -->
-        <div class="mb-3" *ngFor="let opportunity of opportunities">
-            <div class="form-group row mb-0">
-                <div class="col-auto" id="oppheader">
-                    <!-- <label class="col-form-label">{{ opportunity.opportunityName }}</label> -->
-                    <a [routerLink]="['poboxdtls', opportunity.id ]">{{ opportunity.opportunityName }}</a>
-                    <button id="btneditsvd" [disabled]='opportunity.isSaved' (click)="saveOppurtunity(opportunity)"><i class="fas fa-plus" id="plusIcon" *ngIf='!opportunity.isSaved'></i></button>
+        <div class="container-fluid justify-content-center align-items-center col-md-10" id="poboxContainer">
+            <div class="mb-3" *ngFor="let opportunity of opportunities">
+                <div class="form-group row mb-0">
+                    <div class="col-auto" id="oppheader">
+                        <!-- <label class="col-form-label">{{ opportunity.opportunityName }}</label> -->
+                        <a id="oppheader" [routerLink]="['poboxdtls', opportunity.id ]">{{ opportunity.opportunityName }}</a>
+                        <button id="btneditsvd" [disabled]='opportunity.isSaved'
+                            (click)="saveOppurtunity(opportunity)"><i class="fas fa-plus" id="plusIcon"
+                                *ngIf='!opportunity.isSaved'></i></button>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row zeroDiv">
-                <!-- <div class="col-auto" id="orgName"> -->
-                <!-- <label class="col-form-label">{{ opportunity.opportunityDetails.organizationName }}</label> -->
-                <label class="col-form-label zeroDiv orgName">{{ opportunity.organizationName }}</label>
-                <!-- </div> -->
-            </div>
-            <div class="form-group row zeroDiv">
-                <!-- <div class="col-auto" id="oppDesc"> -->
-                <!-- <label class="col-form-label">{{ opportunity.opportunityShortDesc  }}</label> -->
-                <label class="col-form-label zeroDiv oppDesc">{{ opportunity.opportunityShortDesc  }}</label>
-                <!-- </div> -->
-            </div>
-            <div class="form-group row zeroDiv">
-                <!-- <div class="col-auto" id="oppDesc"> -->
-                <!-- <label class="col-form-label posted">{{ opportunity.opportunityDetails.whenPosted }}</label> -->
-                <label class="col-form-label zeroDiv posted">{{ opportunity.whenPosted }}</label>
-                <!-- </div> -->
+                <div class="form-group row zeroDiv">
+                    <!-- <div class="col-auto" id="orgName"> -->
+                    <!-- <label class="col-form-label">{{ opportunity.opportunityDetails.organizationName }}</label> -->
+                    <label class="col-form-label zeroDiv orgName">{{ opportunity.organizationName }}</label>
+                    <!-- </div> -->
+                </div>
+                <div class="form-group row zeroDiv">
+                    <!-- <div class="col-auto" id="oppDesc"> -->
+                    <!-- <label class="col-form-label">{{ opportunity.opportunityShortDesc  }}</label> -->
+                    <label class="col-form-label zeroDiv oppDesc">{{ opportunity.opportunityShortDesc  }}</label>
+                    <!-- </div> -->
+                </div>
+                <div class="form-group row zeroDiv">
+                    <!-- <div class="col-auto" id="oppDesc"> -->
+                    <!-- <label class="col-form-label posted">{{ opportunity.opportunityDetails.whenPosted }}</label> -->
+                    <label class="col-form-label zeroDiv posted">{{ opportunity.whenPosted }}</label>
+                    <!-- </div> -->
+                </div>
             </div>
         </div>
     </form>

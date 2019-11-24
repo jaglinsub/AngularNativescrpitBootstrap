@@ -11,6 +11,7 @@ body {
 .bg-light {
   background-color: white !important;
 }
+
 #sidebar-wrapper {
   min-height: 100vh;
   margin-left: -15rem;
@@ -18,17 +19,24 @@ body {
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
+  
+}
+
+.list-group-item {
+  border: none;  
 }
 
 #sidebar-wrapper .sidebar-heading {
-  padding: 2.0rem 1.25rem;
+  padding: 2.0rem 8.25rem;
   font-size: 1.2rem;
+  
 }
 
 #sidebar-wrapper .list-group {
   
-  width: 12rem;
+  width: 18rem;
   text-align: center;
+  margin-top: 4rem;
 }
 
 #page-content-wrapper {

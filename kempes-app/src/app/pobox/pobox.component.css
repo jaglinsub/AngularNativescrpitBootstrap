@@ -51,12 +51,18 @@ path {
  }
 
 #oppheader {
-margin: 0;
-padding: 0;
-overflow: hidden;
-text-align: left;
-font-size: 32px;
-color: rgba(13,144,168,1);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    color: rgba(13, 144, 168, 1);
 }
 
 

@@ -2,57 +2,67 @@
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading"></div>
+        <!-- <div class="sidebar-heading"></div> -->
         <div class="list-group list-group-flush">
             <a routerLink="/portfolio/myprofile" class="list-group-item list-group-item-action bg-light">My Profile</a>
             <!-- <a routerLink="/portfolio/careerchecklist" class="list-group-item list-group-item-action bg-light">Carrer
                 Checklist</a> -->
             <a routerLink="/portfolio/pobox" class="list-group-item list-group-item-action bg-light">P.O. Box</a>
-            <a routerLink="/portfolio/savedoppurtunity" class="list-group-item list-group-item-action bg-light">Saved Opportunities</a>
+            <a routerLink="/portfolio/savedoppurtunity" class="list-group-item list-group-item-action bg-light">Saved
+                Opportunities</a>
         </div>
     </div>
     <!-- #sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-            <!-- <div class="row bdc">
+            <div class="row p-5">
+            </div>
+        <!-- <div class="row bdc">
                     <breadcrumb [allowBootstrap]="true"></breadcrumb>
                 </div> -->
-        <div class="container-fluid">
-            <form name="pointsform" method="">
-                <!-- Carrer Points -->
-                <div class="form-group row mb-0" style="justify-content: flex-end;">
-                    <div class="col-auto">
-                        <label class="col-form-label">Career Points</label>
-                        <div class="row" style="justify-content:center;">
-                            <div class="col-auto" id="Total_Points">
+        <div class="row">
+            <div class="container-fluid justify-content-center align-items-center col-md-10" style="padding: 0; margin: 0;">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="container-fluid col-md-2" style=" margin-left: -3rem;">
+                <div class="container-fluid">
+                    <form name="pointsform" method="">
+                        <!-- Carrer Points -->
+                        <div class="form-group row mb-0" style="justify-content: flex-end;">
+                            <div class="col-auto">
+                                <label class="col-form-label">Career Points</label>
                                 <div class="row" style="justify-content:center;">
-                                    <label class="col-form-label"> {{ currentPTS }} </label>
-                                </div>
-                                <div class="row" id="Label_Margin" style="justify-content:center;">
-                                    <label class="col-form-label">Total Points</label>
-                                </div>
-                            </div>
-                            <!-- Vertical Line -->
-                            <div class="col-auto ml-4" id="lineVertical">
-                            </div>
+                                    <div class="col-auto" id="Total_Points">
+                                        <div class="row" style="justify-content:center;">
+                                            <label class="col-form-label"> {{ currentPTS }} </label>
+                                        </div>
+                                        <div class="row" id="Label_Margin" style="justify-content:center;">
+                                            <label class="col-form-label">Total Points</label>
+                                        </div>
+                                    </div>
+                                    <!-- Vertical Line -->
+                                    <div class="col-auto ml-4" id="lineVertical">
+                                    </div>
 
-                            <div class="col-auto mr-0"></div>
+                                    <div class="col-auto mr-0"></div>
 
-                            <div class="col-auto" id="Your_Goal">
-                                <div class="row" style="justify-content:center;">
-                                    <label class="col-form-label">20</label>
-                                </div>
-                                <div class="row" id="Label_Margin" style="justify-content:center;">
-                                    <label class="col-form-label">Your Goal</label>
+                                    <div class="col-auto" id="Your_Goal">
+                                        <div class="row" style="justify-content:center;">
+                                            <label class="col-form-label">20</label>
+                                        </div>
+                                        <div class="row" id="Label_Margin" style="justify-content:center;">
+                                            <label class="col-form-label">Your Goal</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto mr-1"></div>
                                 </div>
                             </div>
-                            <div class="col-auto mr-1"></div>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
-            </form>
-            <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
 </div>
