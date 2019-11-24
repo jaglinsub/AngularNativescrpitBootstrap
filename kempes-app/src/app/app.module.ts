@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AuthGuard } from '@src/app/services/auth-guard.service';
 import { AuthService } from '@src/app/services/auth.service';
@@ -57,7 +58,8 @@ import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurt
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     AuthGuard,

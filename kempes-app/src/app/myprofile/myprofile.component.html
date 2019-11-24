@@ -59,6 +59,54 @@
         </div>
     </form>
 </div>
+
+<div id="hr">
+</div>
+
+<div class="container-fluid justify-content-center align-items-center col-md-8" id="oppurContainer">
+    <div class="row nomargin ml-3 oppurforyou">
+        <label class="col-form-label">Opportunities recommended for you</label>
+    </div>
+    <div class="row nomargin ml-n3">
+        <div class="container-fluid justify-content-center align-items-center col-md-11" id="oppurContainer">
+            <mdb-carousel [animation]="'slide'" [isControls]="true" class="carousel-multi-item multi-animation">
+                <mdb-carousel-item *ngFor="let item of slides; let i = index">
+                    <div class="col-md-4 mr-0" *ngFor="let card of item; let cardIndex = index">
+                        <mdb-card class="my-1">
+                            <div class="row" style="padding: 0.5rem; margin-bottom: 0.2rem;">
+                                <div class="col-md-2 mt-3 mr-3">
+                                    <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+                                </div>
+                                <mdb-card-body style="padding: 0%; margin: 0%;">
+                                    <div class="container">
+                                        <div class="row nomargin mb-n3 cardtitle">
+                                            <mdb-card-title>
+                                                <label class="col-form-label">{{card.title}}</label>
+                                            </mdb-card-title>
+                                        </div>
+                                        <div class="row nomargin">
+                                            <label class="col-form-label carddesc">{{card.description}}</label>
+                                        </div>
+                                        <div class="row nomargin">
+                                            <label class="col-form-label cardloc">{{card.loc}}</label>
+                                        </div>
+                                    </div>
+                                </mdb-card-body>
+                            </div>
+                        </mdb-card>
+                    </div>
+                </mdb-carousel-item>
+            </mdb-carousel>
+        </div>
+    </div>
+    <div class="row nomargin mb-2">
+        <label class="col-form-label"></label>
+    </div>
+</div>
+
+<div id="hr">
+</div>
+
 <!-- </form> -->
 <!-- Line Divider Form -->
 <div id="hr">

@@ -1,4 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+/* @import "~mdbootstrap/css/mdb.css";
+ */
 #profileContainer, .profileContainer {
     margin-top: 0rem;
     margin-left: 2.25rem;
@@ -6,6 +8,35 @@
     border: none;
     background-color: rgb(255, 255, 255);
     filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
+}
+
+#oppurContainer {
+    fill: rgb(252, 252, 252);
+    margin: 0;
+    padding: 0;
+    margin-top: 0rem;
+    margin-left: 2.25rem;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
+}
+
+.lblOppur {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    position: absolute;
+    overflow: visible;
+    white-space: nowrap;
+    line-height: 18px;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(118, 118, 118, 1);
 }
 
 .form-control {
@@ -21,7 +52,7 @@
 }
 
 .btn-outline-warn {
-    color: rgba(240,136,115,1);
+    color: rgba(240, 136, 115, 1);
     border: none;
 }
 
@@ -252,4 +283,123 @@
 
 #editIcon {
     color: rgba(13, 144, 168, 1);
+}
+
+.carousel-control-prev {
+    background-color: dimgray;
+    margin: 0;
+    padding: 0;
+    margin-left: -1.2rem;
+    width: 1rem;
+}
+
+.carousel-control-next {
+    background-color: dimgray;
+    margin: 0;
+    padding: 0;
+    margin-right: -1.25rem;
+    width: 1rem;
+}
+
+/* .carousel-control-prev-icon {
+    background-image: url('https://apufpel.com.br/assets/img/seta_prim.png')  !important;
+    width: 50rem;
+      height: 50rem;
+ } */
+
+.mdb-body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    position: absolute;
+    overflow: visible;
+    white-space: nowrap;
+    line-height: 18px;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.cardtitle {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.carddesc {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    /* margin-bottom: 0.2rem; */
+    /* position: absolute; */
+    /* overflow: hidden;
+    white-space: pre-wrap; */
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.cardloc {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    /* margin-bottom: 0.2rem; */
+    /* position: absolute; */
+    /* overflow: hidden; */
+    /* white-space: pre-wrap; */
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.nomargin {
+    margin: 0;
+    padding: 0;
+}
+
+mdb-carousel .carousel-indicators {
+    display: none;
+}
+
+.img-fluid {
+    min-height: 2.5rem !important;
+    max-height: 2.5em !important;
+    max-width: 2.5rem !important;
+    width: 2.5rem !important;
+    /* justify-content: center; */
+}
+
+.oppurforyou {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(118,118,118,1);
 }
