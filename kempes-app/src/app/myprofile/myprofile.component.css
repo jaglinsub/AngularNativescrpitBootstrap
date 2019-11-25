@@ -1,6 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 /* @import "~mdbootstrap/css/mdb.css";
  */
+
 #profileContainer, .profileContainer {
     margin-top: 0rem;
     margin-left: 2.25rem;
@@ -89,6 +90,7 @@
 #Save_experience {
     margin: 0;
     margin-top: 0.5rem;
+    margin-bottom: 1rem;
     padding: 0;
     padding-right: 5px;
     padding-left: 5px;
@@ -218,15 +220,24 @@
 
 #lblexperienceName, #lblroleName, #lblanythingElse, #lblendDate, #lblstartDate, #lbllearnings, #lblhoursspent, #lblactivity {
     margin: 0;
-    margin-bottom: -10px;
     padding: 0;
+    box-sizing: border-box;
+    border: none;
     overflow: hidden;
-    font-size: 18px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
     color: rgba(2, 11, 62, 1);
+    /* margin-bottom: -10px; */
+    line-height: 15px;
+    /* margin-top: -35.5px; */
 }
 
 #hoursspent, #activity, #roleName, #experienceName, #learnings, #startDate, #endDate {
-    margin-right: 156px;
+    /* margin-right: 156px; */
 }
 
 #saved_exp {
@@ -401,5 +412,5 @@ mdb-carousel .carousel-indicators {
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
-    color: rgba(118,118,118,1);
+    color: rgba(118, 118, 118, 1);
 }

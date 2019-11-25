@@ -27,6 +27,25 @@ export class MyprofileComponent implements OnInit {
   gamesFormatted = [];
   mobile = false;
   showNavigationArrows = true;
+  
+  monthList = [ 
+    { value: 'Jan', text: 'Jan' },
+    { value: 'Feb', text: 'Feb' },
+    { value: 'Mar', text: 'Mar' },
+    { value: 'Apr', text: 'Apr' },
+    { value: 'May', text: 'May' },
+    { value: 'June', text: 'June' },
+    { value: 'July', text: 'July' },
+    { value: 'Aug', text: 'Aug' },
+    { value: 'Sep', text: 'Sep' },
+    { value: 'Oct', text: 'Oct' },
+    { value: 'Nov', text: 'Nov' },
+    { value: 'Dec', text: 'Dec' }
+
+];
+
+yearList = [];
+
 
   cards = [
     {
@@ -61,6 +80,14 @@ export class MyprofileComponent implements OnInit {
     this.experience1.roleName = "Role 1";
     this.experience2.roleName = "Role 2";
     this.experience3.roleName = "Role 3"; */
+
+    for (let i = 1900; i <= new Date().getFullYear(); i++) {
+      let newYear = {
+         name:i.toString(),
+         value:i.toString()
+      };
+      this.yearList.push(newYear);
+    }
    }
 
   ngOnInit() {
