@@ -78,6 +78,66 @@ yearList = [];
       img: 'https://i.pinimg.com/474x/8a/6d/6d/8a6d6dfcc676b70fee598d2990ae4306--tree-logos-retro-logos.jpg',
       loc: 'San Francisco CA'
     },
+    {
+      title: 'Card Title 3',
+      description: 'Collective Health',
+      buttonText: 'Button',
+      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg',
+      loc: 'San Francisco CA'
+    },
+    {
+      title: 'Card Title 4',
+      description: 'Collective Health',
+      buttonText: 'Button',
+      // img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
+      // img: '../../assets/Logo_1_A31_Rectangle_125_pattern.png'
+      img: '../../assets/scene.jpg',
+      loc: 'San Francisco CA'
+      // img: 'https://i.pinimg.com/474x/8a/6d/6d/8a6d6dfcc676b70fee598d2990ae4306--tree-logos-retro-logos.jpg'
+    },
+    {
+      title: 'Card Title 5',
+      description: 'Collective Health',
+      buttonText: 'Button',
+      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg',
+      loc: 'San Francisco CA'
+    },
+    {
+      title: 'Card Title 6',
+      description: 'Collective Health',
+      buttonText: 'Button',
+      img: '../../assets/sample_pharmacy.png',
+      loc: 'San Francisco CA'
+    },
+    {
+      title: 'Card Title 7',
+      description: 'Collective Health',
+      buttonText: 'Button',
+      // img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg',
+      img: '../../assets/Logo_1_A31_Rectangle_125_pattern.png',
+      loc: 'San Francisco CA'
+    },
+    {
+      title: 'Card Title 8',
+      description: 'Collective Health',
+      buttonText: 'Button',
+      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg',
+      loc: 'San Francisco CA'
+    },
+    {
+      title: 'Card Title 9',
+      description: 'Collective Health',
+      buttonText: 'Button',
+      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg',
+      loc: 'San Francisco CA'
+    },
+    {
+      title: 'Card Title 10',
+      description: 'Collective Health',
+      buttonText: 'Button',
+      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg',
+      loc: 'San Francisco CA'
+    },
    
   ];
   
