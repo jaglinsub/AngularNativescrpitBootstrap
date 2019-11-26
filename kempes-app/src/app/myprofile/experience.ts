@@ -2,12 +2,17 @@ export class Experience {
     id: number
     experienceName: string
     roleName: string
-    activity: string
+    startMonth: string;
+    startYear: string;
+    endMonth: string;
+    endYear: string;
+    activityType: string
     hoursspent: string
-    learnings: string
-    location: string
-    startDate: string
-    endDate: string
+    responsibility1: string
+    responsibility2: string
+    responsibility3: string
+    
+    
     anythingElse: string;
     userId: string;
     isEditMode: boolean;
@@ -15,13 +20,15 @@ export class Experience {
     constructor() {
         this.experienceName = "";
         this.roleName = "";
-        this.activity = "";
+        this.startMonth = "";
+        this.startYear = "";
+        this.endMonth = "";
+        this.endYear = "";
+        this.activityType = "";
         this.hoursspent = "";
-        this.learnings = "";
-        this.location = "";
-        this.startDate = "";
-        this.endDate = "";
-        this.anythingElse = "";
+        this.responsibility1 = "";
+        this.responsibility2 = "";
+        this.responsibility3 = "";
     }
     
 }

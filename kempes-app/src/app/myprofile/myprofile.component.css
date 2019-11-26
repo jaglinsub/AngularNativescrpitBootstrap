@@ -218,7 +218,24 @@
     color: rgba(2, 11, 62, 1);
 }
 
-#lblexperienceName, #lblroleName, #lblanythingElse, #lblendDate, #lblstartDate, #lbllearnings, #lblhoursspent, #lblactivity {
+#lblexperienceName, #lblroleName, #lblstartMonth, #lblstartYear, #lblendMonth, #lblendYear, #lblactivity, #lblhoursspent, #lblresponsibility1, #lblresponsibility2, #lblresponsibility3 {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	overflow: visible;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(2,11,62,1);
+}
+
+/* View labels */
+
+#svdPoints {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -229,62 +246,103 @@
     font-family: Proxima Nova;
     font-style: normal;
     font-weight: bold;
-    font-size: 14px;
-    color: rgba(2, 11, 62, 1);
-    /* margin-bottom: -10px; */
-    line-height: 15px;
-    /* margin-top: -35.5px; */
+    font-size: 16px;
+    color: rgba(13,144,168,1);
 }
 
-#hoursspent, #activity, #roleName, #experienceName, #learnings, #startDate, #endDate {
-    /* margin-right: 156px; */
+#svdrole {
+    margin: 0;
+padding: 0;
+box-sizing: border-box;
+border: none;
+overflow: visible;
+white-space: nowrap;
+text-align: left;
+font-family: Proxima Nova;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+color: rgba(2,11,62,1);
+}
+
+#lblsvddate, #lblsvdOrgName, #lblsvdact, #lblsvdhrs, #lblsvdhrs {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(155, 155, 155, 1);
+    margin-bottom: -4rem;
+}
+
+/* View labels */
+
+#lblsvdRes {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(118, 118, 118, 1);
 }
 
 #saved_exp {
     /* margin: 0;
     padding: 0; */
+    box-sizing: border-box;
+    border: none;
     overflow: visible;
     white-space: nowrap;
-    font-weight: bold;
-    font-size: 32px;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
     color: rgba(2, 11, 62, 1);
 }
 
-#saved_expname {
-    /* margin: 0;
-    padding: 0; */
+#svddate, #svdOrgName, #svdact, #svdhrs {
+    margin: 0;
+padding: 0;
+box-sizing: border-box;
+border: none;
+overflow: visible;
+white-space: nowrap;
+text-align: left;
+font-family: Proxima Nova;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+color: rgba(2,11,62,1);
+}
+
+#svdRes {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
     overflow: visible;
-    white-space: nowrap;
-    font-weight: bold;
-    font-size: 24px;
-    color: rgba(13, 144, 168, 1);
-}
-
-#lblsvdrole, #lblsvdhrs, #lblsvdact, #lblsvdskill, #lblsvdaddinfo {
-    white-space: nowrap;
-    font-weight: bold;
-    font-size: 18px;
+    white-space: normal;
+    display: block;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
     color: rgba(2, 11, 62, 1);
-    margin: 0;
-    padding: 0;
-    margin-right: 0.5rem;
-}
-
-#svdrole, #svdhrs, #svdact, #svdskill {
-    white-space: nowrap;
-    font-size: 18px;
-    color: rgba(2, 11, 62, 1);
-    margin: 0;
-    padding: 0;
-}
-
-#svdaddinfo {
-    /* white-space: normal; */
-    font-size: 18px;
-    color: rgba(2, 11, 62, 1);
-    margin: 0;
-    padding: 0;
-    /* font-style: italic; */
 }
 
 #btneditsvd {

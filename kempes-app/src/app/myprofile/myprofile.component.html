@@ -120,6 +120,8 @@
 </div>
 <div id="hr">
 </div>
+
+<!-- New experiences -->
 <div class="container-fluid justify-content-center align-items-center col-md-10" id="profileContainer">
     <form (ngSubmit)="onSubmit()" #ProfileExpForm="ngForm">
         <!-- New Experience Form -->
@@ -140,46 +142,40 @@
                         <input type="text" [(ngModel)]="experienceDefault.roleName" class="form-control" id="roleName"
                             name="roleName" placeholder="Role">
                     </div>
-                    <!-- <div class="col-auto">
-                        <label for="activity" class="col-form-label pb-0" id="lblactivity">Name of Activity</label>
-                        <input type="text" [(ngModel)]="experienceDefault.activity" class="form-control" id="activity"
-                            name="activity" placeholder="Activity">
-                    </div> -->
                 </div>
                 <div class="form-group row mb-2">
                     <div class="col-md-3">
-                        <label for="startDate" class="col-form-label pb-0" id="lblstartDate">Start Date</label>
-                        <!-- <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
-                            data-live-search="true" name="oppurOptions"> -->
-                        <!-- <select [(ngModel)]="monthList.text" name="oppurOptions">
-                                <option *ngFor="let month of monthList"  > {{ month.text }} </option>
-                        </select> -->
+                        <label for="startMonth" class="col-form-label pb-0" id="lblstartMonth">Start Date</label>
                         <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
-                            data-live-search="true" data-selectpicker [(ngModel)]="monthList.text" name="oppurOptions">
+                            data-live-search="true" data-selectpicker [(ngModel)]="experienceDefault.startMonth"
+                            name="startMonth">
                             <option *ngFor="let month of monthList" [ngValue]="month.value">
                                 {{ month.text }}</option>
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <label for="startDate" class="col-form-label pb-0" id="lblstartDate"></label>
+                        <label for="startYear" class="col-form-label pb-0" id="lblstartYear"></label>
                         <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
-                            data-live-search="true" data-selectpicker [(ngModel)]="yearList.name" name="oppurOptions">
+                            data-live-search="true" data-selectpicker [(ngModel)]="experienceDefault.startYear"
+                            name="startYear">
                             <option *ngFor="let year of yearList" [ngValue]="year.value">
                                 {{ year.name }}</option>
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <label for="endDate" class="col-form-label pb-0" id="lblendDate">End Date</label>
+                        <label for="endMonth" class="col-form-label pb-0" id="lblendMonth">End Date</label>
                         <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
-                            data-live-search="true" data-selectpicker [(ngModel)]="monthList.text" name="oppurOptions">
+                            data-live-search="true" data-selectpicker [(ngModel)]="experienceDefault.endMonth"
+                            name="endMonth">
                             <option *ngFor="let month of monthList" [ngValue]="month.value">
                                 {{ month.text }}</option>
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <label for="endDate" class="col-form-label pb-0" id="lblendDate"></label>
+                        <label for="endYear" class="col-form-label pb-0" id="lblendYear"></label>
                         <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
-                            data-live-search="true" data-selectpicker [(ngModel)]="yearList.name" name="oppurOptions">
+                            data-live-search="true" data-selectpicker [(ngModel)]="experienceDefault.endYear"
+                            name="endYear">
                             <option *ngFor="let year of yearList" [ngValue]="year.value">
                                 {{ year.name }}</option>
                         </select>
@@ -187,9 +183,10 @@
                 </div>
                 <div class="form-group row mb-2">
                     <div class="col-md-6">
-                        <label for="activity" class="col-form-label pb-0" id="lblactivity">Type of Activity</label>
+                        <label for="activityType" class="col-form-label pb-0" id="lblactivity">Type of Activity</label>
                         <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
-                            data-live-search="true" data-selectpicker [(ngModel)]="yearList.name" name="oppurOptions">
+                            data-live-search="true" data-selectpicker [(ngModel)]="experienceDefault.activityType"
+                            name="activityType">
                             <option *ngFor="let year of yearList" [ngValue]="year.value">
                                 {{ year.name }}</option>
                         </select>
@@ -203,62 +200,46 @@
                             id="hoursspent" name="hoursspent" placeholder="Hours Spent">
                     </div>
                 </div>
-                <!-- <div class="form-group row mb-2">
-                    <div class="col-auto">
-                        <label for="startDate" class="col-form-label pb-0" id="lblstartDate">Start date*</label>
-                        <input type="text" [(ngModel)]="experienceDefault.startDate" class="form-control" id="startDate"
-                            name="startDate" placeholder="Start Date">
-                    </div>
-                    <div class="col-auto">
-                        <label for="endDate" class="col-form-label pb-0" id="lblendDate">End date*</label>
-                        <input type="text" [(ngModel)]="experienceDefault.endDate" class="form-control" id="endDate"
-                            name="endDate" placeholder="End Date">
-                    </div>
-                </div> -->
                 <div class="form-group row mb-0">
                     <div class="col-md-12">
-                        <label for="anythingElse" class="col-form-label pb-0" id="lblanythingElse">Responsibility
+                        <label for="responsibility1" class="col-form-label pb-0" id="lblresponsibility1">Responsibility
                             1</label>
-                        <textarea [(ngModel)]="experienceDefault.anythingElse" class="form-control" id="anythingElse"
-                            name="Responsibility ..." placeholder="Anything Else.."></textarea>
+                        <textarea [(ngModel)]="experienceDefault.responsibility1" class="form-control" id="anythingElse"
+                            name="responsibility1" placeholder="Anything Else.."></textarea>
                     </div>
                 </div>
                 <div class="form-group row mb-0">
                     <div class="col-md-12">
-                        <label for="anythingElse" class="col-form-label pb-0" id="lblanythingElse">Responsibility
+                        <label for="responsibility2" class="col-form-label pb-0" id="lblresponsibility2">Responsibility
                             2</label>
-                        <textarea [(ngModel)]="experienceDefault.anythingElse" class="form-control" id="anythingElse"
-                            name="Responsibility ..." placeholder="Anything Else.."></textarea>
+                        <textarea [(ngModel)]="experienceDefault.responsibility2" class="form-control" id="anythingElse"
+                            name="responsibility2" placeholder="Anything Else.."></textarea>
                     </div>
                 </div>
                 <div class="form-group row mb-0">
                     <div class="col-md-12">
-                        <label for="anythingElse" class="col-form-label pb-0" id="lblanythingElse">Responsibility
+                        <label for="responsibility3" class="col-form-label pb-0" id="lblresponsibility3">Responsibility
                             3</label>
-                        <textarea [(ngModel)]="experienceDefault.anythingElse" class="form-control" id="anythingElse"
-                            name="Responsibility ..." placeholder="Anything Else.."></textarea>
+                        <textarea [(ngModel)]="experienceDefault.responsibility3" class="form-control" id="anythingElse"
+                            name="responsibility3" placeholder="Anything Else.."></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-md-12">
-                    <!-- <button class="btn btn-primary float-right" style="background-color:#0D90A8" type="submit"
-                        id="Save_experience">Save
-                        Experience</button> -->
                     <button class="btn btn-outline-secondary float-right" type="submit" id="Save_experience">Save
-                            Experience</button>
+                        Experience</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
+
 <div id="hr">
 </div>
+
+<!-- Saved experiences -->
 <div class="container-fluid justify-content-center align-items-center col-md-10" id="profileContainer">
-    <!-- Line Divider Form -->
-    <!-- <div id="hr">
-    </div> -->
-    <!-- Saved experiences -->
     <form name="savedexpform" method="post">
         <div *ngIf="profile.experienceArr && profile.experienceArr.length > 0">
             <div class="form-group row mb-3">
@@ -267,35 +248,46 @@
                 </div>
             </div>
 
-            <div class="mb-4" *ngFor="let experience of profile.experienceArr">
-                <div *ngIf="!experience.isEditMode ; else notShow">
+            <div class="col-md-12 ml-4 mb-3" *ngFor="let experience of profile.experienceArr; let i = index">
+
+                <ng-container [ngTemplateOutlet]="experience.isEditMode == true ? editMode : simpleMode"
+                    [ngTemplateOutletContext]="{experience:experience}">
+                </ng-container>
+
+                <!-- view experiences -->
+                <ng-template #simpleMode let-experience='experience'>
                     <div class="form-group row mb-0">
-                        <div class="col-md-12 text-right" id="saved_expname1">
-                            <button id="btneditsvd" (click)="editExperience(experience)"><i class="far fa-edit 10f044"
-                                    id="editIcon"></i></button>
-                        </div>
+                        <!-- <div class="form-group row mb-0"> -->
+                            <div class="col-md-9">
+                                <label class="col-form-label" id="svdrole">{{ experience.roleName }}</label>
+                            </div>
+                            <div class="col-md-2">
+                                    <label class="col-form-label" id="svdPoints">+ 4 pts</label>
+                            </div>
+                            <div class="col-md-1">
+                                    <button id="btneditsvd" (click)="editExperience(experience)"><i class="far fa-edit 10f044"
+                                        id="editIcon"></i></button>
+                            </div>
+                        <!-- </div> -->
                     </div>
                     <div class="form-group row mb-0">
-                        <div class="col-md-12" id="saved_expname">
-                            <div class="form-group row mb-0">
-                                <div class="col col align-self-start">
-                                    <!-- <button ng-click="LikeComment(comment)"><i class="far fa-thumbs-up"></i></button>{{comment.like}} -->
-                                    <!-- <i class="far fa-edit 10f044"></i> -->
-
-                                    <label class="col-form-label">{{ experience.experienceName }}</label>
-                                </div>
-                                <div class="col align-self-end">
-                                    <label class="col-form-label mr-2">Dates:</label>
-                                    <label class="col-form-label">{{ experience.startDate }} -
-                                        {{ experience.endDate }}</label>
-                                </div>
-                            </div>
+                        <div class="col-auto">
+                            <label class="col-form-label" id="lblsvddate">Date:</label>
+                            <label class="col-form-label"
+                                id="svddate">{{ experience.startMonth }}/{{ experience.startYear }} -
+                                {{ experience.endMonth }}/{{ experience.endYear }}</label>
                         </div>
                     </div>
                     <div class="form-group row mb-0">
                         <div class="col-auto">
-                            <label class="col-form-label" id="lblsvdrole">Role:</label>
-                            <label class="col-form-label" id="svdrole">{{ experience.roleName }}</label>
+                            <label class="col-form-label" id="lblsvdOrgName">Organization Name:</label>
+                            <label class="col-form-label" id="svdOrgName">{{ experience.experienceName }}</label>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-auto">
+                            <label class="col-form-label" id="lblsvdact">Activity Name:</label>
+                            <label class="col-form-label" id="svdact">{{ experience.activityType }}</label>
                         </div>
                     </div>
                     <div class="form-group row mb-0">
@@ -305,106 +297,149 @@
                         </div>
                     </div>
                     <div class="form-group row mb-0">
-                        <div class="col-auto">
-                            <label class="col-form-label" id="lblsvdact">Activity Name:</label>
-                            <label class="col-form-label" id="svdact">{{ experience.activity }}</label>
+                        <div class="col-md-12">
+                            <label class="col-form-label" id="lblsvdRes">Responsibilities:</label>
+                            <br>
+                            <label class="col-form-label ml-4" id="svdRes"> 1. {{ experience.responsibility1 }}</label>
+                            <!-- <br>
+                                <br> -->
+                            <label class="col-form-label ml-4" id="svdRes"> 2. {{ experience.responsibility2 }}</label>
+                            <!-- <br>
+                                <br> -->
+                            <label class="col-form-label ml-4" id="svdRes"> 3. {{ experience.responsibility3 }}</label>
                         </div>
                     </div>
+                </ng-template>
+
+                <!-- eidt experiences -->
+                <ng-template #editMode let-experience='experience'>
                     <div class="form-group row mb-0">
-                        <div class="col-auto">
-                            <label class="col-form-label" id="lblsvdskill">Skills Learned:</label>
-                            <label class="col-form-label" id="svdskill">{{ experience.learnings }}</label>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-4">
-                        <div class="col-auto">
-                            <label class="col-form-label" id="lblsvdaddinfo">Additional Info:</label>
-                            <label class="col-form-label" id="svdaddinfo">{{ experience.anythingElse }}</label>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <ng-template #notShow>
-                        <div class="form-group row mb-0">
-                            <div class="mt-0 mb-6">
-                                <div class="form-group row mb-2">
-                                    <div class="col-auto">
-                                        <label for="experienceName" class="col-form-label pb-0"
-                                            id="lblexperienceName">Experience
-                                            Name</label>
-                                        <input type="text" [(ngModel)]="experience.experienceName" class="form-control"
-                                            id="experienceName" name="experienceName" placeholder="Experience">
-                                    </div>
+                        <div class="col-md-12 mt-0 mb-6">
+                            <div class="form-group row mb-2">
+                                <div class="col-md-12">
+                                    <label for="experienceName{{i}}" class="col-form-label pb-0"
+                                        id="lblexperienceName">Organization
+                                        Name</label>
+                                    <input type="text" [(ngModel)]="experience.experienceName" class="form-control"
+                                        id="experienceName" name="experienceName{{i}}" placeholder="Experience">
                                 </div>
-                                <div class="form-group row mb-2">
-                                    <div class="col-auto">
-                                        <label for="roleName" class="col-form-label pb-0" id="lblroleName">What was
-                                            your
-                                            tilte/role?*</label>
-                                        <input type="text" [(ngModel)]="experience.roleName" class="form-control"
-                                            id="roleName" name="roleName" placeholder="Role">
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="activity" class="col-form-label pb-0" id="lblactivity">Name of
-                                            Activity</label>
-                                        <input type="text" [(ngModel)]="experience.activity" class="form-control"
-                                            id="activity" name="activity" placeholder="Activity">
-                                    </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <div class="col-md-12">
+                                    <label for="roleName{{i}}" class="col-form-label pb-0" id="lblroleName">What was
+                                        your
+                                        tilte/role?*</label>
+                                    <input type="text" [(ngModel)]="experience.roleName" class="form-control"
+                                        id="roleName" name="roleName{{i}}" placeholder="Role">
                                 </div>
-                                <div class="form-group row mb-2">
-                                    <div class="col-auto">
-                                        <label for="hoursspent" class="col-form-label pb-0" id="lblhoursspent">Hours
-                                            you
-                                            spend on
-                                            this?</label>
-                                        <input type="text" [(ngModel)]="experience.hoursspent" class="form-control"
-                                            id="hoursspent" name="hoursspent" placeholder="Hours Spent">
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="learnings" class="col-form-label pb-0" id="lbllearnings">What
-                                            did
-                                            you
-                                            learn?*</label>
-                                        <input type="text" [(ngModel)]="experience.learnings" class="form-control"
-                                            id="learnings" name="learnings" placeholder="Learnings">
-                                    </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <div class="col-md-3">
+                                    <label for="startMonth{{i}}" class="col-form-label pb-0" id="lblstartMonth">Start
+                                        Date</label>
+                                    <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
+                                        data-live-search="true" data-selectpicker [(ngModel)]="experience.startMonth"
+                                        name="startMonth{{i}}">
+                                        <option *ngFor="let month of monthList" [ngValue]="month.value">
+                                            {{ month.text }}</option>
+                                    </select>
                                 </div>
-                                <div class="form-group row mb-2">
-                                    <div class="col-auto">
-                                        <label for="startDate" class="col-form-label pb-0" id="lblstartDate">Start
-                                            date*</label>
-                                        <input type="text" [(ngModel)]="experience.startDate" class="form-control"
-                                            id="startDate" name="startDate" placeholder="Start Date">
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="endDate" class="col-form-label pb-0" id="lblendDate">End
-                                            date*</label>
-                                        <input type="text" [(ngModel)]="experience.endDate" class="form-control"
-                                            id="endDate" name="endDate" placeholder="End Date">
-                                    </div>
+                                <div class="col-md-3">
+                                    <label for="startYear{{i}}" class="col-form-label pb-0" id="lblstartYear"></label>
+                                    <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
+                                        data-live-search="true" data-selectpicker [(ngModel)]="experience.startYear"
+                                        name="startYear{{i}}">
+                                        <option *ngFor="let year of yearList" [ngValue]="year.value">
+                                            {{ year.name }}</option>
+                                    </select>
                                 </div>
-                                <div class="form-group row mb-0">
-                                    <div class="col-md-8">
-                                        <label for="anythingElse" class="col-form-label pb-0"
-                                            id="lblanythingElse">Anything else you’d
-                                            like
-                                            to share?</label>
-                                        <textarea [(ngModel)]="experience.anythingElse" class="form-control"
-                                            id="anythingElse" name="Anything Else.."
-                                            placeholder="Anything Else.."></textarea>
-                                    </div>
+                                <div class="col-md-3">
+                                    <label for="endMonth{{i}}" class="col-form-label pb-0" id="lblendMonth">End
+                                        Date</label>
+                                    <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
+                                        data-live-search="true" data-selectpicker [(ngModel)]="experience.endMonth"
+                                        name="endMonth{{i}}">
+                                        <option *ngFor="let month of monthList" [ngValue]="month.value">
+                                            {{ month.text }}</option>
+                                    </select>
                                 </div>
-                                <!-- </div>
-                                    <div class="form-group row"> -->
-                                <div class="col-md-8">
-                                    <button class="btn btn-primary float-right" style="background-color:#0D90A8"
-                                        type="button" id="Save_experience1" (click)="saveExperience(experience)">Save
+                                <div class="col-md-3">
+                                    <label for="endYear{{i}}" class="col-form-label pb-0" id="lblendYear"></label>
+                                    <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
+                                        data-live-search="true" data-selectpicker [(ngModel)]="experience.endYear"
+                                        name="endYear{{i}}">
+                                        <option *ngFor="let year of yearList" [ngValue]="year.value">
+                                            {{ year.name }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <div class="col-md-6">
+                                    <label for="activity{{i}}" class="col-form-label pb-0" id="lblactivity">Type of
+                                        Activity</label>
+                                    <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
+                                        data-live-search="true" data-selectpicker [(ngModel)]="experience.activityType"
+                                        name="activity{{i}}">
+                                        <option *ngFor="let year of yearList" [ngValue]="year.value">
+                                            {{ year.name }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <div class="col-md-6">
+                                    <label for="hoursspent{{i}}" class="col-form-label pb-0" id="lblhoursspent">How many
+                                        hours did you
+                                        spend on this?</label>
+                                    <input type="text" [(ngModel)]="experience.hoursspent" class="form-control"
+                                        id="hoursspent" name="hoursspent{{i}}" placeholder="Hours Spent">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-12">
+                                    <label for="responsibility1{{i}}" class="col-form-label pb-0"
+                                        id="lblresponsibility1">Responsibility
+                                        1</label>
+                                    <textarea [(ngModel)]="experience.responsibility1" class="form-control"
+                                        id="anythingElse" name="responsibility1{{i}}"
+                                        placeholder="Anything Else.."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-12">
+                                    <label for="responsibility2{{i}}" class="col-form-label pb-0"
+                                        id="lblresponsibility2">Responsibility
+                                        2</label>
+                                    <textarea [(ngModel)]="experience.responsibility2" class="form-control"
+                                        id="anythingElse" name="responsibility2{{i}}"
+                                        placeholder="Anything Else.."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                                <div class="col-md-12">
+                                    <label for="responsibility3{{i}}" class="col-form-label pb-0"
+                                        id="lblresponsibility3">Responsibility
+                                        3</label>
+                                    <textarea [(ngModel)]="experience.responsibility3" class="form-control"
+                                        id="anythingElse" name="responsibility3{{i}}"
+                                        placeholder="Anything Else.."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-1">
+                                <div class="col-md-12">
+                                    <button class="btn btn-outline-secondary float-right" type="button"
+                                        id="Save_experience" name="saveExperience{{i}}"
+                                        (click)="saveExperience(experience)">Save
                                         Experience</button>
+                                    <button class="btn btn-outline-secondary float-right mr-2" type="button"
+                                        id="Save_experience" name="cancelExperience{{i}}"
+                                        (click)="cancelExperienceEdit(experience)">Cancel</button>
+
                                 </div>
                             </div>
                         </div>
-                    </ng-template>
-                </div>
+
+                    </div>
+                </ng-template>
             </div>
         </div>
     </form>

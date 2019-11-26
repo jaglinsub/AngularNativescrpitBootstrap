@@ -29,19 +29,33 @@ export class MyprofileComponent implements OnInit {
   showNavigationArrows = true;
   
   monthList = [ 
-    { value: 'Jan', text: 'Jan' },
-    { value: 'Feb', text: 'Feb' },
-    { value: 'Mar', text: 'Mar' },
-    { value: 'Apr', text: 'Apr' },
-    { value: 'May', text: 'May' },
-    { value: 'June', text: 'June' },
-    { value: 'July', text: 'July' },
-    { value: 'Aug', text: 'Aug' },
-    { value: 'Sep', text: 'Sep' },
-    { value: 'Oct', text: 'Oct' },
-    { value: 'Nov', text: 'Nov' },
-    { value: 'Dec', text: 'Dec' }
+    { value: '1', text: 'Jan' },
+    { value: '2', text: 'Feb' },
+    { value: '3', text: 'Mar' },
+    { value: '4', text: 'Apr' },
+    { value: '5', text: 'May' },
+    { value: '6', text: 'June' },
+    { value: '7', text: 'July' },
+    { value: '8', text: 'Aug' },
+    { value: '9', text: 'Sep' },
+    { value: '10', text: 'Oct' },
+    { value: '11', text: 'Nov' },
+    { value: '12', text: 'Dec' }
+];
 
+monthList1 = [ 
+  { value: 'Jan', text: 'Jan' },
+  { value: 'Feb', text: 'Feb' },
+  { value: 'Mar', text: 'Mar' },
+  { value: 'Apr', text: 'Apr' },
+  { value: 'May', text: 'May' },
+  { value: 'June', text: 'June' },
+  { value: 'July', text: 'July' },
+  { value: 'Aug', text: 'Aug' },
+  { value: 'Sep', text: 'Sep' },
+  { value: 'Oct', text: 'Oct' },
+  { value: 'Nov', text: 'Nov' },
+  { value: 'Dec', text: 'Dec' }
 ];
 
 yearList = [];
@@ -156,10 +170,12 @@ yearList = [];
   }
 
   editExperience(exp : Experience) {
+    console.log("Experience editing ON= " + exp.experienceName);
     exp.isEditMode = !exp.isEditMode;
   }
 
   showhideNewExp(exp : Experience) {
+    
     this.showNewExp = !this.showNewExp;
   }
 
@@ -171,6 +187,11 @@ yearList = [];
     });
     exp.isEditMode = !exp.isEditMode;
     
+  }
+
+  cancelExperienceEdit(exp : Experience) {
+    console.log("Experience editing OFF= " + exp.experienceName);
+    exp.isEditMode = !exp.isEditMode;
   }
 
   chunk(arr, chunkSize) {
