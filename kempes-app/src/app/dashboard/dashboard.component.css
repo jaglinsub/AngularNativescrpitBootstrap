@@ -22,25 +22,20 @@ body {
 }
 
 .list-group-item {
-  border: none;  
+  border: none;
   margin-left: 1rem;
   /* padding-left: 2rem; */
-  
 }
 
 #sidebar-wrapper .sidebar-heading {
   /* padding: 2.0rem 8.25rem; */
   font-size: 1.2rem;
-  
 }
 
 #sidebar-wrapper .list-group {
-  
   width: 15rem;
   text-align: left;
-  margin-top: 4rem;  
-  
-  
+  margin-top: 4rem;
 }
 
 #page-content-wrapper {
@@ -108,4 +103,68 @@ body {
   margin-left: 5px;
   border-left: 2px solid rgba(0, 0, 0, 0.1);
   height: 2.25rem;
+}
+
+#pointSystem {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+  border: none;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
+  overflow: visible;
+  background-color: rgb(255, 255, 255);
+}
+
+#lblptssys {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  overflow: hidden;
+  text-align: center;
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: rgba(118, 118, 118, 1);
+}
+
+.pointsSysSpacer {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 4rem;
+}
+
+.nomargin {
+  margin: 0;
+  padding: 0;
+}
+
+#lblroleName1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  overflow: hidden;
+  text-align: left;
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  color: rgba(118, 118, 118, 1);
+}
+
+#lblrolepts1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  overflow: visible;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  color: rgba(2, 11, 62, 1);
 }
