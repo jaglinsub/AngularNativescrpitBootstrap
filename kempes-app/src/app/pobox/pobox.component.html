@@ -5,41 +5,29 @@
         <!-- Explore Header -->
         <div class="form-group row mb-0 align-items-center">
             <div class="col-md-12" id="explore">
-                <label class="col-form-label">Explore you P.O. Box!</label>
+                <label class="col-form-label">Explore your P.O Box</label>
             </div>
         </div>
         <!-- Welcome Header -->
         <div class="form-group row mb-0 align-items-center">
             <div class="col-12" id="welcome">
                 <div class="justify-content-center">
-                    <span>
-                        Welcome to you Personal Opportunity box! This list of <br> opportunities is made just for
-                        you. You can also click
-                        <i class="fas fa-plus" id="plusIcon"></i>
-                        <!-- <svg id="Union_1_A34_BooleanGroup_46" class="Union_1_A34_BooleanGroup_46"
-                            viewBox="-3068 -5618.001 23.519 23.521">
-                            <path fill="rgba(240,136,115,1)" id="Union_1_A34_BooleanGroup_46"
-                                d="M -3059.375732421875 -5594.48046875 L -3059.375732421875 -5603.1044921875 L -3067.999755859375 -5603.1044921875 L -3067.999755859375 -5609.3759765625 L -3059.375732421875 -5609.3759765625 L -3059.375732421875 -5618.0009765625 L -3053.103515625 -5618.0009765625 L -3053.103515625 -5609.3759765625 L -3044.48046875 -5609.3759765625 L -3044.48046875 -5603.1044921875 L -3053.103515625 -5603.1044921875 L -3053.103515625 -5594.48046875 L -3059.375732421875 -5594.48046875 Z">
-                            </path>
-                        </svg> -->
+                    <span>Welcome to your Personal Opportunity box! This list of opportunities is made just for you.
                     </span>
                 </div>
-                <span>
-                    to save an opportunity for later.
-                </span>
             </div>
         </div>
         <!-- Specing -->
-        <div class="form-group row mt-md-3"></div>
+        <div class="form-group row blnkspacing"></div>
         <!-- List of opportunity -->
         <div class="container-fluid justify-content-center align-items-center col-md-10" id="poboxContainer">
             <div class="mb-3" *ngFor="let opportunity of opportunities">
-                <div class="form-group row mb-0">
+                <div class="form-group row zeroDiv">
                     <div class="col-auto" id="oppheader">
                         <!-- <label class="col-form-label">{{ opportunity.opportunityName }}</label> -->
                         <a id="oppheader" [routerLink]="['poboxdtls', opportunity.id ]">{{ opportunity.opportunityName }}</a>
                         <button id="btneditsvd" [disabled]='opportunity.isSaved'
-                            (click)="saveOppurtunity(opportunity)"><i class="fas fa-plus" id="plusIcon"
+                            (click)="saveOppurtunity(opportunity)"><i class="fas fa-bookmark" id="plusIcon"
                                 *ngIf='!opportunity.isSaved'></i></button>
                     </div>
                 </div>

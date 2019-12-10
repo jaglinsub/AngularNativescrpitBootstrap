@@ -1,2 +1,7 @@
  
 @import '~nativescript-theme-core/css/core.light.css';
+@import url("https://use.typekit.net/pzr4ktm.css");
+
+* {
+    font-family: proxima-nova;
+  }

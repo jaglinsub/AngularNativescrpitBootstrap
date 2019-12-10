@@ -28,7 +28,7 @@ Hue-126;sat-206;lum-85; */
 }
 
 .h3 {
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-size: 60px;
     color: rgba(2, 11, 62, 1);
 }
@@ -36,7 +36,7 @@ Hue-126;sat-206;lum-85; */
 .h7 {
     margin-top: -20px;
     margin-bottom: 20px;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-size: 24px;
     color: rgba(2, 11, 62, 1);
 }

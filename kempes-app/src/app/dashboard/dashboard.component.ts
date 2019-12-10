@@ -8,12 +8,18 @@ import { CurrentPointsService } from './current-points.service';
 })
 export class DashboardComponent implements OnInit {
   currentPTS:number = 0;
+  showPtsSystem : boolean = false;
   constructor(private currentPointsService: CurrentPointsService) {
 
     this.currentPointsService.currentPTSSubject$.subscribe((pts) => {
       this.currentPTS = pts;
     });
-    console.log("DashboardComponent Cons: Current points=" + this.currentPTS);
+
+    this.currentPointsService.showPtsSystemSubject$.subscribe((show) => {
+      this.showPtsSystem = show;
+    });
+    console.log("DashboardComponent Cons: Current points= " + this.currentPTS);
+    console.log("DashboardComponent Cons: showPtsSystem= " + this.showPtsSystem);
 
    }
 

@@ -6,6 +6,7 @@ import { User } from '../signup/User';
 import { UserServiceService } from '../services/user-service.service';
 import { Interests } from '../interests/Interests';
 import { InterestOptions } from '../interests/InterestOptions';
+import { CurrentPointsService } from '../dashboard/current-points.service';
 
 @Component({
   selector: 'app-myprofile',
@@ -14,8 +15,8 @@ import { InterestOptions } from '../interests/InterestOptions';
   encapsulation: ViewEncapsulation.None
 })
 export class MyprofileComponent implements OnInit {
-  profile : Profile;
-  interests : Interests;
+  profile: Profile;
+  interests: Interests;
   intOptions: InterestOptions;
   afterSchool: string;
 
@@ -24,18 +25,18 @@ export class MyprofileComponent implements OnInit {
   experience2 = new Experience();
   experience3 = new Experience();
   user: User;
-  showNewExp : boolean;
+  showNewExp: boolean;
 
   CAROUSEL_BREAKPOINT = 1280;
   carouselDisplayMode = 'multiple';
   slides: any = [[]];
 
-  games= [{"title_id":1,"title_name":"MIssion Impossible","title_img":"https://media.services.cinergy.ch/media/box1600/f1323e57a2c4ea79dde779a89d561f85bfbe6bf5.jpg","genres":[{"id":1,"name":"Action"},{"id":2,"name":"Adventure"}]},{"title_id":2,"title_name":"Matrix","title_img":"https://www.sideshowtoy.com/assets/products/903302-neo/lg/the-matrix-neo-sixth-scale-figure-hot-toys-903302-01.jpg","genres":[{"id":1,"name":"Action"},{"id":2,"name":"Adventure"},{"id":6,"name":"Fantasy"}]},{"title_id":3,"title_name":"Avengers","title_img":"http://media.comicbook.com/2018/03/avengers-infinity-war-poster-all-iron-man-version-1096449.jpeg","genres":[{"id":1,"name":"Action"},{"id":2,"name":"Adventure"},{"id":6,"name":"Fantasy"}]},{"title_id":4,"title_name":"Stargate SG-1","title_img":"https://image.tmdb.org/t/p/w300_and_h450_bestv2/rst5xc4f7v1KiDiQjzDiZqLtBpl.jpg","genres":[{"id":1,"name":"Action"},{"id":5,"name":"Drama"},{"id":2,"name":"Adventure"},{"id":9,"name":"Sci Fi"}]},{"title_id":5,"title_name":"Scooby Doo","title_img":"https://images-na.ssl-images-amazon.com/images/G/01/aplusautomation/vendorimages/1cdd3ea2-f14f-416b-9aaa-644a9a01ad8c.jpg._CB321085566_.jpg","genres":[{"id":1,"name":"Action"},{"id":10,"name":"Thriller"},{"id":6,"name":"Fantasy"}]}];
+  games = [{ "title_id": 1, "title_name": "MIssion Impossible", "title_img": "https://media.services.cinergy.ch/media/box1600/f1323e57a2c4ea79dde779a89d561f85bfbe6bf5.jpg", "genres": [{ "id": 1, "name": "Action" }, { "id": 2, "name": "Adventure" }] }, { "title_id": 2, "title_name": "Matrix", "title_img": "https://www.sideshowtoy.com/assets/products/903302-neo/lg/the-matrix-neo-sixth-scale-figure-hot-toys-903302-01.jpg", "genres": [{ "id": 1, "name": "Action" }, { "id": 2, "name": "Adventure" }, { "id": 6, "name": "Fantasy" }] }, { "title_id": 3, "title_name": "Avengers", "title_img": "http://media.comicbook.com/2018/03/avengers-infinity-war-poster-all-iron-man-version-1096449.jpeg", "genres": [{ "id": 1, "name": "Action" }, { "id": 2, "name": "Adventure" }, { "id": 6, "name": "Fantasy" }] }, { "title_id": 4, "title_name": "Stargate SG-1", "title_img": "https://image.tmdb.org/t/p/w300_and_h450_bestv2/rst5xc4f7v1KiDiQjzDiZqLtBpl.jpg", "genres": [{ "id": 1, "name": "Action" }, { "id": 5, "name": "Drama" }, { "id": 2, "name": "Adventure" }, { "id": 9, "name": "Sci Fi" }] }, { "title_id": 5, "title_name": "Scooby Doo", "title_img": "https://images-na.ssl-images-amazon.com/images/G/01/aplusautomation/vendorimages/1cdd3ea2-f14f-416b-9aaa-644a9a01ad8c.jpg._CB321085566_.jpg", "genres": [{ "id": 1, "name": "Action" }, { "id": 10, "name": "Thriller" }, { "id": 6, "name": "Fantasy" }] }];
   gamesFormatted = [];
   mobile = false;
   showNavigationArrows = true;
-  
-  monthList = [ 
+
+  monthList = [
     { value: '1', text: 'Jan' },
     { value: '2', text: 'Feb' },
     { value: '3', text: 'Mar' },
@@ -48,24 +49,24 @@ export class MyprofileComponent implements OnInit {
     { value: '10', text: 'Oct' },
     { value: '11', text: 'Nov' },
     { value: '12', text: 'Dec' }
-];
+  ];
 
-monthList1 = [ 
-  { value: 'Jan', text: 'Jan' },
-  { value: 'Feb', text: 'Feb' },
-  { value: 'Mar', text: 'Mar' },
-  { value: 'Apr', text: 'Apr' },
-  { value: 'May', text: 'May' },
-  { value: 'June', text: 'June' },
-  { value: 'July', text: 'July' },
-  { value: 'Aug', text: 'Aug' },
-  { value: 'Sep', text: 'Sep' },
-  { value: 'Oct', text: 'Oct' },
-  { value: 'Nov', text: 'Nov' },
-  { value: 'Dec', text: 'Dec' }
-];
+  monthList1 = [
+    { value: 'Jan', text: 'Jan' },
+    { value: 'Feb', text: 'Feb' },
+    { value: 'Mar', text: 'Mar' },
+    { value: 'Apr', text: 'Apr' },
+    { value: 'May', text: 'May' },
+    { value: 'June', text: 'June' },
+    { value: 'July', text: 'July' },
+    { value: 'Aug', text: 'Aug' },
+    { value: 'Sep', text: 'Sep' },
+    { value: 'Oct', text: 'Oct' },
+    { value: 'Nov', text: 'Nov' },
+    { value: 'Dec', text: 'Dec' }
+  ];
 
-yearList = [];
+  yearList = [];
 
 
   cards = [
@@ -145,10 +146,10 @@ yearList = [];
       img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg',
       loc: 'San Francisco CA'
     },
-   
+
   ];
-  
-  constructor(private profileService: ProfileService, private userService: UserServiceService) {
+
+  constructor(private profileService: ProfileService, private userService: UserServiceService, private currentPointsService: CurrentPointsService) {
     /* this.profile = new Profile();
     this.experienceDefault = new Experience();
 
@@ -175,22 +176,23 @@ yearList = [];
 
     for (let i = new Date().getFullYear(); i >= 2017; i--) {
       let newYear = {
-         name:i.toString(),
-         value:i.toString()
+        name: i.toString(),
+        value: i.toString()
       };
       this.yearList.push(newYear);
     }
     // this.yearList.sort((a,b) => 0 - (b > a ? 1 : -1));
-   }
+  }
 
   ngOnInit() {
+
+    this.currentPointsService.setShowPtsSystem(true);
 
     //this.profile.experienceArr = [this.experience1, this.experience2, this.experience3 ];
     this.profileService.getProfileforUser().subscribe(profile => {
       this.profile = profile;
       console.log("profile=" + JSON.stringify(this.profile));
-      if(this.profile == null)
-      {
+      if (this.profile == null) {
         this.profile = new Profile();
         this.profile.highSchoolName = this.user.organizationName;
         // this.profile.classOf = "test class";
@@ -202,7 +204,7 @@ yearList = [];
 
     this.slides = this.chunk(this.cards, 2);
 
-    
+
 
     if (window.innerWidth <= this.CAROUSEL_BREAKPOINT) {
       this.carouselDisplayMode = 'single';
@@ -218,23 +220,25 @@ yearList = [];
 
     for (var i = 0; i < this.games.length; i++) {
       if (i % 3 == 0) {
-          j++;
-          this.gamesFormatted[j] = [];
-          this.gamesFormatted[j].push(this.games[i]);
+        j++;
+        this.gamesFormatted[j] = [];
+        this.gamesFormatted[j].push(this.games[i]);
       }
       else {
-          this.gamesFormatted[j].push(this.games[i]);
+        this.gamesFormatted[j].push(this.games[i]);
       }
+    }
+    console.log("Formatted Games= " + JSON.stringify(this.gamesFormatted));
+
+    
   }
-  console.log("Formatted Games= " + JSON.stringify(this.gamesFormatted));
-  }
+
 
   onSubmit() {
     console.log("onSubmit=>" + JSON.stringify(this.profile));
     console.log("onSubmit=>" + JSON.stringify(this.experienceDefault));
 
-    if(this.profile.experienceArr == null)
-    {
+    if (this.profile.experienceArr == null) {
       console.log("exp is null 1");
       this.profile.experienceArr = [this.experienceDefault];
     }
@@ -242,8 +246,8 @@ yearList = [];
       console.log("exp is not null 1");
       this.profile.experienceArr.push(this.experienceDefault);
     }
-    
-    this.profileService.saveProfile(this.profile).subscribe ( data => {
+
+    this.profileService.saveProfile(this.profile).subscribe(data => {
       this.profile = data;
       this.experienceDefault = new Experience();
       this.showhideNewExp(this.experienceDefault);
@@ -251,27 +255,27 @@ yearList = [];
     });
   }
 
-  editExperience(exp : Experience) {
+  editExperience(exp: Experience) {
     console.log("Experience editing ON= " + exp.experienceName);
     exp.isEditMode = !exp.isEditMode;
   }
 
-  showhideNewExp(exp : Experience) {
-    
+  showhideNewExp(exp: Experience) {
+
     this.showNewExp = !this.showNewExp;
   }
 
-  saveExperience(exp : Experience) {
-    this.profileService.saveProfile(this.profile).subscribe ( data => {
+  saveExperience(exp: Experience) {
+    this.profileService.saveProfile(this.profile).subscribe(data => {
       this.profile = data;
       this.experienceDefault = new Experience();
       console.log("After saving individual exp = " + JSON.stringify(this.profile));
     });
     exp.isEditMode = !exp.isEditMode;
-    
+
   }
 
-  cancelExperienceEdit(exp : Experience) {
+  cancelExperienceEdit(exp: Experience) {
     console.log("Experience editing OFF= " + exp.experienceName);
     exp.isEditMode = !exp.isEditMode;
   }

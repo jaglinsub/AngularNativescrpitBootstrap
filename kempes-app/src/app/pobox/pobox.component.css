@@ -5,21 +5,38 @@
 
 #explore {
     margin: 0;
+    margin-top: 3.25rem;
     padding: 0;
-    overflow: hidden;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
     text-align: center;
-    font-size: 40px;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
     color: rgba(2, 11, 62, 1);
 }
 
 #welcome {
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    /* margin-top: -5px; */
-    text-align: center;
-    font-size: 24px;
-    color: rgba(2, 11, 62, 1);
+padding: 0;
+box-sizing: border-box;
+border: none;
+overflow: visible;
+white-space: nowrap;
+margin-top: -3.5px;
+text-align: center;
+font-family: proxima-nova;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+color: rgba(2,11,62,1);
+}
+
+.blnkspacing {
+    margin-top: 2.25rem;
 }
 
 #Union_1_A34_BooleanGroup_46, Union_1_A34_BooleanGroup_46 {
@@ -48,7 +65,7 @@ path {
     color: gray;
     margin: 0;
     padding: 0;
- }
+}
 
 #oppheader {
     margin: 0;
@@ -58,19 +75,17 @@ path {
     overflow: visible;
     white-space: nowrap;
     text-align: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
     color: rgba(13, 144, 168, 1);
 }
 
-
 #btneditsvd {
     background-color: transparent;
     border: none;
 }
-
 
 .zeroDiv {
     margin: 0;
@@ -80,13 +95,13 @@ path {
 .orgName {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     border: none;
     overflow: visible;
     white-space: nowrap;
     text-align: left;
     justify-content: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -98,9 +113,10 @@ path {
     padding: 0;
     box-sizing: border-box;
     border: none;
-    overflow: hidden;
+    overflow: visible;
     text-align: left;
-    font-family: Proxima Nova;
+    justify-content: left;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -115,7 +131,7 @@ path {
     overflow: visible;
     white-space: nowrap;
     text-align: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;

@@ -69,7 +69,7 @@
     white-space: nowrap;
     /* text-align: left; */
     vertical-align: middle;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -83,7 +83,7 @@
     white-space: nowrap;
     text-align: left;
     margin-left: .5rem;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: normal;
     font-size: 32px;

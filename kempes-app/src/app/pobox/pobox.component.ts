@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Opportunity } from './Opportunity';
 import { PoboxService } from './pobox.service';
+import { CurrentPointsService } from '../dashboard/current-points.service';
 
 @Component({
   selector: 'app-pobox',
@@ -13,12 +14,14 @@ export class PoboxComponent implements OnInit {
   opportunity2: Opportunity;
   opportunity3: Opportunity;
 
-  constructor(private poboxService: PoboxService) {
+  constructor(private poboxService: PoboxService, private currentPointsService: CurrentPointsService) {
 
    
    }
 
   ngOnInit() {
+
+    this.currentPointsService.setShowPtsSystem(false);
 
     this.opportunity1 = new Opportunity();
     this.opportunity1.opportunityName = "Professional Opportunity 1";

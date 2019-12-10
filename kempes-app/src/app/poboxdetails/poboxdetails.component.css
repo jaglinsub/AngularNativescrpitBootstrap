@@ -23,7 +23,7 @@
     overflow: visible;
     white-space: nowrap;
     text-align: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
@@ -37,7 +37,7 @@
 
 .qualDtls {
     text-align: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     color: rgba(2, 11, 62, 1);
     margin: 0;
     padding: 0;
@@ -57,7 +57,7 @@
     white-space: nowrap;
     text-align: left;
     justify-content: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -72,7 +72,7 @@
     overflow: visible;
     white-space: nowrap;
     text-align: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -95,7 +95,7 @@
     overflow: visible;
     white-space: nowrap;
     text-align: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -104,7 +104,7 @@
 
 .roledtl {
     text-align: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -117,7 +117,7 @@
 
 .typeofoppurlbl {
     text-align: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     font-style: normal;
     font-weight: bold;
     color: rgba(2, 11, 62, 1);
@@ -130,7 +130,7 @@
 
 .typeofoppur {
     text-align: left;
-    font-family: Proxima Nova;
+    font-family: proxima-nova;
     color: rgba(2, 11, 62, 1);
     margin: 0;
     padding: 0;
