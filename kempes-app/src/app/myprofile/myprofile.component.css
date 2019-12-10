@@ -3,8 +3,9 @@
  */
 
 #profileContainer, .profileContainer {
-    margin-top: 0rem;
-    margin-left: 2.25rem;
+    max-width: 635px;
+    margin-top: 4rem;
+    margin-left: 3.93rem;
     box-sizing: border-box;
     border: none;
     background-color: rgb(255, 255, 255);
@@ -12,17 +13,22 @@
 }
 
 #oppurContainer {
-    fill: rgb(252, 252, 252);
+    max-width: 635px;
+    /* fill: rgb(252, 252, 252); */
     margin: 0;
     padding: 0;
     margin-top: 0rem;
-    margin-left: 2.25rem;
+    margin-left: 3.93rem;
     box-sizing: border-box;
     border: none;
     background-color: rgb(255, 255, 255);
-    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
+    /* filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161)); */
 }
 
+#oppurCarousel {
+    max-width: 610px;
+    box-sizing: border-box;
+}
 .lblOppur {
     margin: 0;
     padding: 0;
@@ -436,9 +442,9 @@ color: rgba(2,11,62,1);
     text-align: left;
     font-family: Proxima Nova;
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 10px;
-    color: rgba(2, 11, 62, 1);
+    color: rgba(118,118,118,1);
 }
 
 .nomargin {

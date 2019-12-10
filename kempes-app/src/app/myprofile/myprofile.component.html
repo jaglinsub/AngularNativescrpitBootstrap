@@ -7,8 +7,7 @@
             <div class="col-auto">
                 <br>
                 <label class="col-form-label pb-0" id="User">{{ user.firstName }} {{user.lastName}}</label>
-                <label class="col-form-label" id="lblafterhigh">"After high school, I want to be a Nurse
-                    Practitioner"</label>
+                <label class="col-form-label" id="lblafterhigh">"After high school, I want to be a {{ afterSchool }}"</label>
             </div>
         </div>
         <div class="form-group row">
@@ -42,8 +41,8 @@
                     <div class="col-12">
                         <label for="moreAbtMe" class="col-form-label pb-0" id="lblmoreAbtMe">More about me</label>
                         <textarea [(ngModel)]="profile.moreAboutMe" class="form-control" id="moreAbtMe"
-                            name="More About Me.." placeholder="moreAbtMe" rows="2"
-                            style="min-width: 41rem;"></textarea>
+                            name="More About Me.." placeholder="more about me" rows="2"
+                            style="min-width: 38rem;"></textarea>
                     </div>
                     <div class="col-12 align-self-end mt-2">
                         <!-- <br> -->
@@ -68,27 +67,27 @@
     <div class="row nomargin ml-3 oppurforyou">
         <label class="col-form-label">Opportunities recommended for you</label>
     </div>
-    <div class="row nomargin ml-n3">
+    <div class="row nomargin ml-n4" id="oppurCarousel">
         <div class="container-fluid justify-content-center align-items-center col-md-11" id="oppurContainer">
-            <mdb-carousel [animation]="'slide'" [isControls]="true" class="carousel-multi-item multi-animation">
+            <mdb-carousel [animation]="'slide'" [interval]="'0'" [isControls]="true" class="carousel-multi-item multi-animation">
                 <mdb-carousel-item *ngFor="let item of slides; let i = index">
-                    <div class="col-md-4 mr-0" *ngFor="let card of item; let cardIndex = index">
+                    <div class="col-md-6 mr-0" *ngFor="let card of item; let cardIndex = index">
                         <mdb-card class="my-1">
                             <div class="row" style="padding: 0.5rem; margin-bottom: 0.2rem;">
-                                <div class="col-md-2 mt-3 mr-3">
+                                <div class="col-md-2 p-0 ml-4 mt-3 mb-3 mr-0">
                                     <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
                                 </div>
                                 <mdb-card-body style="padding: 0%; margin: 0%;">
                                     <div class="container">
-                                        <div class="row nomargin mb-n3 cardtitle">
+                                        <div class="row nomargin mt-2 mb-1 cardtitle">
                                             <mdb-card-title>
                                                 <label class="col-form-label">{{card.title}}</label>
                                             </mdb-card-title>
                                         </div>
-                                        <div class="row nomargin">
+                                        <div class="row nomargin mt-n4">
                                             <label class="col-form-label carddesc">{{card.description}}</label>
                                         </div>
-                                        <div class="row nomargin">
+                                        <div class="row nomargin mt-n1">
                                             <label class="col-form-label cardloc">{{card.loc}}</label>
                                         </div>
                                     </div>
@@ -137,8 +136,7 @@
                 </div>
                 <div class="form-group row mb-2">
                     <div class="col-md-12">
-                        <label for="roleName" class="col-form-label pb-0" id="lblroleName">What was your
-                            tilte/role?*</label>
+                        <label for="roleName" class="col-form-label pb-0" id="lblroleName">What was your title/role</label>
                         <input type="text" [(ngModel)]="experienceDefault.roleName" class="form-control" id="roleName"
                             name="roleName" placeholder="Role">
                     </div>

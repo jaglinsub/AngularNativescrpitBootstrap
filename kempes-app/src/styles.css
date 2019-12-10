@@ -1,13 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-/* @font-face {
-  font-family: 'Proxima Nova';
-  src: url(./fonts/din/DINAlternateBold.otf);
-  } */
+@font-face {
+  font-family: Proxima Nova;
+  src: url('/assets/fonts/proximanova-regular.otf') format("opentype");
+}
 
 body {
-  font-family: Proxima Nova;
+  /* font-family: Proxima Nova; */
+ }
+
+ * {
+   font-family: Proxima Nova;
  }
 
 .header {

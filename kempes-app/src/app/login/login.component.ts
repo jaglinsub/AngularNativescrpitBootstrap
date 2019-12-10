@@ -152,6 +152,7 @@ export class LoginComponent implements OnInit {
                 this.interests = interests;
                 if (this.interests.userId != undefined) {
                   this.router.navigate(['portfolio/pobox']);
+                  this.userService.setInterests(interests);
                   // this.router.navigate(['portfolio/myprofile']);
                   // this.userService.setUser(data);
                 }

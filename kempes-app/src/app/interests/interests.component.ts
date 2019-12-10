@@ -3,6 +3,7 @@ import { Interests } from './Interests';
 import { InterestOptions } from './InterestOptions';
 import { InterestService } from './interest.service';
 import { Router } from '@angular/router';
+import { UserServiceService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-interests',
@@ -14,7 +15,7 @@ export class InterestsComponent implements OnInit {
   interests: Interests;
   interestOptions: InterestOptions[];
 
-  constructor(private interestService: InterestService, private router: Router) {
+  constructor(private interestService: InterestService, private router: Router, private userService: UserServiceService) {
    /*  this.interests  = new Interests();
     
     this.interestOptions = 
@@ -39,6 +40,7 @@ export class InterestsComponent implements OnInit {
     console.log("onSubmit=>" + JSON.stringify(this.interests));
     this.interestService.saveInterests(this.interests).subscribe ( data => {
       this.interests = data;
+      this.userService.setInterests(data);
       console.log("After response" + JSON.stringify(this.interests));
       this.router.navigate(['portfolio/pobox']);
     });

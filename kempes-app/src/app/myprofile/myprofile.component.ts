@@ -3,6 +3,9 @@ import { Profile } from './profile';
 import { Experience } from './experience';
 import { ProfileService } from './profile.service';
 import { User } from '../signup/User';
+import { UserServiceService } from '../services/user-service.service';
+import { Interests } from '../interests/Interests';
+import { InterestOptions } from '../interests/InterestOptions';
 
 @Component({
   selector: 'app-myprofile',
@@ -12,6 +15,10 @@ import { User } from '../signup/User';
 })
 export class MyprofileComponent implements OnInit {
   profile : Profile;
+  interests : Interests;
+  intOptions: InterestOptions;
+  afterSchool: string;
+
   experienceDefault = new Experience();
   experience1 = new Experience();
   experience2 = new Experience();
@@ -141,7 +148,7 @@ yearList = [];
    
   ];
   
-  constructor(private profileService: ProfileService) {
+  constructor(private profileService: ProfileService, private userService: UserServiceService) {
     /* this.profile = new Profile();
     this.experienceDefault = new Experience();
 
@@ -155,13 +162,25 @@ yearList = [];
     this.experience2.roleName = "Role 2";
     this.experience3.roleName = "Role 3"; */
 
-    for (let i = 1900; i <= new Date().getFullYear(); i++) {
+    this.userService.interest$.subscribe((ints) => {
+      this.interests = ints;
+    });
+    console.log("Profile comp::Cons::Interests =" + JSON.stringify(this.interests));
+
+    //InterestOptions
+    this.intOptions = this.interests.interestOptions.find(x => x.interestQuestionName.includes('After I graduate high school'));
+    console.log("Profile comp::Cons::InterestOption =" + JSON.stringify(this.intOptions));
+    this.afterSchool = this.intOptions.selectedOptions;
+    console.log("Profile comp::Cons::afterSchool =" + this.afterSchool);
+
+    for (let i = new Date().getFullYear(); i >= 2017; i--) {
       let newYear = {
          name:i.toString(),
          value:i.toString()
       };
       this.yearList.push(newYear);
     }
+    // this.yearList.sort((a,b) => 0 - (b > a ? 1 : -1));
    }
 
   ngOnInit() {
@@ -181,7 +200,9 @@ yearList = [];
     });
     this.user = this.profileService.user;
 
-    this.slides = this.chunk(this.cards, 3);
+    this.slides = this.chunk(this.cards, 2);
+
+    
 
     if (window.innerWidth <= this.CAROUSEL_BREAKPOINT) {
       this.carouselDisplayMode = 'single';
@@ -225,6 +246,7 @@ yearList = [];
     this.profileService.saveProfile(this.profile).subscribe ( data => {
       this.profile = data;
       this.experienceDefault = new Experience();
+      this.showhideNewExp(this.experienceDefault);
       console.log("After response" + JSON.stringify(this.profile));
     });
   }

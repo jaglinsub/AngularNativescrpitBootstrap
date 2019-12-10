@@ -1,62 +1,57 @@
-<div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
-    <div class="bg-light" id="sidebar-wrapper">
-        <!-- <div class="sidebar-heading"></div> -->
-        <div class="list-group list-group-flush">
-            <a routerLink="/portfolio/myprofile" class="list-group-item list-group-item-action bg-light">My Profile</a>
-            <!-- <a routerLink="/portfolio/careerchecklist" class="list-group-item list-group-item-action bg-light">Carrer
-                Checklist</a> -->
-            <a routerLink="/portfolio/pobox" class="list-group-item list-group-item-action bg-light">P.O. Box</a>
-            <a routerLink="/portfolio/savedoppurtunity" class="list-group-item list-group-item-action bg-light">Saved
-                Opportunities</a>
-        </div>
-    </div>
-    <!-- #sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <div class="row p-5">
-        </div>
-        <!-- <div class="row bdc">
-                    <breadcrumb [allowBootstrap]="true"></breadcrumb>
-                </div> -->
-        <div class="row">
-            <div class="container-fluid justify-content-center align-items-center col-md-10"
-                style="padding: 0; margin: 0;">
-                <router-outlet></router-outlet>
+<div class="container-fluid" id="wrapper">
+    <div class="row">
+        <!-- Sidebar -->
+        <!-- <div class="col-md-half" id="leftmargindiv2" style="background-color: hotpink;"></div> -->
+        <div class="col" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+                <a routerLink="/portfolio/myprofile" class="list-group-item list-group-item-action bg-light">My
+                    Profile</a>
+                <a routerLink="/portfolio/pobox" class="list-group-item list-group-item-action bg-light">P.O. Box</a>
+                <a routerLink="/portfolio/savedoppurtunity"
+                    class="list-group-item list-group-item-action bg-light">Saved
+                    Opportunities</a>
             </div>
-            <div class="container-fluid col-md-3" style="margin-left: -6rem;">
-                <div class="container-fluid">
+            <!-- <label class="col-form-label">Career Points 10</label> -->
+        </div>
+        <div class="col" id="page-content-wrapper">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- </div> -->
+        <!-- #sidebar-wrapper -->
+        <div class="col-md-3" id="points-content-wrapper">
+            <div class="col" style="margin-left: 0rem; margin-top: 4rem;" id="pointswrapper">
+                <div class="container-fluid m-0 p-0" style="justify-content: center;">
                     <form name="pointsform" method="">
                         <!-- Carrer Points -->
-                        <div class="form-group row mb-0" style="justify-content: flex-end;">
-                            <div class="col-auto">
-                                <label class="col-form-label">Career Points</label>
+                        <div class="form-group row m-0" style="justify-content: center;">
+                            <div class="col-auto m-0 p-0" style="justify-content:center;">
+                                <div class="row m-0 p-0" style="justify-content:center;">
+                                    <label class="col-form-label lblcarpts">Career Points</label>
+                                </div>
                                 <div class="row" style="justify-content:center;">
                                     <div class="col-auto" id="Total_Points">
-                                        <div class="row" style="justify-content:center;">
-                                            <label class="col-form-label"> {{ currentPTS }} </label>
+                                        <div class="row m-0" style="justify-content:center;">
+                                            <label class="col-form-label lblcurrpts"> {{ currentPTS }} </label>
                                         </div>
-                                        <div class="row" id="Label_Margin" style="justify-content:center;">
-                                            <label class="col-form-label">Total Points</label>
+                                        <div class="row m-0" id="Label_Margin" style="justify-content:center;">
+                                            <label class="col-form-label lblyourpts">Your points</label>
                                         </div>
                                     </div>
                                     <!-- Vertical Line -->
-                                    <div class="col-auto ml-4" id="lineVertical">
+                                    <div class="col-auto" id="lineVertical">
                                     </div>
 
-                                    <div class="col-auto mr-0"></div>
+                                    <!-- <div class="col-auto mr-0"></div> -->
 
                                     <div class="col-auto" id="Your_Goal">
-                                        <div class="row" style="justify-content:center;">
-                                            <label class="col-form-label">20</label>
+                                        <div class="row m-0" style="justify-content:center;">
+                                            <label class="col-form-label goalpts">20</label>
                                         </div>
-                                        <div class="row" id="Label_Margin" style="justify-content:center;">
-                                            <label class="col-form-label">Your Goal</label>
+                                        <div class="row m-0" id="Label_Margin" style="justify-content:center;">
+                                            <label class="col-form-label lblyourgoal">Your Goal</label>
                                         </div>
                                     </div>
-                                    <div class="col-auto mr-1"></div>
+                                    <div class="col-auto mr-n4"></div>
                                 </div>
                             </div>
                         </div>
@@ -73,63 +68,28 @@
                             <label class="col-form-label pb-0 " id="lblptssys">Point System</label>
                         </div>
                     </div>
-                    <div class="form-group row mb-1">
-                        <div class="col-md-7 nomargin ml-2">
-                            <label class="col-form-label pb-0 nomargin" id="lblroleName1">Intership Exp</label>
-                        </div>
-                        <div class="col-md-1 nomargin">
-                            <label class="col-form-label pb-0 nomargin" id="lblrolepts1"></label>
-                        </div>
-                        <div class="col-md-3 nomargin" style="text-align: right;">
-                            <label class="col-form-label pb-0 nomargin" id="lblrolepts1">10 pts</label>
-                        </div>
+                    <div class="d-flex mb-1">
+                        <div class="m-0 mr-auto p-0 lblroleName1">Intership Exp</div>
+                        <div class="p-0 lblrolepts1">10 pts</div>
                     </div>
-                    <div class="form-group row mb-1">
-                        <div class="col-md-7 nomargin ml-2">
-                            <label class="col-form-label pb-0 nomargin" id="lblroleName1">Volunteering Exp</label>
-                        </div>
-                        <div class="col-md-1 nomargin">
-                            <label class="col-form-label pb-0 nomargin" id="lblrolepts1"></label>
-                        </div>
-                        <div class="col-md-3 nomargin" style="text-align: right;">
-                            <label class="col-form-label pb-0 nomargin" id="lblrolepts1">7 pts</label>
-                        </div>
+                    <div class="d-flex mb-1">
+                        <div class="m-0 mr-auto p-0 lblroleName1">Volunteering Exp</div>
+                        <div class="p-0 lblrolepts1">7 pts</div>
                     </div>
-                    <div class="form-group row mb-1">
-                        <div class="col-md-7 nomargin ml-2">
-                            <label class="col-form-label pb-0 nomargin" id="lblroleName1">Student Org.
-                                Involvement</label>
-                        </div>
-                        <div class="col-md-1 nomargin">
-                            <label class="col-form-label pb-0 nomargin" id="lblrolepts1"></label>
-                        </div>
-                        <div class="col-md-3 nomargin" style="text-align: right;">
-                            <label class="col-form-label pb-0 nomargin" id="lblrolepts1">4 pts</label>
-                        </div>
+                    <div class="d-flex mb-1">
+                        <div class="m-0 mr-auto p-0 lblroleName1">Student Org.
+                            Involvement</div>
+                        <div class="p-0 lblrolepts1">4 pts</div>
                     </div>
-                    <div class="form-group row mb-1">
-                        <div class="col-md-7 nomargin ml-2">
-                            <label class="col-form-label pb-0 nomargin" id="lblroleName1">Calls with
-                                Professionals</label>
-                        </div>
-                        <div class="col-md-1 nomargin">
-                            <label class="col-form-label pb-0 nomargin" id="lblrolepts1"></label>
-                        </div>
-                        <div class="col-md-3 nomargin" style="text-align: right;">
-                            <label class="col-form-label pb-0 nomargin" id="lblrolepts1">4 pts</label>
-                        </div>
+                    <div class="d-flex mb-1">
+                        <div class="m-0 mr-auto p-0 lblroleName1">Calls with
+                            Professionals</div>
+                        <div class="p-0 lblrolepts1">4 pts</div>
                     </div>
-                    <div class="form-group row mb-1">
-                            <div class="col-md-7 nomargin ml-2">
-                                <label class="col-form-label pb-0 nomargin" id="lblroleName1">Career Research</label>
-                            </div>
-                            <div class="col-md-1 nomargin">
-                                <label class="col-form-label pb-0 nomargin" id="lblrolepts1"></label>
-                            </div>
-                            <div class="col-md-3 nomargin" style="text-align: right;">
-                                <label class="col-form-label pb-0 nomargin" id="lblrolepts1">3 pts</label>
-                            </div>
-                        </div>
+                    <div class="d-flex mb-1">
+                        <div class="m-0 mr-auto p-0 lblroleName1">Career Research</div>
+                        <div class="p-0 lblrolepts1">3 pts</div>
+                    </div>
                 </div>
                 <!-- </div> -->
             </div>
