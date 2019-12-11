@@ -14,6 +14,7 @@ export class sigupLogin {
   showConfirmPassword: boolean;
   loginText: string;
   twitterText: string;
+  funText: string;
 }
 
 @Component({
@@ -57,11 +58,13 @@ export class LoginComponent implements OnInit {
         this.siguplogin.showConfirmPassword = true;
         this.siguplogin.loginText = "Sign up with Email";
         this.siguplogin.twitterText = "Sign up with Twitter";
+        this.siguplogin.funText = "Sign up to keep the fun going";
       }
       else {
         this.siguplogin.showConfirmPassword = false;
         this.siguplogin.loginText = "Login with Email";
         this.siguplogin.twitterText = "Login with Twitter";
+        this.siguplogin.funText = "Log in to keep the fun going";
       }
       console.log("inside showConfirmPassword=", this.siguplogin.showConfirmPassword);
     });
