@@ -1,81 +1,142 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+#wrapper {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	margin-top: 0rem;
+}
 
 .masthead {
-    padding-top: 3rem;
-    padding-bottom: 5rem;
-    margin-top: 3rem;
-    background: url("../../img/AdobeStock_270379797_Preview_A3_Rectangle_2_pattern.png");
-    background-repeat: no-repeat;
+	/* padding-top: 3rem; */
+	/* padding-bottom: 5rem; */
+	margin: 0;
+	padding: 0;
+	margin-left: -15px;
+	margin-right: -15px;
+	/* margin-top: 3rem; */
+	box-sizing: border-box;
+	height: 430px;
+	/* background: url("../../img/Landingpage_Cover_Image.jpeg"); */
+	background: url("../../img/Adobe_Stock_Photo_A27_Group_439_pattern.png");
+	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 	/* background-attachment: fixed; */
+}
 
-  }
-
-  #Welcome_to_Kempes{
-    margin-bottom: -1rem;
+#Welcome_to_Kempes {
+	/* margin-bottom: -1rem;
     margin-left: 5rem;
 		font-family: proxima-nova;
 		font-style: normal;
 		font-weight: bold;
 		font-size: 96px;
-		color: rgba(2,11,62,1);
-  }
-  
-  #Where_students_are_connected_w {
-    margin-top: -1.25rem;
-    margin-left: 5rem;
-		font-family: proxima-nova;
-		font-style: italic;
-		font-weight: bold;
-		font-size: 42px;
-		color: rgba(13,144,168,1);
-	}
-  
-  #first___we_get_to_know_you_and {
-    display: block;
-		text-align: center;
-		font-family: proxima-nova;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 35px;
-    color: rgba(240,136,115,1);
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-  }
-  
-  #first___we_get_to_know_you_and > p {
-    line-height: 50px;
-  }
+		color: rgba(2,11,62,1); */
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 91px;
+	top: 100px;
+	box-sizing: border-box;
+	border: none;
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	overflow: visible;
+	white-space: nowrap;
+	text-align: left;
+	font-family: proxima-nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 96px;
+	color: rgba(2, 11, 62, 1);
+}
 
-  #We_ask_a_few_quick_questions_t {
-		overflow: hidden;
-		text-align: center;
-		font-family: proxima-nova;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 20px;
-		color: rgba(112,112,112,1);
-  }
-  
-  #Are_you_a_student__parent__or_ {
-		overflow: hidden;
-		text-align: center;
-		font-family: proxima-nova;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 40px;
-		color: rgba(2,11,62,1);
-		visibility: hidden;
-  }
-  
-	#Contact_us {
-		overflow: hidden;
-		text-align: center;
-		font-family: proxima-nova;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 32px;
-		color: rgba(255,255,255,1);
-		visibility: hidden;
-	}
+#Where_students_are_connected_w {
+	/* margin-top: -1.25rem;
+	margin-left: 5rem;
+	font-family: proxima-nova;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 42px;
+	color: rgba(13, 144, 168, 1); */
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 90px;
+	top: 216px;
+	box-sizing: border-box;
+	border: none;
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	overflow: visible;
+	white-space: nowrap;
+	text-align: left;
+	font-family: proxima-nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(13, 144, 168, 1);
+}
+
+#knowyou {
+	margin: 0;
+	padding: 0;
+	margin-top: 3rem;
+	box-sizing: border-box;
+	border: none;
+}
+
+.knowyouheader {
+	border: none;
+	overflow: hidden;
+	font-family: proxima-nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	color: rgba(240, 136, 115, 1);
+}
+
+.knowyoudesc {
+	border: none;
+	overflow: hidden;
+	text-align: center;
+	font-family: proxima-nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(112,112,112,1);
+}
+
+#first___we_get_to_know_you_and>p {
+	line-height: 50px;
+}
+
+#We_ask_a_few_quick_questions_t {
+	overflow: hidden;
+	text-align: center;
+	font-family: proxima-nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(112, 112, 112, 1);
+}
+
+#Are_you_a_student__parent__or_ {
+	overflow: hidden;
+	text-align: center;
+	font-family: proxima-nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40px;
+	color: rgba(2, 11, 62, 1);
+	visibility: hidden;
+}
+
+#Contact_us {
+	overflow: hidden;
+	text-align: center;
+	font-family: proxima-nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 32px;
+	color: rgba(255, 255, 255, 1);
+	visibility: hidden;
+}
