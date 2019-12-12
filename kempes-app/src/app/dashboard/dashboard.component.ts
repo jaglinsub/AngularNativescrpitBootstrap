@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
     });
 
     this.currentPointsService.showPtsSystemSubject$.subscribe((show) => {
+      console.log("DashboardComponent Cons: show= " + show);
       this.showPtsSystem = show;
     });
     console.log("DashboardComponent Cons: Current points= " + this.currentPTS);
