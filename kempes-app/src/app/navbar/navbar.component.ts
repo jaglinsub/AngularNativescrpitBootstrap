@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    console.log("Navbar init: authService.showProfileMenu= " + this.authService.showProfileMenu);
   }
 
   //logoutClicked(event: Event): void {

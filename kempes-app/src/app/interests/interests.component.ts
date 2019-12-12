@@ -4,6 +4,7 @@ import { InterestOptions } from './InterestOptions';
 import { InterestService } from './interest.service';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../services/user-service.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-interests',
@@ -15,7 +16,7 @@ export class InterestsComponent implements OnInit {
   interests: Interests;
   interestOptions: InterestOptions[];
 
-  constructor(private interestService: InterestService, private router: Router, private userService: UserServiceService) {
+  constructor(private interestService: InterestService, private router: Router, private userService: UserServiceService, private authService: AuthService) {
    /*  this.interests  = new Interests();
     
     this.interestOptions = 
@@ -42,6 +43,7 @@ export class InterestsComponent implements OnInit {
       this.interests = data;
       this.userService.setInterests(data);
       console.log("After response" + JSON.stringify(this.interests));
+      this.authService.showProfileMenu = true;
       this.router.navigate(['portfolio/pobox']);
     });
   }

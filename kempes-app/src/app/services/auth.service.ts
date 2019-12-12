@@ -17,6 +17,7 @@ export class AuthService {
   private user: Observable<firebase.User>;
   public userDetails: firebase.User = null;
   public isUserLoggedIn: boolean;
+  public showProfileMenu: boolean = false;
 
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router, private userService: UserServiceService) {
     this.user = _firebaseAuth.authState;
