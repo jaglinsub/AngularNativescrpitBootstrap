@@ -78,7 +78,7 @@ label {
     background-color: rgb(234, 234, 234);
     /* stop-color: rgb(253, 253, 253);
     stop-opacity: 1; */
-    color: black !important;
+    color: rgba(117, 117, 117, 1);
     font-family: proxima-nova;
     font-style: normal;
     font-weight: bold;

@@ -62,8 +62,8 @@ export class LoginComponent implements OnInit {
       }
       else {
         this.siguplogin.showConfirmPassword = false;
-        this.siguplogin.loginText = "Login with Email";
-        this.siguplogin.twitterText = "Login with Twitter";
+        this.siguplogin.loginText = "Log in with Email";
+        this.siguplogin.twitterText = "Log in with Twitter";
         this.siguplogin.funText = "Log in to keep the fun going";
       }
       console.log("inside showConfirmPassword=", this.siguplogin.showConfirmPassword);
