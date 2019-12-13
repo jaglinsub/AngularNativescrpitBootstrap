@@ -117,11 +117,11 @@
                 class="fa fa-plus" id="plusIcon"></i> Add new experience</button>
     </div>
 </div>
-<div id="hr">
-</div>
+<!-- <div id="hr">
+</div> -->
 
 <!-- New experiences -->
-<div class="container-fluid justify-content-center align-items-center col-md-10" id="profileContainer">
+<div class="container-fluid justify-content-center align-items-center col-md-10" id="NewExpContainer">
     <form (ngSubmit)="onSubmit()" #ProfileExpForm="ngForm">
         <!-- New Experience Form -->
         <div *ngIf="showNewExp">
@@ -233,15 +233,15 @@
     </form>
 </div>
 
-<div id="hr">
-</div>
+<!-- <div id="hr">
+</div> -->
 
 <!-- Saved experiences -->
-<div class="container-fluid justify-content-center align-items-center col-md-10" id="profileContainer">
+<div class="container-fluid justify-content-center align-items-center col-md-10" id="SvdExpContainer">
     <form name="savedexpform" method="post">
         <div *ngIf="profile.experienceArr && profile.experienceArr.length > 0">
             <div class="form-group row mb-3">
-                <div class="col-auto" id="saved_exp">
+                <div class="col-auto mt-2" id="saved_exp">
                     <label class="col-form-label">Experience</label>
                 </div>
             </div>
@@ -254,17 +254,19 @@
 
                 <!-- view experiences -->
                 <ng-template #simpleMode let-experience='experience'>
-                    <div class="form-group row mb-0">
+                    <div class="form-group row m-0 p-0">
                         <!-- <div class="form-group row mb-0"> -->
-                            <div class="col-md-9">
+                            <div class="col-md-8  m-0 p-0">
                                 <label class="col-form-label" id="svdrole">{{ experience.roleName }}</label>
                             </div>
-                            <div class="col-md-2">
-                                    <label class="col-form-label" id="svdPoints">+ 4 pts</label>
+                            <div class="col-md-3 m-0 p-0">
+                                    <label class="col-form-label float-right" id="svdPoints">+ 4 pts</label>
                             </div>
                             <div class="col-md-1">
+                                    <div class="row m-0 p-0 justify-content-center">
                                     <button id="btneditsvd" (click)="editExperience(experience)"><i class="far fa-edit 10f044"
                                         id="editIcon"></i></button>
+                                    </div>
                             </div>
                         <!-- </div> -->
                     </div>

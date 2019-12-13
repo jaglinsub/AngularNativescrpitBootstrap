@@ -12,6 +12,26 @@
     filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
 }
 
+#NewExpContainer {
+    max-width: 635px;
+    margin-top: 1rem;
+    margin-left: 3.93rem;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
+}
+
+#SvdExpContainer {
+    max-width: 635px;
+    margin-top: 1rem;
+    margin-left: 3.93rem;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
+}
+
 #oppurContainer {
     max-width: 635px;
     /* fill: rgb(252, 252, 252); */
@@ -55,7 +75,7 @@
     /* margin: 0; */
     /* padding: 0; */
     box-sizing: border-box;
-    border-width: .4px;
+    border-width: 1px;
 }
 
 .btn-outline-warn {
