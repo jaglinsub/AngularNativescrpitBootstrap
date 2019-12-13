@@ -8,6 +8,7 @@ import { Observable, of } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { UserServiceService } from './user-service.service';
 import { User } from '../signup/User';
+import { Subscription } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +19,12 @@ export class AuthService {
   public userDetails: firebase.User = null;
   public isUserLoggedIn: boolean;
   public showProfileMenu: boolean = false;
+  private userSubscription: Subscription;
 
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router, private userService: UserServiceService) {
     this.user = _firebaseAuth.authState;
 
-    this.user.subscribe(
+    this.userSubscription = this.user.subscribe(
       (user) => {
         if (user) {
           this.userDetails = user;
@@ -84,6 +86,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
+    
     const loggedIn = this._firebaseAuth.authState.pipe(first()).toPromise();
     loggedIn.then(log => {
       if(log != null) {
@@ -119,12 +122,14 @@ export class AuthService {
 
         //this.userDetails.providerData[0]
         this.userDetails = null;
-        //this.user = null;
+        
+        this.showProfileMenu = false;
+        this.userSubscription.unsubscribe();
+        // this.user = null;
         this.router.navigate(['/']);
 
       }
       );
-
     console.log("Finished log out");
   }
 
