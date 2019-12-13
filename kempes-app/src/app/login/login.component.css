@@ -59,7 +59,8 @@ label {
     border: none;
     width: 170px;
     overflow: visible;
-    background-color: #0D90A8;
+    background-color: rgba(13, 144, 168, 1);
+    color: rgba(255, 255, 255, 1);
     font-family: proxima-nova;
     font-style: normal;
     font-weight: normal;
@@ -85,10 +86,16 @@ label {
     font-size: 14px;
 }
 
+.btnemail:hover
+{
+    background-color: rgb(9, 111, 129);
+    color: rgba(255, 255, 255, 1);
+}
+
 .btntwitter:hover
 {
-    /* background-color: rgb(234, 234, 234); */
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(220, 220, 220);
+    color: rgba(117, 117, 117, 1);
 }
 
 .fa-twitter {

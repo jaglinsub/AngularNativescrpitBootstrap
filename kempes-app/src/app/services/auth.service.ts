@@ -124,7 +124,7 @@ export class AuthService {
         this.userDetails = null;
         
         this.showProfileMenu = false;
-        this.userSubscription.unsubscribe();
+        // this.userSubscription.unsubscribe();
         // this.user = null;
         this.router.navigate(['/']);
 
