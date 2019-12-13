@@ -11,6 +11,7 @@ export class User {
     phoneNumber: string
     organizationName: string
     userType: UserType;
+    expDateofGrad: string;
 
     constructor() {}
     

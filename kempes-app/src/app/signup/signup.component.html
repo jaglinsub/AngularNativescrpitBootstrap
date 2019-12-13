@@ -1,65 +1,100 @@
 <div class="signupbg">
     <div class="container justify-content-center">
-        <label class="form-control-plaintext h3" align="center">Welcome to Kempes</label>
-        <label class="form-control-plaintext h7" align="center">
-            <span>Fill out this form and so we can get started!</span>
-        </label>
-        <div class="container-fluid h-100">
+        <div class="col-md-12">
+            <div class="d-flex flex-row justify-content-center" id="Welcome_to_Kempes__Log_in_to_k">
+                <span>Welcome to Kempes </span>
+            </div>
+            <div class="d-flex flex-row justify-content-center" id="Welcome_to_Kempes__Log_in_to_k1">
+                <span>Fill out this form and so we can get started!</span>
+            </div>
+        </div>
+        <div class="container-fluid mt-4 h-100">
             <div class="row justify-content-center align-items-center h-100">
-                <!-- <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3"> -->
-                    <!-- <div class="col col-sm-4"> -->
-                            <div class="col col-md-3">
+                <div class="col col-md-4 pl-0" style="padding-right: 12px;">
                     <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
-                        <div class="form-group">
-                            <select class="form-control" data-style="btn-primary" data-live-search="true"
-                                data-selectpicker
-                                 [(ngModel)]="modelPerson.userType.typeName" name="personType">
-<!-- [(ngModel)]="modelPersonType.typeName" name="personType"> -->
-                                <option hidden value="0">Type of user</option>
-                                <option value="Student">Student</option>
-                                <option value="Councillor">Councillor</option>
-                                <option value="Parent">Parent</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="First Name" type="text" [(ngModel)]="modelPerson.firstName" name="firstName">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Last Name" type="text" [(ngModel)]="modelPerson.lastName" name="lastName">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Email" type="text" [(ngModel)]="modelPerson.email" name="email" readonly>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-8  pr-0">
 
-                                    <input class="form-control" placeholder="Birthday" type="date" [ngModel]="modelPerson.dateofBirth" (ngModelChange)="modelPerson.dateofBirth = $event" name="dateofBirth">
-
-                                <!-- <input class="form-control" placeholder="Birthday" onblur="(this.setAttribute('placeholder', ''))" type="date" [ngModel]="modelPerson.dateofBirth" (ngModelChange)="modelPerson.dateofBirth = $event" name="dateofBirth">     -->
-                                <!-- WORKING <input class="form-control" placeholder="Birthday" type="date" [ngModel]="modelPerson.dateofBirth | date:'MM-dd-yyyy'" (ngModelChange)="modelPerson.dateofBirth = $event" name="dateofBirth"> -->
-
-                                <!-- <input class="form-control" placeholder="Birthday" onblur="(this.setAttribute('placeholder', ''))" type="date" [(ngModel)]='{{modelPerson.dateofBirth | date:"MM/dd/yyyy"}}'' name="dateofBirth"> -->
-                                <!-- <input placeholder="Birthday" class="form-control" type="date" onfocus="(this.type='date')" onblur="(this.type='text')" [(ngModel)]="modelPerson.dateofBirth" (ngModelChange)="modelPerson.dateofBirth = $event" id="date"> -->
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input class="form-control" placeholder="First Name" type="text"
+                                [(ngModel)]="modelPerson.firstName" name="firstName">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input class="form-control" placeholder="Last Name" type="text"
+                                [(ngModel)]="modelPerson.lastName" name="lastName">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" placeholder="Email" type="text" [(ngModel)]="modelPerson.email"
+                                name="email" readonly>
+                        </div>
+                        <div class="form-group">
+                            <div class="col col-md-6 pl-0">
+                                <label for="dateofBirth">Birthday</label>
+                                <input class="form-control" placeholder="Birthday" type="date"
+                                    [ngModel]="modelPerson.dateofBirth"
+                                    (ngModelChange)="modelPerson.dateofBirth = $event" name="dateofBirth">
                             </div>
+                        </div>
+                        <!-- <div class="form-group row">
+                            <div class="col-sm-8  pr-0">
+                                    <label for="dateofBirth">Birthday</label>
+                                    <input class="form-control" placeholder="Birthday" type="date" [ngModel]="modelPerson.dateofBirth" (ngModelChange)="modelPerson.dateofBirth = $event" name="dateofBirth">
+                            </div>
+
                             <div class="col-sm-4 pl-1 pr-3">
                                 <input class="form-control" placeholder="Grade" type="text" [(ngModel)]="modelPerson.grade" name="grade">
                             </div>
+                        </div> -->
+                        <div class="form-group">
+                            <div class="col col-md-6 pl-0">
+                                <label for="personType">Type of User</label>
+                                <select class="form-control" data-style="btn-primary" data-live-search="true"
+                                    data-selectpicker [(ngModel)]="modelPerson.userType.typeName" name="personType">
+                                    <option value="0" disabled selected>-Select-</option>
+                                    <!-- <option hidden value="0">Type of user</option> -->
+                                    <option value="Student">Student</option>
+                                    <option value="Councillor">Councillor</option>
+                                    <option value="Parent">Parent</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="What city are you located in?" type="text"  [(ngModel)]="modelPerson.location" name="location">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input class="form-control" placeholder="000-000-0000" type="text"
+                                [(ngModel)]="modelPerson.phoneNumber" name="phoneNumber">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="Phone Number" type="text" [(ngModel)]="modelPerson.phoneNumber" name="phoneNumber">
+                            <label for="location">City you are located in</label>
+                            <input class="form-control" placeholder="City" type="text"
+                                [(ngModel)]="modelPerson.location" name="location">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="School or organization name" type="text" [(ngModel)]="modelPerson.organizationName" name="organization">
+                            <div class="row m-0 p-0">
+                                <div class="col col-md-6 pl-0">
+                                    <label for="grade">Grade</label>
+                                    <input class="form-control" placeholder="Grade" type="text"
+                                        [(ngModel)]="modelPerson.grade" name="grade">
+                                </div>
+                                <div class="col col-md-6 pl-0 pr-0">
+                                    <label for="expDateofGrad">Expected Graduation Date</label>
+                                    <input class="form-control" type="date" [ngModel]="modelPerson.expDateofGrad"
+                                        (ngModelChange)="modelPerson.expDateofGrad = $event" name="expDateofGrad">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                                <label for="organization">School Name</label>
+                            <input class="form-control" placeholder="School or organization name" type="text"
+                                [(ngModel)]="modelPerson.organizationName" name="organization">
                         </div>
                         <div class="form-group ml-4 pr-40">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Yes, I’d like to receive helpful information from the Kempes team</label>
+                            <label class="form-check-label" for="exampleCheck1">Yes, I’d like to receive helpful information from Kempes</label>
                         </div>
                         <div class="form-group" align="center">
-                            <button class="btn btn-info" type="submit">Sign In</button>
+                            <button class="btn btn-primary btnsubmit" type="submit">Continue</button>
                         </div>
                     </form>
                 </div>

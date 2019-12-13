@@ -17,7 +17,7 @@ Hue-126;sat-206;lum-85; */
 }
 
 .signupbg {
-    padding-top: 4rem;
+    padding-top: 3rem;
     padding-bottom: 50rem;
     position: relative;
     height: 100%;
@@ -27,18 +27,70 @@ Hue-126;sat-206;lum-85; */
     display: block;
 }
 
-.h3 {
-    font-family: proxima-nova;
-    font-size: 60px;
+#Welcome_to_Kempes__Log_in_to_k {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
     color: rgba(2, 11, 62, 1);
 }
 
-.h7 {
-    margin-top: -20px;
-    margin-bottom: 20px;
+#Welcome_to_Kempes__Log_in_to_k1 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(118, 118, 118, 1);
+}
+
+label {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
     font-family: proxima-nova;
-    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
     color: rgba(2, 11, 62, 1);
+}
+
+.btnsubmit {
+    margin: 0;
+    margin-bottom: 0rem;
+    /* padding: 0; */
+    box-sizing: border-box;
+    border: none;
+    width: 170px;
+    overflow: visible;
+    background-color: rgba(13, 144, 168, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.btnsubmit:hover {
+    background-color: rgb(9, 111, 129);
+    color: rgba(255, 255, 255, 1);
 }
 
 .col-form-label-lg {
@@ -60,7 +112,6 @@ input[type="date"]:focus:before, input[type="date"]:valid::before {
     content: "";
 } */
 
-
 /* input[type="date"]::before { 
     content: attr(placeholder) !important;
     width: 100%;
@@ -69,5 +120,6 @@ input[type="date"]:focus:before, input[type="date"]:valid::before {
 /* hide our custom/fake placeholder text when in focus to show the default
  * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
  */
+
 /* input[type="date"]:focus::before,
 input[type="date"]:valid::before { display: none } */
