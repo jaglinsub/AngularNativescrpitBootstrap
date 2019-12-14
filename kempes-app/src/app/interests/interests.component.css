@@ -1,5 +1,4 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-
 .body {
     height: 100vh;
     /* background-color:rgb(44, 52, 94); */
@@ -7,10 +6,10 @@
 
 .offset-sm-12 {
     margin-left: 7.5%;
-  }
+}
 
 .interestbg {
-    padding-top: 4rem;
+    padding-top: 3rem;
     padding-bottom: 5rem;
     position: relative;
     height: 100%;
@@ -45,7 +44,6 @@
     text-align: center;
 }
 
-
 .h8 {
     font-size: .85rem;
     color: black;
@@ -54,8 +52,17 @@
 }
 
 .questionLabel {
-    font-family: proxima-nova;
-    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
     color: rgba(2, 11, 62, 1);
 }
 
@@ -67,44 +74,60 @@
     border-radius: 100%;
 }
 
-.badge {
+.badge-pill {
     color: #fff;
     background-color: #0D90A8;
-    padding: 0.5em 0.5em;
-    border-radius: 1.5rem;
+    /* padding: 0.5em 0.5em; */
+    border-radius: 100%;
 }
 
 #Welcome_to_Kempes__Log_in_to_k {
-    overflow: hidden;
-    text-align: center;
-    font-family: proxima-nova;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Proxima Nova;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
-    color: rgba(2,11,62,1);
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
+    font-size: 35px;
+    color: rgba(2, 11, 62, 1);
 }
 
 #Welcome_to_Kempes__Log_in_to_k1 {
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
     text-align: center;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(118, 118, 118, 1);
+}
+
+.btnsubmit {
+    margin: 0;
+    margin-bottom: 0rem;
+    /* padding: 0; */
+    box-sizing: border-box;
+    border: none;
+    width: 170px;
+    overflow: visible;
+    background-color: rgba(13, 144, 168, 1);
+    color: rgba(255, 255, 255, 1);
     font-family: proxima-nova;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    margin-top: -10px;
-    margin-right: 0px;
-    margin-bottom: 30px;
-    /*margin-left: 0px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px; */
+    font-size: 14px;
+}
+
+.btnsubmit:hover {
+    background-color: rgb(9, 111, 129);
+    color: rgba(255, 255, 255, 1);
 }

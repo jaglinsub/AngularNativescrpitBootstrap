@@ -1,90 +1,50 @@
 <div class="interestbg">
     <div class="container justify-content-center">
-        <div id="Welcome_to_Kempes__Log_in_to_k">
-            <span>Almost there!</span>
-        </div>
-        <div id="Welcome_to_Kempes__Log_in_to_k1">
-            <span>
-                We have a few questions to ask you so that we <br> provide our best recommendations for you
-            </span>
-        </div>
-        <div class="col-sm-12 offset-sm-12">
-            <form (ngSubmit)="onSubmit()" #interestForm="ngForm">
-                <div class="mb-4" *ngFor="let interestOption of interests.interestOptions">
-                    <div class="form-group row">
-                        <label class="questionLabel" for="exampleInputEmail1">
-                            <span class="badge badge-dark">{{interestOption.displayOrder}}#</span>
-                            {{interestOption.interestQuestion}}
-                        </label>
-                        <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                            data-selectpicker [(ngModel)]="interestOption.selectedOptions"
-                            name="oppurOptions">
-                            <option *ngFor="let answers of interestOption.answerOptions" [ngValue]="answers.answerName">{{ answers.answerName }}</option>
-                        </select>
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <div class="d-flex flex-row justify-content-center" id="Welcome_to_Kempes__Log_in_to_k">
+                    <span>Almost there!</span>
+                </div>
+                <div class="d-flex flex-row justify-content-center" id="Welcome_to_Kempes__Log_in_to_k1">
+                    <span>We have a few questions to ask you so that we provide our best recommendations for you</span>
+                </div>
+            </div>
+            <div class="col-sm-12 offset-sm-12">
+                <form (ngSubmit)="onSubmit()" #interestForm="ngForm">
+                    <div class="mb-4" *ngFor="let interestOption of interests.interestOptions; let i = index;">
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-8 m-0 p-0">
+                                    
+                                <span class="badge badge-pill float-left mr-2">{{interestOption.displayOrder}}</span>
+                                <label class="questionLabel float-left" name="questionLabel + i">{{interestOption.interestQuestion}}</label>
+                            <!-- </div> -->
+                            <!-- <div class="col-md-5 m-0 p-0" style="background-color: darkcyan;"> -->
+                                    <select class="form-control col-sm-5 mt-1 ml-2 float-left" data-style="btn-primary"
+                                    data-live-search="true" data-selectpicker
+                                    [(ngModel)]="interestOption.selectedOptions" name="oppurOptions + i">
+                                    <option *ngFor="let answers of interestOption.answerOptions"
+                                        [ngValue]="answers.answerName">
+                                        {{ answers.answerName }}</option>
+                                </select>
+                            </div>
+                            <!-- <div class="col-md-6 ml-auto m-0 p-0" style="background-color: darkorange;">
+                                <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary"
+                                    data-live-search="true" data-selectpicker
+                                    [(ngModel)]="interestOption.selectedOptions" name="oppurOptions">
+                                    <option *ngFor="let answers of interestOption.answerOptions"
+                                        [ngValue]="answers.answerName">
+                                        {{ answers.answerName }}</option>
+                                </select>
+                            </div> -->
+                        </div>
                     </div>
-                </div>
-
-                <!-- <div class="form-group row">
-                    <label class="questionLabel" for="exampleInputEmail1">
-                        <span class="badge badge-dark">2#</span>
-                        At school, when I’m given a project, I’d rather work
-                    </label>
-                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                        data-selectpicker [(ngModel)]="interests.projectOptions.projectTypeName" name="projectOptions">
-                        <option value="0"></option>
-                        <option value="1">With A Team</option>
-                        <option value="2">Independently</option>
-                    </select>
-                </div>
-
-                <div class="form-group row">
-                    <label class="questionLabel" for="exampleInputEmail1">
-                        <span class="badge badge-dark">3#</span>
-                        My favorite activity to do outside of school is
-                    </label>
-                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                        data-selectpicker [(ngModel)]="interests.outsideOptions.outsideTypeName" name="outsideOptions">
-                        <option value="0"></option>
-                        <option value="1">Play Basketball</option>
-                        <option value="2">Go To Library</option>
-                    </select>
-                </div>
-
-                <div class="form-group row">
-                    <label class="questionLabel" for="exampleInputEmail1">
-                        <span class="badge badge-dark">4#</span>
-                        Ideally, before I graduate I want to know how to
-                    </label>
-                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                        data-selectpicker [(ngModel)]="interests.howtoOptions.howtoTypeName" name="howtoOptions">
-                        <option value="0"></option>
-                        <option value="1">Respect Others</option>
-                        <option value="2">Listen More and Talk Less</option>
-                    </select>
-                </div>
-
-                <div class="form-group row">
-                    <label class="questionLabel" for="exampleInputEmail1">
-                        <span class="badge badge-dark">5#</span>
-                        After I graduate high school, I think I want to be a
-                    </label>
-                    <select class="form-control col-sm-3 mt-1 ml-2" data-style="btn-primary" data-live-search="true"
-                        data-selectpicker [(ngModel)]="interests.afterGradOptions.afterGradTypeName"
-                        name="afterGradOptions">
-                        <option value="0"></option>
-                        <option value="1">Nurse</option>
-                        <option value="2">Engineer</option>
-                    </select>
-                </div> -->
-
-                <div class="form-group" align="center">
-                    <button type="submit" class="btn btn-primary"
-                        style="background-color:#0D90A8; font-size: 24px; width: 262px; height: 49px;"
-                        >
-                        Complete Sign Up
-                    </button>
-                </div>
-            </form>
+                    <div class="form-group" align="center">
+                        <button type="submit" class="btn btn-primary btnsubmit">
+                            Complete Sign Up
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

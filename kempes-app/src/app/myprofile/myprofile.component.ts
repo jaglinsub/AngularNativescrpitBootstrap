@@ -174,7 +174,7 @@ export class MyprofileComponent implements OnInit {
     this.afterSchool = this.intOptions.selectedOptions;
     console.log("Profile comp::Cons::afterSchool =" + this.afterSchool);
 
-    for (let i = new Date().getFullYear(); i >= 2017; i--) {
+    for (let i = new Date().getFullYear(); i >= (new Date().getFullYear() - 10); i--) {
       let newYear = {
         name: i.toString(),
         value: i.toString()
