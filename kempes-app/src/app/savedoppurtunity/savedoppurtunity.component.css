@@ -1,10 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 #savedOppurContainer {
-    margin-top: 0rem;
+    /* margin-top: 0rem; */
 }
 
 #explore {
     margin: 0;
+    margin-top: 3.25rem;
     padding: 0;
     box-sizing: border-box;
     border: none;
@@ -16,6 +17,10 @@
     font-weight: normal;
     font-size: 30px;
     color: rgba(2, 11, 62, 1);
+}
+
+.blnkspacing {
+    margin-top: 2.25rem;
 }
 
 #welcome {
