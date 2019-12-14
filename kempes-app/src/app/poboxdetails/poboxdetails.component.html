@@ -1,17 +1,16 @@
-<div class="container-fluid justify-content-center align-items-center" id="poboxdtlsContainer1">
-    <div class="row mb-0 align-items-center">
-        <div class="col-md-1" id="blank">
-            <!-- <span>Hi</span> -->
-        </div>
-        <div class="col-md-10" id="blank">
-            <div class="container-fluid justify-content-center align-items-center" id="poboxdtlsContainer">
+<!-- <div class="container-fluid justify-content-center align-items-center" id="poboxdtlsContainer1"> -->
+    <!-- <div class="row mb-0 align-items-center"> -->
+        <!-- <div class="col-md-1" id="blank">
+        </div> -->
+        <!-- <div class="col-md-10" id="blank"> -->
+            <div class="container-fluid justify-content-center align-items-center col-md-10" id="poboxdtlsContainer">
                 <!-- Profile Form -->
                 <form name="poboxform" method="">
                     <!-- Explore Header -->
                     <div class="form-group row mb-0 align-items-center">
                         <div class="col-md-12 mt-4" id="heading">
                             <div class="form-group row">
-                                <div class="col-md-2">
+                                <div class="col-md-2" style="margin: 1rem;">
                                     <!-- <img src="assets/sample_pharmacy.png" class="img-thumbnail" width="70" height="70"> -->
                                     <img [src]="opportunityDetails.organizationURL" class="img-thumbnail" width="70" height="70">
                                 </div>
@@ -99,10 +98,10 @@
                         </div> -->
                                 </div>
 
-                                <div class="col-auto zeroDiv mr-5">
+                                <div class="col-auto zeroDiv mr-3">
                                 </div>
-                                <div class="col-auto zeroDiv" style="margin-left: 4.25rem; margin-top: 2.5rem">
-                                    <button class="btn btn-outline-info mr-2" [disabled]='opportunity.isSaved' type="button" (click)="saveOppurtunity()">
+                                <div class="col-auto zeroDiv" style="margin-left: 2.9rem; margin-top: 2.5rem">
+                                    <button class="btn btn-outline-info mr-3" [disabled]='opportunity.isSaved' type="button" (click)="saveOppurtunity()">
                                         <i class="far fa-bookmark"></i>
                                         Save
                                     </button>
@@ -165,6 +164,6 @@
 
                 </form>
             </div>
-        </div>
-    </div>
-</div>
+        <!-- </div> -->
+    <!-- </div> -->
+<!-- </div> -->

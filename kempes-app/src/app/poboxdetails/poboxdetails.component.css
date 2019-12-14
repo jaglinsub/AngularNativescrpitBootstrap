@@ -1,10 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 #poboxdtlsContainer {
-    margin-top: 0rem;
-    /* margin-left: 5rem; */
-    /* margin-right: 5rem; */
-    /* padding-right: 48rem; */
-    background-color: white;
+    max-width: 635px;
+    margin-top: 4rem;
+    margin-left: 3.93rem;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgb(255, 255, 255);
     filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
 }
 
