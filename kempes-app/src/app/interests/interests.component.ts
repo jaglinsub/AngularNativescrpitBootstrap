@@ -47,4 +47,10 @@ export class InterestsComponent implements OnInit {
       this.router.navigate(['portfolio/pobox']);
     });
   }
+
+  get sortedInterestsData() {
+    return this.interests.interestOptions.sort((a, b) => {
+      return -1 * (<any>(b.displayOrder) - <any>(a.displayOrder));
+    });
+  }
 }

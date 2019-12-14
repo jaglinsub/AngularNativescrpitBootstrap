@@ -12,7 +12,7 @@
             <div class="col-md-12">
                 <div class="row justify-content-center">
                     <form (ngSubmit)="onSubmit()" #interestForm="ngForm">
-                        <div class="col mb-4 justify-content-center" *ngFor="let interestOption of interests.interestOptions; let i = index;">
+                        <div class="col mb-4 justify-content-center" *ngFor="let interestOption of sortedInterestsData ; let i = index;">
                             <div class="form-group row justify-content-center">
                                 <div class="col-auto">
                                     <div class="row">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group" align="center">
                             <button type="submit" class="btn btn-primary btnsubmit">
-                                Complete Sign Up
+                                Complete sign up!
                             </button>
                         </div>
                     </form>
