@@ -79,6 +79,10 @@
     background-color: #0D90A8;
     /* padding: 0.5em 0.5em; */
     border-radius: 100%;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
 }
 
 #Welcome_to_Kempes__Log_in_to_k {
