@@ -122,7 +122,7 @@
 
 <!-- New experiences -->
 <div class="container-fluid justify-content-center align-items-center col-md-10" id="NewExpContainer">
-    <form (ngSubmit)="onSubmit()" #ProfileExpForm="ngForm">
+    <form (ngSubmit)="saveNewExperience()" #ProfileExpForm="ngForm">
         <!-- New Experience Form -->
         <div *ngIf="showNewExp">
             <div class="mt-0 mb-6">
@@ -184,10 +184,13 @@
                         <label for="activityType" class="col-form-label pb-0" id="lblactivity">Type of Activity</label>
                         <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
                             data-live-search="true" data-selectpicker [(ngModel)]="experienceDefault.activityType"
-                            name="activityType">
-                            <option *ngFor="let year of yearList" [ngValue]="year.value">
-                                {{ year.name }}</option>
+                            name="activityType" (ngModelChange)="onActivityTypeChange($event, experienceDefault)">
+                            <option *ngFor="let ptsSystem of pointSystem" [ngValue]="ptsSystem.activityName">
+                                {{ ptsSystem.activityName }}</option>
                         </select>
+                    </div>
+                    <div class="col-md-6" style="padding-top: 1.5rem; padding-left:0 ;" *ngIf="experienceDefault.activityPoint">
+                        <label class="col-form-label" id="lblactivityPts">+{{ experienceDefault.activityPoint }} Career Points</label>
                     </div>
                 </div>
                 <div class="form-group row mb-2">
@@ -260,7 +263,7 @@
                                 <label class="col-form-label" id="svdrole">{{ experience.roleName }}</label>
                             </div>
                             <div class="col-md-3 m-0 p-0">
-                                    <label class="col-form-label float-right" id="svdPoints">+ 4 pts</label>
+                                    <label class="col-form-label float-right" id="svdPoints">+{{ experience.activityPoint }} pts</label>
                             </div>
                             <div class="col-md-1">
                                     <div class="row m-0 p-0 justify-content-center">
@@ -379,11 +382,14 @@
                                         Activity</label>
                                     <select class="form-control" style="padding: 0; margin: 0;" data-style="btn-primary"
                                         data-live-search="true" data-selectpicker [(ngModel)]="experience.activityType"
-                                        name="activity{{i}}">
-                                        <option *ngFor="let year of yearList" [ngValue]="year.value">
-                                            {{ year.name }}</option>
+                                        name="activity{{i}}" (ngModelChange)="onActivityTypeChange($event, experience)">
+                                        <option *ngFor="let ptsSystem of pointSystem" [ngValue]="ptsSystem.activityName">
+                                            {{ ptsSystem.activityName }}</option>
                                     </select>
                                 </div>
+                                <div class="col-md-6" style="padding-top: 1.5rem; padding-left:0 ;" *ngIf="experience.activityPoint">
+                                        <label class="col-form-label" id="lblactivityPts">+{{ experience.activityPoint }} Career Points</label>
+                                    </div>
                             </div>
                             <div class="form-group row mb-2">
                                 <div class="col-md-6">

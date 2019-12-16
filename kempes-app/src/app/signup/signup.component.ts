@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
     this.userService.user$.subscribe((usr) => {
       //this.modelPerson = usr;
       this.updateModel(usr);
-      console.log("model person=" + this.modelPerson.userType.typeName);
+      // console.log("model person=" + this.modelPerson.userType.typeName);
     });
     console.log("model person 2=" + JSON.stringify(this.modelPerson));
   }
@@ -45,8 +45,11 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     
 
-
-    this.modelPerson.userType = this.modelPersonType;
+    if(this.modelPerson.userType == null || this.modelPerson.userType.typeName == null) {
+      console.log("model userType or typename is null =" + JSON.stringify(this.modelPerson));
+      this.modelPerson.userType = this.modelPersonType;
+    }
+    
     this.modelPerson.email = this.authService.isLoggedIn ? this.authService.userDetails.providerData[0].email : "";
 
     //this.modelPersonType.type = "Student";
@@ -65,7 +68,8 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     console.log(this.modelPerson.firstName);
-    console.log(this.modelPerson);
+    console.log(this.modelPerson.userType.typeName);
+    console.log("onSubmit of User= " + this.modelPerson);
     this.signupService.saveUser(this.modelPerson).subscribe(
       data => {
         this.modelPerson = data;

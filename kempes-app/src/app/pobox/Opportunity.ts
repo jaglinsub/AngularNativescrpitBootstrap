@@ -10,6 +10,7 @@ export class Opportunity {
     whenPosted: string;
     opportunityDetails: OpportunityDetails;
     isSaved: boolean;
+    typeofProfOppurtunity: string;
     
     constructor() {}
 }

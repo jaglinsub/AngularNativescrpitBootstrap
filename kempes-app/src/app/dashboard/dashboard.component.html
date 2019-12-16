@@ -68,11 +68,11 @@
                             <label class="col-form-label pb-0 " id="lblptssys">Point System</label>
                         </div>
                     </div>
-                    <div class="d-flex mb-1">
-                        <div class="m-0 mr-auto p-0 lblroleName1">Intership Exp</div>
-                        <div class="p-0 lblrolepts1">10 pts</div>
+                    <div class="d-flex mb-1" *ngFor="let pointSystem of sortedPointSystem ; let i = index;">
+                        <div class="m-0 mr-auto p-0 lblroleName1"> {{ pointSystem.activityName }} </div>
+                        <div class="p-0 lblrolepts1">{{ pointSystem.activityPoint }} pts</div>
                     </div>
-                    <div class="d-flex mb-1">
+                    <!-- <div class="d-flex mb-1">
                         <div class="m-0 mr-auto p-0 lblroleName1">Volunteering Exp</div>
                         <div class="p-0 lblrolepts1">7 pts</div>
                     </div>
@@ -89,7 +89,7 @@
                     <div class="d-flex mb-1">
                         <div class="m-0 mr-auto p-0 lblroleName1">Career Research</div>
                         <div class="p-0 lblrolepts1">3 pts</div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- </div> -->
             </div>

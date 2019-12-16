@@ -108,6 +108,22 @@ path {
     color: rgba(2, 11, 62, 1);
 }
 
+.lbloppurType {
+    margin: 0;
+    margin-left: 3px;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(155,155,155,1);
+}
+
 .oppDesc {
     margin: 0;
     padding: 0;

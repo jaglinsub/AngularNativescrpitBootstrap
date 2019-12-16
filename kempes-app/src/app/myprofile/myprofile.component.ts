@@ -7,6 +7,8 @@ import { UserServiceService } from '../services/user-service.service';
 import { Interests } from '../interests/Interests';
 import { InterestOptions } from '../interests/InterestOptions';
 import { CurrentPointsService } from '../dashboard/current-points.service';
+import { PointSystem } from '../dashboard/PointSystem';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-myprofile',
@@ -19,7 +21,8 @@ export class MyprofileComponent implements OnInit {
   interests: Interests;
   intOptions: InterestOptions;
   afterSchool: string;
-
+  pointSystem: PointSystem[];
+  
   experienceDefault = new Experience();
   experience1 = new Experience();
   experience2 = new Experience();
@@ -188,6 +191,10 @@ export class MyprofileComponent implements OnInit {
 
     this.currentPointsService.setShowPtsSystem(true);
 
+    this.currentPointsService.pointSystemSubject$.subscribe((ptsSystem) => {
+      this.pointSystem = ptsSystem;
+    });
+
     //this.profile.experienceArr = [this.experience1, this.experience2, this.experience3 ];
     this.profileService.getProfileforUser().subscribe(profile => {
       this.profile = profile;
@@ -195,10 +202,8 @@ export class MyprofileComponent implements OnInit {
       if (this.profile == null) {
         this.profile = new Profile();
         this.profile.highSchoolName = this.user.organizationName;
-        // this.profile.classOf = "test class";
-        //this.experienceDefault = new Experience();
-        //this.profile.experienceArr = [this.experienceDefault];
       }
+      this.updateTotalPoints();
     });
     this.user = this.profileService.user;
 
@@ -238,21 +243,14 @@ export class MyprofileComponent implements OnInit {
     console.log("onSubmit=>" + JSON.stringify(this.profile));
     console.log("onSubmit=>" + JSON.stringify(this.experienceDefault));
 
-    if (this.profile.experienceArr == null) {
-      console.log("exp is null 1");
-      this.profile.experienceArr = [this.experienceDefault];
-    }
-    else {
-      console.log("exp is not null 1");
-      this.profile.experienceArr.push(this.experienceDefault);
-    }
-
     this.profileService.saveProfile(this.profile).subscribe(data => {
       this.profile = data;
       this.experienceDefault = new Experience();
-      this.showhideNewExp(this.experienceDefault);
+      
       console.log("After response" + JSON.stringify(this.profile));
     });
+
+    this.updateTotalPoints();
   }
 
   editExperience(exp: Experience) {
@@ -265,6 +263,48 @@ export class MyprofileComponent implements OnInit {
     this.showNewExp = !this.showNewExp;
   }
 
+  updateTotalPoints() {
+
+    let totalPts = 0;
+    if (this.profile.experienceArr != null) {
+      for(var i = 0, len = this.profile.experienceArr.length; i < len; i++) {
+        if(this.profile.experienceArr[i].activityPoint) {
+          totalPts = totalPts + Number(this.profile.experienceArr[i].activityPoint);
+          console.log("updating totalPts=" + totalPts);
+        }
+      }
+    }
+
+    console.log("Total Points totalPts=" + totalPts);
+    if(totalPts) {
+      this.currentPointsService.setCurrentPTS(totalPts);
+    }
+    else {
+      this.currentPointsService.setCurrentPTS(0);
+    }    
+  }
+
+  saveNewExperience() {
+
+    if (this.profile.experienceArr == null) {
+      console.log("exp is null 1");
+      this.profile.experienceArr = [this.experienceDefault];
+    }
+    else {
+      console.log("exp is not null 1");
+      this.profile.experienceArr.splice(0, 0, this.experienceDefault);
+    }
+
+    this.profileService.saveProfile(this.profile).subscribe(data => {
+      this.profile = data;
+      this.experienceDefault = new Experience();
+      this.showhideNewExp(this.experienceDefault);
+      console.log("After saving individual exp = " + JSON.stringify(this.profile));
+    });
+
+    this.updateTotalPoints();
+  }
+  
   saveExperience(exp: Experience) {
     this.profileService.saveProfile(this.profile).subscribe(data => {
       this.profile = data;
@@ -272,12 +312,19 @@ export class MyprofileComponent implements OnInit {
       console.log("After saving individual exp = " + JSON.stringify(this.profile));
     });
     exp.isEditMode = !exp.isEditMode;
-
+    this.updateTotalPoints();
   }
 
   cancelExperienceEdit(exp: Experience) {
     console.log("Experience editing OFF= " + exp.experienceName);
     exp.isEditMode = !exp.isEditMode;
+  }
+
+  onActivityTypeChange(newValue: string, exp: Experience) {
+    
+    let ptsSys = this.pointSystem.find(item => item.activityName == newValue);
+    exp.activityPoint = ptsSys.activityPoint;
+    console.log("onActivityTypeChange= " + newValue + " and it's point is= " + exp.activityPoint);
   }
 
   chunk(arr, chunkSize) {

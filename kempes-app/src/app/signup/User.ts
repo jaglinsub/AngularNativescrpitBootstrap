@@ -12,6 +12,7 @@ export class User {
     organizationName: string
     userType: UserType;
     expDateofGrad: string;
+    receiveUpdates: boolean
 
     constructor() {}
     

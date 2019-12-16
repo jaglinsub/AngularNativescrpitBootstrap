@@ -51,7 +51,7 @@
                                 <label for="personType">Type of User</label>
                                 <select class="form-control" data-style="btn-primary" data-live-search="true"
                                     data-selectpicker [(ngModel)]="modelPerson.userType.typeName" name="personType">
-                                    <option value="0" disabled selected>-Select-</option>
+                                    <option value="0" hidden>-Select-</option>
                                     <!-- <option hidden value="0">Type of user</option> -->
                                     <option value="Student">Student</option>
                                     <option value="Councillor">Councillor</option>
@@ -90,7 +90,7 @@
                                 [(ngModel)]="modelPerson.organizationName" name="organization">
                         </div>
                         <div class="form-group ml-4 pr-40">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="modelPerson.receiveUpdates" name="receiveUpdates">
                             <label class="form-check-label" for="exampleCheck1">Yes, I’d like to receive helpful information from Kempes</label>
                         </div>
                         <div class="form-group" align="center">

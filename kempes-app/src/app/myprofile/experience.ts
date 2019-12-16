@@ -7,6 +7,7 @@ export class Experience {
     endMonth: string;
     endYear: string;
     activityType: string
+    activityPoint: string;
     hoursspent: string
     responsibility1: string
     responsibility2: string
@@ -25,6 +26,7 @@ export class Experience {
         this.endMonth = "";
         this.endYear = "";
         this.activityType = "";
+        this.activityPoint = "";
         this.hoursspent = "";
         this.responsibility1 = "";
         this.responsibility2 = "";
