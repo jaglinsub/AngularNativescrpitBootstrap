@@ -18,12 +18,28 @@
             <div class="form-group mt-4">
               <label for="email">Email</label>
               <input type="email" class="form-control" name="email" placeholder="Email"
-                [(ngModel)]="emailPasswordCredentials.email" required>
+                [(ngModel)]="emailPasswordCredentials.email" maxlength="45" required #emailValidator="ngModel">
+                <div *ngIf="emailValidator.invalid" class="alert1 alert-danger1">
+
+                    <div *ngIf="emailValidator.errors.required">
+                      <i class="fas fa-exclamation-circle"></i> Email is required.
+                    </div>
+                  </div>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input type="password" class="form-control" name="password" placeholder="Password"
-                [(ngModel)]="emailPasswordCredentials.password" required>
+                [(ngModel)]="emailPasswordCredentials.password" required minlength="6" #passwordValidator="ngModel">
+              <!-- <div *ngIf="passwordValidator.invalid && (passwordValidator.dirty || passwordValidator.touched)" class="alert1 alert-danger1"> -->
+              <div *ngIf="passwordValidator.invalid" class="alert1 alert-danger1">
+
+                <div *ngIf="passwordValidator.errors.required">
+                  <i class="fas fa-exclamation-circle"></i> Password is required.
+                </div>
+                <div *ngIf="passwordValidator.errors.minlength">
+                  <i class="fas fa-exclamation-circle"></i> Name must be at least 6 characters long.
+                </div>
+              </div>
             </div>
 
             <ng-container *ngIf="siguplogin.showConfirmPassword">

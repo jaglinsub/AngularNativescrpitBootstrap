@@ -12,7 +12,7 @@ import { environment } from '@src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -32,6 +32,7 @@ import { BreadcrumbsModule } from "ng6-breadcrumbs";
 import { PoboxService } from '@src/app/pobox/pobox.service';
 import { POBoxDetailsService } from '@src/app/poboxdetails/pobox-details.service';
 import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurtunity.component';
+import { PaymentComponent } from '@src/app/payment/payment.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurt
     AboutusComponent,
     PoboxdetailsComponent,
     SavedoppurtunityComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurt
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],

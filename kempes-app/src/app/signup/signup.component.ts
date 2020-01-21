@@ -70,6 +70,8 @@ export class SignupComponent implements OnInit {
     console.log(this.modelPerson.firstName);
     console.log(this.modelPerson.userType.typeName);
     console.log("onSubmit of User= " + this.modelPerson);
+    let re = /\//gi;
+    this.modelPerson.dateofBirth = this.modelPerson.dateofBirth.replace(re, "-");
     this.signupService.saveUser(this.modelPerson).subscribe(
       data => {
         this.modelPerson = data;

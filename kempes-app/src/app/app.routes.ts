@@ -12,6 +12,7 @@ import { CareerchecklistComponent } from './careerchecklist/careerchecklist.comp
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { PoboxdetailsComponent } from './poboxdetails/poboxdetails.component';
 import { SavedoppurtunityComponent } from './savedoppurtunity/savedoppurtunity.component';
+import { PaymentComponent } from './payment/payment.component';
 
 export const routes: Routes = [
     {
@@ -108,5 +109,13 @@ export const routes: Routes = [
                 component: PoboxdetailsComponent,
             },
         ]
+    },
+    {
+        path: 'payment',
+        // canActivate: [AuthGuard],
+        component: PaymentComponent,
+        data: {
+            breadcrumb: 'Sign Up'
+        }
     },
 ];
