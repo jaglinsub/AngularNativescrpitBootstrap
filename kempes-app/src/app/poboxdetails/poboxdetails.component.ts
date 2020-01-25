@@ -34,16 +34,16 @@ export class PoboxdetailsComponent implements OnInit {
       //if url from server is Null, assumption is byte array of the image is available
       //else use the url from server
       console.log("this.opportunityDetails.organizationURL= " + this.opportunityDetails.organizationURL);
-      if (!this.opportunityDetails.organizationURL) {
+      if (oppur.opportunityDetails.organizationImage) {
         // if (isUndefined(this.opportunityDetails.organizationURL) || isNull(this.opportunityDetails.organizationURL)) {
-        let objectURL = 'data:image/jpeg;base64,' + oppur.opportunityDetails.organizationImage;
+        let objectURL = 'data:image/png;base64,' + oppur.opportunityDetails.organizationImage;
         this.image = this.sanitizer.bypassSecurityTrustUrl(objectURL);
         this.opportunityDetails.organizationURL = this.image;
       }
       else {
         // this.opportunityDetails.organizationURL = "https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/612830d463dc8a90bb5ae256f71144f4";
       }
-      console.log("Image URL= " + this.image);
+      // console.log("Image URL= " + this.image);
 
       this.poboxService.getSavedOpportunities().subscribe (oppurs => {
         

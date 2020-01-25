@@ -154,8 +154,10 @@
                                 <!-- <ul>
                                     <li *ngFor="let qualificationDetails of opportunityDetails.qualificationDetails">{{ qualificationDetails.quatlificationDescription }}</li>
                                 </ul> -->
-                                <div *ngFor="let qualificationDetails of opportunityDetails.qualificationDetails">
-                                        <p class='qualDtls'><span > - {{ qualificationDetails }}</span></p>
+                                <div class="col-md-12" *ngFor="let qualificationDetails of opportunityDetails.qualificationDetails">
+                                        <!-- <p class='qualDtls'><span > - {{ qualificationDetails }}</span></p> -->
+                                        <span class='qualDtls'> - {{ qualificationDetails }}</span>
+                                     <br/>
                                 </div>
                             </div>
                         </div>
