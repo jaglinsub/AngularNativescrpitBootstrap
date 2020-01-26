@@ -36,7 +36,15 @@ export class PoboxdetailsComponent implements OnInit {
       console.log("this.opportunityDetails.organizationURL= " + this.opportunityDetails.organizationURL);
       if (oppur.opportunityDetails.organizationImage) {
         // if (isUndefined(this.opportunityDetails.organizationURL) || isNull(this.opportunityDetails.organizationURL)) {
-        let objectURL = 'data:image/png;base64,' + oppur.opportunityDetails.organizationImage;
+        let imageStr = oppur.opportunityDetails.organizationImage;
+        let objectURL: any;
+        if(imageStr.startsWith("data:image")) {
+          objectURL = oppur.opportunityDetails.organizationImage;
+        }
+        else {
+          objectURL = 'data:image/png;base64,' + oppur.opportunityDetails.organizationImage;
+        }
+        
         this.image = this.sanitizer.bypassSecurityTrustUrl(objectURL);
         this.opportunityDetails.organizationURL = this.image;
       }

@@ -1,9 +1,23 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+
+.fieldset {
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
 #poboxdtlsContainer {
-    max-width: 635px;
+    /* max-width: 635px; */
     margin-top: 4rem;
     margin-left: 3.93rem;
     box-sizing: border-box;
+    display: flex;
     border: none;
     background-color: rgb(255, 255, 255);
     filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.161));
@@ -18,11 +32,12 @@
 .oppurName {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     border: none;
-    position: absolute;
-    overflow: visible;
-    white-space: nowrap;
+    /* position: absolute; */
+    /* overflow: visible; */
+    white-space: wrap;
+    line-height: 1.25;
     text-align: left;
     font-family: proxima-nova;
     font-style: normal;
@@ -54,8 +69,9 @@
     padding: 0;
     /* box-sizing: border-box; */
     border: none;
-    overflow: visible;
-    white-space: nowrap;
+    /* overflow: visible; */
+    white-space: wrap;
+    line-height: 1.25;
     text-align: left;
     justify-content: left;
     font-family: proxima-nova;
@@ -85,7 +101,7 @@
     padding: 0;
     box-sizing: border-box;
     border: none;
-    overflow: visible;
+    /* overflow: visible; */
 }
 
 .loclbl {
@@ -93,8 +109,9 @@
     padding: 0;
     box-sizing: border-box;
     border: none;
-    overflow: visible;
-    white-space: nowrap;
+    /* overflow: visible; */
+    white-space: wrap;
+    line-height: 1.25;
     text-align: left;
     font-family: proxima-nova;
     font-style: normal;

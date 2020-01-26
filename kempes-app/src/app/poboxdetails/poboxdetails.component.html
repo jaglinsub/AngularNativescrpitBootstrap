@@ -1,171 +1,120 @@
-<!-- <div class="container-fluid justify-content-center align-items-center" id="poboxdtlsContainer1"> -->
-    <!-- <div class="row mb-0 align-items-center"> -->
-        <!-- <div class="col-md-1" id="blank">
-        </div> -->
-        <!-- <div class="col-md-10" id="blank"> -->
-            <div class="container-fluid justify-content-center align-items-center col-md-10" id="poboxdtlsContainer">
-                <!-- Profile Form -->
-                <form name="poboxform" method="">
-                    <!-- Explore Header -->
-                    <div class="form-group row mb-0 align-items-center">
-                        <div class="col-md-12 mt-4" id="heading">
-                            <div class="form-group row">
-                                <div class="col-md-2" style="margin: 1rem;">
-                                    <!-- <img src="assets/sample_pharmacy.png" class="img-thumbnail" width="70" height="70"> -->
-                                    <img [src]="opportunityDetails.organizationURL" class="img-thumbnail" width="70" height="70">
-                                </div>
-                                <div class="col-auto zeroDiv">
-                                    <div class="form-group row" style="margin-bottom: 2.25rem">
-                                        <label
-                                            class="col-form-label oppurName">{{ opportunity.opportunityName }}</label>
-                                    </div>
-
-                                    <div class="form-group row mb-0">
-                                        <div class="col-auto zeroDiv">
-                                            <label
-                                                class="col-form-label orgName">{{ opportunity.organizationName }}</label>
-                                        </div>
-                                        <div class="col-auto zeroDiv ml-1">
-                                        </div>
-                                        <div class="col-auto zeroDiv">
-                                            <img src="assets/location.png" class="img-thumbnail locimg">
-                                            <label
-                                                class="col-form-label loclbl">{{ opportunity.organizationAddress }}</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-form-label posted">{{ opportunity.whenPosted }}</label>
-                                    </div>
-
-                                    <div class="form-group row mb-0">
-                                        <label class="col-form-label roledtl">Role Details</label>
-                                    </div>
-                                    <div class="form-group row mb-0">
-                                        <label class="col-form-label typeofoppurlbl">Type of Professional
-                                            Opportunity</label>
-                                    </div>
-                                    <div class="form-group row mb-0">
-                                        <label
-                                            class="col-form-label typeofoppur"> - {{ opportunityDetails.typeofProfOppurtunity }}</label>
-                                    </div>
-                                    <div class="form-group row mb-0">
-                                        <label class="col-form-label typeofoppurlbl">Length & Hours</label>
-                                    </div>
-                                    <div class="form-group row mb-0">
-                                        <label class="col-form-label typeofoppur">
-                                            <span> - {{ opportunityDetails.workLength }}</span> <br>
-                                            <span> - {{ opportunityDetails.workHours }}</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-group row mb-0">
-                                        <label class="col-form-label typeofoppurlbl">Recommendations</label>
-                                    </div>
-                                    <div class="form-group row mb-0">
-                                        <label
-                                            class="col-form-label typeofoppur"> - {{ opportunityDetails.recommendations }}</label>
-                                    </div>
-                                    <div class="form-group row mb-0">
-                                        <label class="col-form-label typeofoppurlbl">School Attendance</label>
-                                    </div>
-                                    <div class="form-group row mb-0">
-                                        <label
-                                            class="col-form-label typeofoppur"> - {{ opportunityDetails.schoolAttendance }}</label>
-                                    </div>
-                                    <div class="form-group row mb-0">
-                                        <label class="col-form-label typeofoppurlbl">GPA</label>
-                                    </div>
-                                    <div class="form-group row mb-3">
-                                        <label
-                                            class="col-form-label typeofoppur"> - {{ opportunityDetails.gpaScore }}</label>
-                                    </div>
-
-                                    <!-- <div class="form-group row mb-0">
-                                <div class="col-1 zeroDiv">
-                                        <div class="form-group row mb-0">
-                                                <label class="col-form-label typeofoppurlbl">Description</label>
-                                            </div>
-                                            <div class="form-group row mb-0">
-                                                <label class="col-form-label typeofoppur">
-                                                    <span>Under direct supervision of a licensed Pharmacist, dispenses, compounds, procures,
-                                                        stores, and distributes pharmacy products. Consults with patients and medical
-                                                        personnel regarding medication therapy. Provides pharmaceutical care for
-                                                        hospitalized or ambulatory patients as assigned. Provides medical personnel and
-                                                        patients with medication information and product identification. Performs other
-                                                        duties as required.</span>
-                                                </label>
-                                            </div>
-                                </div>
-                        </div> -->
-                                </div>
-
-                                <div class="col-auto zeroDiv mr-3">
-                                </div>
-                                <div class="col-auto zeroDiv" style="margin-left: 2.9rem; margin-top: 2.5rem">
-                                    <button class="btn btn-outline-info mr-3" [disabled]='opportunity.isSaved' type="button" (click)="saveOppurtunity()">
-                                        <i class="far fa-bookmark"></i>
-                                        Save
-                                    </button>
-                                    <button class="btn btn-info" [disabled]=true type="submit">Apply Now</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row mb-4 align-items-center">
-                        <div class="col-md-2">
-                        </div>
-                        <div class="col-md-8 zeroDiv">
-                            <div class="form-group row mb-0">
-                                <label class="col-form-label typeofoppurlbl">Description</label>
-                            </div>
-                            <div class="form-group row mb-0">
-                                <label class="col-form-label typeofoppur">
-                                    <!-- <span>Under direct supervision of a licensed Pharmacist, dispenses, compounds, procures,
-                                stores, and distributes pharmacy products. Consults with patients and medical
-                                personnel regarding medication therapy. Provides pharmaceutical care for
-                                hospitalized or ambulatory patients as assigned. Provides medical personnel and
-                                patients with medication information and product identification. Performs other
-                                duties as required.</span> -->
-                                    <span>{{ opportunityDetails.oppurtunityLongDescription }}</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row mb-0 align-items-center">
-                        <div class="col-md-2">
-                        </div>
-                        <div class="col-md-8 zeroDiv">
-                            <div class="form-group row mb-0">
-                                <label class="col-form-label typeofoppurlbl">Basic Qualifications:</label>
-                            </div>
-                            <div class="form-group row mb-0">
-                                <!-- <label class="col-form-label typeofoppur">
-                            <span>
-                                -Ability to either type 30 WPM/6000 KPH, or type prescription labels required. <br>
-                                -Excellent verbal & written communication skills<br>
-                                -Ability to learn and operate pharmacy computer systems and other equipment, stand for
-                                long periods of time read fine print, communicate with co-workers and patients, and
-                                lift/transport items from 1-50 lbs., light to moderate carrying, pulling, pushing,
-                                walking, frequent bending, stooping, reaching.<br>
-                                -Must be willing to work in a Labor Management Partnership environment.<br>
-                                -MUST PASS BACKGROUND CHECK.</span>
-                        </label> -->
-                                <!-- <ul>
-                                    <li *ngFor="let qualificationDetails of opportunityDetails.qualificationDetails">{{ qualificationDetails.quatlificationDescription }}</li>
-                                </ul> -->
-                                <div class="col-md-12" *ngFor="let qualificationDetails of opportunityDetails.qualificationDetails">
-                                        <!-- <p class='qualDtls'><span > - {{ qualificationDetails }}</span></p> -->
-                                        <span class='qualDtls'> - {{ qualificationDetails }}</span>
-                                     <br/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </form>
+<div class="col-md-11" id="poboxdtlsContainer" style="padding: 0;">
+    <!-- PO Box Details Form -->
+    <form name="poboxform" method="">
+        <div class="fieldset mb-4"></div>
+        <div class="fieldset">
+            <div class="col-md-2"
+                style="margin:0; padding-top:0; padding-bottom:0; ">
+                <img [src]="opportunityDetails.organizationURL" class="img-thumbnail" style="width: 100%;">
             </div>
-        <!-- </div> -->
-    <!-- </div> -->
-<!-- </div> -->
+            <div class="col-md-10" style="margin:0; padding: 0;">
+                <div class="fieldset">
+                    <div class="col-md-12" style="margin:0; padding: 0; margin-bottom: 1rem;">
+                        <label class="col-form-label oppurName">{{ opportunity.opportunityName }}</label>
+                    </div>
+                </div>
+                <div class="fieldset mb-4">
+                    <div class="col-md-7" style="margin:0; padding: 0;">
+                        <div class="fieldset">
+                            <div class="col-md-12" style="margin:0; padding: 0;">
+                                <label class="col-form-label orgName">{{ opportunity.organizationName }}</label>
+                            </div>
+                        </div>
+                        <div class="fieldset">
+                            <div class="col-md-12" *ngIf="opportunity.organizationAddress"
+                                style="margin:0; padding: 0;">
+                                <img src="assets/location.png" class="img-thumbnail locimg">
+                                <label class="col-form-label loclbl">{{ opportunity.organizationAddress }}</label>
+                            </div>
+                        </div>
+                        <div class="fieldset">
+                            <div class="col-md-12" style="margin:0; padding: 0;">
+                                <label class="col-form-label posted">{{ opportunity.whenPosted }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5" style="margin:0; padding: 0;">
+                        <div class="fieldset" style="justify-content:space-evenly">
+                            <button class="btn btn-outline-info" [disabled]='opportunity.isSaved' type="button"
+                                (click)="saveOppurtunity()">
+                                <i class="far fa-bookmark"></i>
+                                Save
+                            </button>
+                            <button class="btn btn-info" [disabled]=true type="submit" style="margin-left: 0rem;">Apply
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="fieldset mb-4">
+                    <div class="col-md-12" style="margin:0; padding: 0;">
+                        <div class="form-group fieldset">
+                            <label class="col-form-label roledtl">Role Details</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppurlbl">Type of Professional
+                                Opportunity</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppur"> -
+                                {{ opportunityDetails.typeofProfOppurtunity }}</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppurlbl">Length & Hours</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppur">
+                                <span> - {{ opportunityDetails.workLength }}</span> <br>
+                                <span> - {{ opportunityDetails.workHours }}</span>
+                            </label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppurlbl">Recommendations</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppur"> -
+                                {{ opportunityDetails.recommendations }}</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppurlbl">School Attendance</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppur"> -
+                                {{ opportunityDetails.schoolAttendance }}</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppurlbl">GPA</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppur"> - {{ opportunityDetails.gpaScore }}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="fieldset mb-4">
+                    <div class="col-md-12" style="margin:0; padding: 0;">
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppurlbl">Description</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppur">
+                                <span>{{ opportunityDetails.oppurtunityLongDescription }}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="fieldset mb-4">
+                    <div class="col-md-12" style="margin:0; padding: 0;">
+                        <div class="form-group fieldset">
+                            <label class="col-form-label typeofoppurlbl">Basic Qualifications:</label>
+                        </div>
+                        <div class="form-group fieldset">
+                            <div class="col-md-12" *ngFor="let qualificationDetails of opportunityDetails.qualificationDetails">
+                                <span class='qualDtls'> - {{ qualificationDetails }}</span>
+                             <br/>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
