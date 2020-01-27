@@ -33,6 +33,7 @@ import { PoboxService } from '@src/app/pobox/pobox.service';
 import { POBoxDetailsService } from '@src/app/poboxdetails/pobox-details.service';
 import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurtunity.component';
 import { PaymentComponent } from '@src/app/payment/payment.component';
+import { MustMatchDirective } from './login/must-match.directive';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { PaymentComponent } from '@src/app/payment/payment.component';
     PoboxdetailsComponent,
     SavedoppurtunityComponent,
     PaymentComponent,
+    MustMatchDirective,
   ],
   imports: [
     BrowserModule,

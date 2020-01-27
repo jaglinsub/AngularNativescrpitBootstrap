@@ -7,7 +7,6 @@ import { User } from '../signup/User';
 import { UserServiceService } from '../services/user-service.service';
 import { Interests } from '../interests/Interests';
 import { InterestService } from '../interests/interest.service';
-import { Observable } from 'tns-core-modules/ui/core/bindable/bindable';
 import { EmailPasswordCredentials } from './EmailPasswordCredentials';
 
 export class sigupLogin {
@@ -27,24 +26,11 @@ export class LoginComponent implements OnInit {
   modelPerson: User;
   interests: Interests;
   emailPasswordCredentials: EmailPasswordCredentials;
+  
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
   constructor(private authService: AuthService, private userService: UserServiceService, private sigupService: SignupService, private interestService: InterestService, private router: Router, private activatedRoute: ActivatedRoute, private cd: ChangeDetectorRef,
     private zone: NgZone) {
-    /* this.siguplogin = new sigupLogin();
-    this.activatedRoute.params.subscribe( params => {
-      console.log("Route Params=", params);
-      if (params['id']) { (1)
-        console.log("Route Params in side=", params['id']);
-        this.siguplogin.showConfirmPassword = true;
-        this.siguplogin.loginText = "Sign up";
-      }
-      else
-      {
-        console.log("Route Params in side=", params['id']);
-        this.siguplogin.showConfirmPassword = false;
-        this.siguplogin.loginText = "Login";
-      }
-    }); */
   }
 
   ngOnInit() {
@@ -90,7 +76,7 @@ export class LoginComponent implements OnInit {
 
   signInWithTwitter() {
     this.authService.signInWithTwitter()
-      .then((res) => {
+      .then(() => {
         //this.router.navigate(['signup'])
         console.log("After routing");
       })
@@ -143,7 +129,6 @@ export class LoginComponent implements OnInit {
 
       if (this.authService.isLoggedIn) {
         console.log("user logged in true");
-        const result = (await this.sigupService.findUserByEmail());
         (await this.sigupService.findUserByEmail()).subscribe(
           data => {
             console.log("data outside = " + JSON.stringify(data));
@@ -178,7 +163,7 @@ export class LoginComponent implements OnInit {
   }
   signInWithFacebook() {
     this.authService.signInWithFacebook()
-      .then((res) => {
+      .then(() => {
         this.router.navigate(['signup'])
       })
       .catch((err) => console.log(err));
@@ -187,7 +172,7 @@ export class LoginComponent implements OnInit {
 
   signInWithGoogle() {
     this.authService.signInWithGoogle()
-      .then((res) => {
+      .then(() => {
         this.router.navigate(['interests'])
       })
       .catch((err) => console.log(err));
@@ -195,7 +180,7 @@ export class LoginComponent implements OnInit {
 
   signInWithGithub() {
     this.authService.signInWithGithub()
-      .then((res) => {
+      .then(() => {
         this.router.navigate(['interests'])
       })
       .catch((err) => console.log(err));

@@ -5,7 +5,7 @@
       <div class="">
         <div class="card-block">
 
-          <form name="userform" method="post">
+          <form name="userform" method="post" #loginForm="ngForm" [mustMatch]="['password', 'confirmpassword']" novalidate>
             <div class="col-md-12">
               <div class="d-flex flex-row justify-content-center" id="Welcome_to_Kempes__Log_in_to_k">
                 <span>Welcome to Kempes </span>
@@ -18,26 +18,36 @@
             <div class="form-group mt-4">
               <label for="email">Email</label>
               <input type="email" class="form-control" name="email" placeholder="Email"
-                [(ngModel)]="emailPasswordCredentials.email" maxlength="45" required #emailValidator="ngModel">
-                <div *ngIf="emailValidator.invalid" class="alert1 alert-danger1">
-
-                    <div *ngIf="emailValidator.errors.required">
-                      <i class="fas fa-exclamation-circle"></i> Email is required.
-                    </div>
-                  </div>
+                [(ngModel)]="emailPasswordCredentials.email" maxlength="45" required [pattern]="emailPattern"
+                #emailValidator="ngModel">
+              <div *ngIf="emailValidator.invalid && (emailValidator.dirty || emailValidator.touched)"
+                class="alert1 alert-danger1">
+                <div *ngIf="emailValidator.errors.required">
+                  <i class="fas fa-exclamation-circle"></i>
+                  Please enter an email.
+                </div>
+                <div *ngIf="emailValidator.errors.pattern">
+                  <i class="fas fa-exclamation-circle"></i>
+                  Please enter a valid email.
+                </div>
+              </div>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input type="password" class="form-control" name="password" placeholder="Password"
-                [(ngModel)]="emailPasswordCredentials.password" required minlength="6" #passwordValidator="ngModel">
-              <!-- <div *ngIf="passwordValidator.invalid && (passwordValidator.dirty || passwordValidator.touched)" class="alert1 alert-danger1"> -->
-              <div *ngIf="passwordValidator.invalid" class="alert1 alert-danger1">
+                [(ngModel)]="emailPasswordCredentials.password" required minlength="6" maxlength="20"
+                #passwordValidator="ngModel">
+              <div *ngIf="passwordValidator.invalid && (passwordValidator.dirty || passwordValidator.touched)"
+                class="alert1 alert-danger1">
+                <!-- <div *ngIf="passwordValidator.invalid" class="alert1 alert-danger1"> -->
 
                 <div *ngIf="passwordValidator.errors.required">
-                  <i class="fas fa-exclamation-circle"></i> Password is required.
+                  <i class="fas fa-exclamation-circle"></i>
+                  Password is required.
                 </div>
                 <div *ngIf="passwordValidator.errors.minlength">
-                  <i class="fas fa-exclamation-circle"></i> Name must be at least 6 characters long.
+                  <i class="fas fa-exclamation-circle"></i>
+                  Please use 6 or more characters.
                 </div>
               </div>
             </div>
@@ -47,12 +57,29 @@
               <div class="form-group">
                 <label for="exampleConfirmPassword1">Confirm Password</label>
                 <input type="password" class="form-control" name="confirmpassword" placeholder=" Confirm Password"
-                  [(ngModel)]="emailPasswordCredentials.confirmPassword" required>
+                  [(ngModel)]="emailPasswordCredentials.confirmPassword" required minlength="6" maxlength="20"
+                  #confirmpasswordValidator="ngModel">
+                  <div *ngIf="confirmpasswordValidator.invalid && (confirmpasswordValidator.dirty || confirmpasswordValidator.touched)"
+                class="alert1 alert-danger1">
+                <div *ngIf="confirmpasswordValidator.errors.required">
+                  <i class="fas fa-exclamation-circle"></i>
+                  Password is required.
+                </div>
+                <div *ngIf="confirmpasswordValidator.errors.minlength">
+                  <i class="fas fa-exclamation-circle"></i>
+                  Please use 6 or more characters.
+                </div>
+                <div *ngIf="confirmpasswordValidator.errors.mustMatch">
+                  <i class="fas fa-exclamation-circle"></i>
+                  Your passwords don't match.
+                </div>
+              </div>
               </div>
             </ng-container>
 
             <div class="form-group" align="center">
-              <button type="buton" class="btn btn-primary btnemail" (click)="signInWithEmail()">
+              <button type="buton" class="btn btn-primary btnemail" [disabled]="!loginForm.form.valid"
+                (click)="signInWithEmail()">
                 {{ siguplogin.loginText }}
               </button>
             </div>
