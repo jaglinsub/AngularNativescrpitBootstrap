@@ -34,7 +34,9 @@ import { POBoxDetailsService } from '@src/app/poboxdetails/pobox-details.service
 import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurtunity.component';
 import { PaymentComponent } from '@src/app/payment/payment.component';
 import { MustMatchDirective } from './login/must-match.directive';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { MustMatchDirective } from './login/must-match.directive';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    NgxMaskModule.forRoot(options)
   ],
   providers: [
     AuthGuard,

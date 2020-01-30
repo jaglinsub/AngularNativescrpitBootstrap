@@ -1,33 +1,57 @@
-/* background
-r-44;g-52;b-94
-Hue-154;sat-87;lum-65;
-
-button color;
-r-13;g-144;b-168
-Hue-126;sat-206;lum-85; */
-
 @import "~bootstrap/dist/css/bootstrap.css";
-.body {
-    height: 100vh;
-    /* background-color:rgb(44, 52, 94); */
+.fieldset {
+    margin: 0 15px 1rem;
+    padding: 0;
+    border-style: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
-.offset-sm-12 {
-    margin-left: 7.5%;
+.fieldsetb {
+    margin: 0 15px 0rem;
+    padding: 0;
+    border-style: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
-.signupbg {
-    padding-top: 3rem;
-    padding-bottom: 50rem;
-    position: relative;
-    height: 100%;
-    /* background-color:rgb(44, 52, 94); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
+.row {
+    margin: 0rem;
 }
 
-#Welcome_to_Kempes__Log_in_to_k {
+.field {
+    /* padding: 10px 20px 11px; */
+    padding: 0;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    border-radius: 0.25rem;
+}
+
+.filedCenter {
+    justify-content: center;
+}
+
+.field.half-width {
+    width: calc(50% - (5px / 2));
+}
+
+.field.third-width {
+    width: calc(33% - (5px / 3));
+}
+
+.field+.field {
+    margin-top: 6px;
+}
+
+#WelcometoKempesLog {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -42,13 +66,13 @@ Hue-126;sat-206;lum-85; */
     color: rgba(2, 11, 62, 1);
 }
 
-#Welcome_to_Kempes__Log_in_to_k1 {
+#Filloutthisform {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border: none;
     overflow: visible;
-    white-space: nowrap;
+    white-space: wrap;
     text-align: center;
     font-family: proxima-nova;
     font-style: normal;
@@ -69,16 +93,14 @@ label {
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    color: rgba(2, 11, 62, 1);
+    color: rgba(23, 23, 23, 1);
 }
 
 .btnsubmit {
     margin: 0;
     margin-bottom: 0rem;
-    /* padding: 0; */
     box-sizing: border-box;
     border: none;
-    width: 170px;
     overflow: visible;
     background-color: rgba(13, 144, 168, 1);
     color: rgba(255, 255, 255, 1);
@@ -88,38 +110,42 @@ label {
     font-size: 14px;
 }
 
-.btnsubmit:hover {
-    background-color: rgb(9, 111, 129);
-    color: rgba(255, 255, 255, 1);
+.alertMsg {
+    position: relative;
+    padding: 0.25rem 0rem;
+    /* margin-bottom: 1rem; */
+    border: none;
 }
 
-.col-form-label-lg {
-    color: white;
-    text-align: right
+.alert-dangerMsg {
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(218, 38, 37, 1);
 }
 
-.navbar-text {
-    color: #fff;
+form.submitted .ng-invalid {
+    border: 2px solid rgba(218, 38, 37, 1);
 }
 
-/* input[type="date"]:before {
-    content: attr(placeholder) !important;
-    color: #aaa;
-    margin-right: 1.2em;
-}
-
-input[type="date"]:focus:before, input[type="date"]:valid::before {
-    content: "";
+/* form.submitted {
+    border: 2px solid rgba(218, 38, 37, 1);
 } */
 
-/* input[type="date"]::before { 
-    content: attr(placeholder) !important;
-    width: 100%;
+/* form.invalid .ng-invalid {
+    border: 2px solid rgba(218, 38, 37, 1);
+} */
+/* .ng-invalid.ng-touched:not(form) {
+    border: 2px solid rgba(218, 38, 37, 1);
 } */
 
-/* hide our custom/fake placeholder text when in focus to show the default
- * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
- */
+/* .ng-invalid:not(form) {
+    border: 2px solid rgba(218, 38, 37, 1);
+} */
 
-/* input[type="date"]:focus::before,
-input[type="date"]:valid::before { display: none } */
+.ng-valid[required], .ng-valid.required {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}

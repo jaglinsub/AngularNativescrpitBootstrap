@@ -41,13 +41,14 @@
     "nativescript-angular": "~8.0.1",
     "nativescript-theme-core": "~1.0.4",
     "ng6-breadcrumbs": "^1.0.7",
+    "ngx-mask": "^8.1.7",
     "reflect-metadata": "~0.1.12",
     "rxjs": "~6.5.0",
     "tns-core-modules": "~6.0.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.800.0",
+    "@angular-devkit/build-angular": "^0.803.23",
     "@angular/cli": "~8.0.3",
     "@angular/compiler-cli": "~8.0.1",
     "@nativescript/schematics": "^0.7.3",

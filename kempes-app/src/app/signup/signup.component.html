@@ -1,104 +1,215 @@
-<div class="signupbg">
-    <div class="container justify-content-center">
-        <div class="col-md-12">
-            <div class="d-flex flex-row justify-content-center" id="Welcome_to_Kempes__Log_in_to_k">
-                <span>Welcome to Kempes </span>
-            </div>
-            <div class="d-flex flex-row justify-content-center" id="Welcome_to_Kempes__Log_in_to_k1">
-                <span>Fill out this form and so we can get started!</span>
-            </div>
-        </div>
-        <div class="container-fluid mt-4 h-100">
-            <div class="row justify-content-center align-items-center h-100">
-                <div class="col col-md-4 pl-0" style="padding-right: 12px;">
-                    <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
-
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 mr-auto ml-auto">
+            <form id="signup-form" name="signup-form" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)"
+                [ngClass]="{ submitted: !isValidFormSubmitted}" novalidate>
+                <div class="fieldset mb-4">
+                    <div class="col-md-12 field-group p-0">
+                        <div class="fieldset filedCenter" id="WelcometoKempesLog">
+                            <span>Welcome to Kempes</span>
+                        </div>
+                        <div class="fieldset filedCenter" id="Filloutthisform">
+                            <span>Fill out this form and so we can get started!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fieldsetb">
+                    <div class="col-md-2 field-group p-0"></div>
+                    <div class="col-md-4 field-group p-0">
+                        <div class="fieldset">
+                            <label for="firstName">First Name*</label>
                             <input class="form-control" placeholder="First Name" type="text"
-                                [(ngModel)]="modelPerson.firstName" name="firstName">
+                                [(ngModel)]="modelPerson.firstName" name="firstName" required maxlength="15"
+                                #fNameValidator="ngModel" (keypress)="textOnly($event)">
+                            <!-- <div *ngIf="fNameValidator.invalid && (fNameValidator.dirty || fNameValidator.touched)" -->
+                            <div *ngIf="fNameValidator.invalid && !isValidFormSubmitted"
+                                class="alertMsg alert-dangerMsg">
+                                <div *ngIf="fNameValidator.errors.required">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter your first name.
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
+                    </div>
+                    <div class="col-md-4 field-group p-0">
+                        <div class="fieldset">
+                            <label for="lastName">Last Name*</label>
                             <input class="form-control" placeholder="Last Name" type="text"
-                                [(ngModel)]="modelPerson.lastName" name="lastName">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input class="form-control" placeholder="Email" type="text" [(ngModel)]="modelPerson.email"
-                                name="email" readonly>
-                        </div>
-                        <div class="form-group">
-                            <div class="col col-md-6 pl-0">
-                                <label for="dateofBirth">Birthday</label>
-                                <input class="form-control" placeholder="Birthday" type="date"
-                                    [ngModel]="modelPerson.dateofBirth"
-                                    (ngModelChange)="modelPerson.dateofBirth = $event" name="dateofBirth">
+                                [(ngModel)]="modelPerson.lastName" name="lastName" (keypress)="textOnly($event)"
+                                required maxlength="15" #lNameValidator="ngModel">
+                            <div *ngIf="lNameValidator.invalid && !isValidFormSubmitted"
+                                class="alertMsg alert-dangerMsg">
+                                <div *ngIf="lNameValidator.errors.required">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter your last name.
+                                </div>
                             </div>
                         </div>
-                        <!-- <div class="form-group row">
-                            <div class="col-sm-8  pr-0">
-                                    <label for="dateofBirth">Birthday</label>
-                                    <input class="form-control" placeholder="Birthday" type="date" [ngModel]="modelPerson.dateofBirth" (ngModelChange)="modelPerson.dateofBirth = $event" name="dateofBirth">
-                            </div>
-
-                            <div class="col-sm-4 pl-1 pr-3">
-                                <input class="form-control" placeholder="Grade" type="text" [(ngModel)]="modelPerson.grade" name="grade">
-                            </div>
-                        </div> -->
-                        <div class="form-group">
-                            <div class="col col-md-6 pl-0">
-                                <label for="personType">Type of User</label>
-                                <select class="form-control" data-style="btn-primary" data-live-search="true"
-                                    data-selectpicker [(ngModel)]="modelPerson.userType.typeName" name="personType">
-                                    <option value="0" hidden>-Select-</option>
-                                    <!-- <option hidden value="0">Type of user</option> -->
-                                    <option value="Student">Student</option>
-                                    <option value="Councillor">Councillor</option>
-                                    <option value="Parent">Parent</option>
-                                </select>
+                    </div>
+                    <div class="col-md-2 field-group p-0"></div>
+                </div>
+                <div class="fieldsetb">
+                    <div class="col-md-2 field-group p-0"></div>
+                    <div class="col-md-4 field-group p-0">
+                        <div class="fieldset">
+                            <label for="dateofBirth">Birthday*</label>
+                            <input class="form-control" placeholder="Birthday" type="date"
+                                [ngModel]="modelPerson.dateofBirth" (ngModelChange)="modelPerson.dateofBirth = $event"
+                                name="dateofBirth" required minlength="10" maxlength="10" #dobValidator="ngModel">
+                            <div *ngIf="dobValidator.invalid && !isValidFormSubmitted" class="alertMsg alert-dangerMsg">
+                                <div *ngIf="dobValidator.errors.required; else invaliddob">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter your date of birth.
+                                </div>
+                                <div *ngIf="dobValidator.errors.minlength">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter a valid date of birth.
+                                </div>
+                                <ng-template #invaliddob>
+                                    <div>
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        Please enter a valid date of birth.
+                                    </div>
+                                </ng-template>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="phoneNumber">Phone Number</label>
-                            <input class="form-control" placeholder="000-000-0000" type="text"
-                                [(ngModel)]="modelPerson.phoneNumber" name="phoneNumber">
+                    </div>
+                    <div class="col-md-4 field-group p-0"></div>
+                    <div class="col-md-2 field-group p-0"></div>
+                </div>
+                <div class="fieldsetb">
+                    <div class="col-md-2 field-group p-0"></div>
+                    <div class="col-md-4 field-group p-0">
+                        <div class="fieldset">
+                            <label for="phoneNumber">Phone Number*</label>
+                            <input class="form-control" placeholder="(000) 000-0000" mask="(000) 000-0000" type="text"
+                                [(ngModel)]="modelPerson.phoneNumber" name="phoneNumber" required minlength="10"
+                                maxlength="14" #phoneValidator="ngModel">
+                            <div *ngIf="phoneValidator.invalid && !isValidFormSubmitted"
+                                class="alertMsg alert-dangerMsg">
+                                <div *ngIf="phoneValidator.errors.required">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter your phone number.
+                                </div>
+                                <div *ngIf="phoneValidator.errors.minlength">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter a valid phone number.
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="location">City you are located in</label>
+                    </div>
+                    <div class="col-md-4 field-group p-0"></div>
+                    <div class="col-md-2 field-group p-0"></div>
+                </div>
+                <div class="fieldsetb">
+                    <div class="col-md-2 field-group p-0"></div>
+                    <div class="col-md-8 field-group p-0">
+                        <div class="fieldset">
+                            <label for="email">Parent Email</label>
+                            <input type="email" class="form-control" [(ngModel)]="modelPerson.firstName" name="email"
+                                placeholder="Email" maxlength="45" required [pattern]="emailPattern"
+                                #emailValidator="ngModel">
+                            <div *ngIf="emailValidator.invalid && !isValidFormSubmitted"
+                                class="alertMsg alert-dangerMsg">
+                                <div *ngIf="emailValidator.errors.required">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter an email.
+                                </div>
+                                <div *ngIf="emailValidator.errors.pattern">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter a valid email.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 field-group p-0"></div>
+                </div>
+                <div class="fieldsetb">
+                    <div class="col-md-2 field-group p-0"></div>
+                    <div class="col-md-8 field-group p-0">
+                        <div class="fieldset">
+                            <label for="location">City you are located in*</label>
                             <input class="form-control" placeholder="City" type="text"
-                                [(ngModel)]="modelPerson.location" name="location">
-                        </div>
-                        <div class="form-group">
-                            <div class="row m-0 p-0">
-                                <div class="col col-md-6 pl-0">
-                                    <label for="grade">Grade</label>
-                                    <input class="form-control" placeholder="Grade" type="text"
-                                        [(ngModel)]="modelPerson.grade" name="grade">
-                                </div>
-                                <div class="col col-md-6 pl-0 pr-0">
-                                    <label for="expDateofGrad">Expected Graduation Date</label>
-                                    <input class="form-control" type="date" [ngModel]="modelPerson.expDateofGrad"
-                                        (ngModelChange)="modelPerson.expDateofGrad = $event" name="expDateofGrad">
+                                [(ngModel)]="modelPerson.location" name="location" required maxlength="45"
+                                #cityValidator="ngModel">
+                            <div *ngIf="cityValidator.invalid && !isValidFormSubmitted"
+                                class="alertMsg alert-dangerMsg">
+                                <div *ngIf="cityValidator.errors.required">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter your city's name.
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                                <label for="organization">School Name</label>
+                    </div>
+                    <div class="col-md-2 field-group p-0"></div>
+                </div>
+                <div class="fieldsetb">
+                    <div class="col-md-2 field-group p-0"></div>
+                    <div class="col-md-4 field-group p-0">
+                        <div class="fieldset">
+                            <label for="grade">Grade*</label>
+                            <input class="form-control" placeholder="Grade" type="text" [(ngModel)]="modelPerson.grade"
+                                name="grade" required #gradeValidator="ngModel">
+                            <div *ngIf="gradeValidator.invalid && !isValidFormSubmitted"
+                                class="alertMsg alert-dangerMsg">
+                                <div *ngIf="gradeValidator.errors.required">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please select your grade.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 field-group p-0">
+                        <div class="fieldset">
+                            <label for="expDateofGrad">Expected Graduation Date*</label>
+                            <input class="form-control" type="date" [ngModel]="modelPerson.expDateofGrad"
+                                (ngModelChange)="modelPerson.expDateofGrad = $event" name="expDateofGrad">
+                        </div>
+                    </div>
+                    <div class="col-md-2 field-group p-0"></div>
+                </div>
+                <div class="fieldsetb">
+                    <div class="col-md-2 field-group p-0"></div>
+                    <div class="col-md-8 field-group p-0">
+                        <div class="fieldset">
+                            <label for="organization">School Name*</label>
                             <input class="form-control" placeholder="School or organization name" type="text"
-                                [(ngModel)]="modelPerson.organizationName" name="organization">
+                                [(ngModel)]="modelPerson.organizationName" name="organization" required
+                                #schoolValidator="ngModel">
+                            <div *ngIf="schoolValidator.invalid && !isValidFormSubmitted"
+                                class="alertMsg alert-dangerMsg">
+                                <div *ngIf="schoolValidator.errors.required">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter your school's name.
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group ml-4 pr-40">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="modelPerson.receiveUpdates" name="receiveUpdates">
-                            <label class="form-check-label" for="exampleCheck1">Yes, I’d like to receive helpful information from Kempes</label>
+                    </div>
+                    <div class="col-md-2 field-group p-0"></div>
+                </div>
+                <div class="fieldsetb">
+                    <div class="col-md-2 field-group p-0"></div>
+                    <div class="col-md-8 field-group p-0">
+                        <div class="fieldset">
+                            <input type="checkbox" style="margin-left: 0px;" class="form-check-input" id="exampleCheck1"
+                                [(ngModel)]="modelPerson.receiveUpdates" name="receiveUpdates">
+                            <label for="exampleCheck1" style="margin-left: 20px; white-space:pre-wrap;">Yes, I’d
+                                like to
+                                receive helpful information from Kempes</label>
                         </div>
-                        <div class="form-group" align="center">
+                    </div>
+                    <div class="col-md-2 field-group p-0"></div>
+                </div>
+                <div class="fieldsetb">
+                    <div class="col-md-4 field-group p-0"></div>
+                    <div class="col-md-4 field-group p-0">
+                        <div class="fieldset filedCenter">
                             <button class="btn btn-primary btnsubmit" type="submit">Continue</button>
                         </div>
-                    </form>
+                    </div>
+                    <div class="col-md-4 field-group p-0"></div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
