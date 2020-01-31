@@ -106,7 +106,7 @@
                     <div class="col-md-8 field-group p-0">
                         <div class="fieldset">
                             <label for="email">Parent Email</label>
-                            <input type="email" class="form-control" [(ngModel)]="modelPerson.firstName" name="email"
+                            <input type="email" class="form-control" [(ngModel)]="modelPerson.parentsEmail" name="email"
                                 placeholder="Email" maxlength="45" required [pattern]="emailPattern"
                                 #emailValidator="ngModel">
                             <div *ngIf="emailValidator.invalid && !isValidFormSubmitted"
@@ -148,8 +148,12 @@
                     <div class="col-md-4 field-group p-0">
                         <div class="fieldset">
                             <label for="grade">Grade*</label>
-                            <input class="form-control" placeholder="Grade" type="text" [(ngModel)]="modelPerson.grade"
-                                name="grade" required #gradeValidator="ngModel">
+                            <select class="form-control" data-style="btn-primary" data-live-search="true"
+                                data-selectpicker [(ngModel)]="modelPerson.grade" name="grade" required
+                                #gradeValidator="ngModel">
+                                <option *ngFor="let grade of gradeList" [ngValue]="grade.value">
+                                    {{ grade.text }}</option>
+                            </select>
                             <div *ngIf="gradeValidator.invalid && !isValidFormSubmitted"
                                 class="alertMsg alert-dangerMsg">
                                 <div *ngIf="gradeValidator.errors.required">
@@ -161,9 +165,15 @@
                     </div>
                     <div class="col-md-4 field-group p-0">
                         <div class="fieldset">
-                            <label for="expDateofGrad">Expected Graduation Date*</label>
-                            <input class="form-control" type="date" [ngModel]="modelPerson.expDateofGrad"
-                                (ngModelChange)="modelPerson.expDateofGrad = $event" name="expDateofGrad">
+                            <label for="expYearofGrad">Expected Graduation Year</label>
+                            <select class="form-control" data-style="btn-primary" data-live-search="true"
+                                data-selectpicker [(ngModel)]="modelPerson.expYearofGrad" name="expYearofGrad" required
+                                #expYearofGradValidator="ngModel">
+                                <option *ngFor="let expYear of yearList" [ngValue]="expYear.value">
+                                    {{ expYear.name }}</option>
+                            </select>
+                            <!-- <input class="form-control" type="date" [ngModel]="modelPerson.expDateofGrad"
+                                (ngModelChange)="modelPerson.expDateofGrad = $event" name="expDateofGrad"> -->
                         </div>
                     </div>
                     <div class="col-md-2 field-group p-0"></div>

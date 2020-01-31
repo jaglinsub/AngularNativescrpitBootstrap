@@ -22,6 +22,14 @@ export class SignupComponent implements OnInit {
   modelPersonType = new UserType();
   isValidFormSubmitted: boolean;
 
+  gradeList = [
+    { value: 'Freshmen', text: 'Freshmen' },
+    { value: 'Sophomore', text: 'Sophomore' },
+    { value: 'Junior', text: 'Junior' },
+    { value: 'Senior', text: 'Senior' }
+  ];
+
+  yearList = [];
   //modelPerson = new User(0, "", "", "", new Date().getDate(), "", "", "", "", new UserType(0, "", ""));
 
   constructor(private cd: ChangeDetectorRef,
@@ -48,6 +56,14 @@ export class SignupComponent implements OnInit {
   }
   ngOnInit() {
 
+    for (let i = new Date().getFullYear(); i <= (new Date().getFullYear() + 6); i++) {
+      let newYear = {
+        name: i.toString(),
+        value: i.toString()
+      };
+      this.yearList.push(newYear);
+    }
+
     this.isValidFormSubmitted = true;
     if (this.modelPerson.userType == null || this.modelPerson.userType.typeName == null) {
       console.log("model userType or typename is null =" + JSON.stringify(this.modelPerson));
@@ -56,7 +72,7 @@ export class SignupComponent implements OnInit {
 
     this.modelPerson.email = this.authService.isLoggedIn ? this.authService.userDetails.providerData[0].email : "";
 
-    //this.modelPersonType.type = "Student";
+    this.modelPersonType.typeName = "Student";
     /* this.modelPerson.firstName = "";
     this.modelPerson.lastName = "";
     
