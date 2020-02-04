@@ -1,4 +1,5 @@
 import { UserType } from "./UserType"
+import { ParentUser } from "../parent/ParentUser"
 
 export class User {
     id: string
@@ -13,7 +14,7 @@ export class User {
     userType: UserType;
     expYearofGrad: string;
     receiveUpdates: boolean
-    parentsEmail: string;
+    parentUser: ParentUser;
 
     constructor() {}
     

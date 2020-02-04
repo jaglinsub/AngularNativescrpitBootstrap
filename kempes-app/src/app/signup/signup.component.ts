@@ -8,6 +8,7 @@ import { SignupService } from "./signup.service";
 import { AuthService } from '../services/auth.service';
 import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
+import { ParentUser } from '../parent/ParentUser';
 
 @Component({
   selector: 'app-signup',
@@ -20,6 +21,8 @@ export class SignupComponent implements OnInit {
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   modelPerson = new User();
   modelPersonType = new UserType();
+  parentUser = new ParentUser();
+  
   isValidFormSubmitted: boolean;
 
   gradeList = [
@@ -68,6 +71,10 @@ export class SignupComponent implements OnInit {
     if (this.modelPerson.userType == null || this.modelPerson.userType.typeName == null) {
       console.log("model userType or typename is null =" + JSON.stringify(this.modelPerson));
       this.modelPerson.userType = this.modelPersonType;
+    }
+
+    if(this.modelPerson.parentUser == null) {
+      this.modelPerson.parentUser = this.parentUser;
     }
 
     this.modelPerson.email = this.authService.isLoggedIn ? this.authService.userDetails.providerData[0].email : "";

@@ -16,6 +16,7 @@ import { AboutusComponent } from '@src/app/aboutus/aboutus.component';
 import { PoboxdetailsComponent } from '@src/app/poboxdetails/poboxdetails.component';
 import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurtunity.component';
 import { PaymentComponent } from '@src/app/payment/payment.component';
+import { ParentComponent } from '@src/app/parent/parent.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -40,6 +41,7 @@ import { PaymentComponent } from '@src/app/payment/payment.component';
     PoboxdetailsComponent,
     SavedoppurtunityComponent,
     PaymentComponent,
+    ParentComponent,
   ],
   imports: [
     NativeScriptModule,

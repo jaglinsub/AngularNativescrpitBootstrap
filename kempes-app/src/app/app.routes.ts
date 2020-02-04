@@ -48,7 +48,7 @@ export const routes: Routes = [
         component: AboutusComponent,
     },
     {
-        path: 'login/:id',
+        path: 'login/:id/:token',
         component: LoginComponent,
     },
     // {

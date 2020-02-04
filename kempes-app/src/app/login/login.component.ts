@@ -83,46 +83,64 @@ export class LoginComponent implements OnInit {
       .then(() => {
         this.routeAfterLogin();
       })
-      /* .then(() => {
-        this.zone.run(async () => {
-          this.cd.detectChanges();
-
-          if (this.authService.isLoggedIn) {
-            console.log("user logged in true");
-            const result = (await this.sigupService.findUserByEmail());
-            (await this.sigupService.findUserByEmail()).subscribe(
-              data => {
-                console.log("data outside = " + JSON.stringify(data));
-                if (data) {
-                  console.log("data=" + data.firstName);
-                  this.userService.setUser(data);
-
-                  this.interestService.findInterestforUser().subscribe(interests => {
-                    this.interests = interests;
-                    if (this.interests.userId != undefined) {
-                      this.router.navigate(['portfolio/pobox']);
-                    }
-                    else {
-                      this.router.navigate(['interests']);
-                    }
-                    console.log("Interest=" + JSON.stringify(this.interests));
-                  });
-                }
-                else {
-                  this.router.navigate(['signup']);
-                }
-
-              }
-            );
-
-          }
-        })
-      }) */
       .catch((err) => console.log(err));
 
     console.log("outside of signin");
   }
 
+  routeAfterLoginWithEmail(emailId: string) {
+    this.zone.run(async () => {
+      this.cd.detectChanges();
+      let userFound: boolean = false;
+      let parentFound: boolean = false;
+       console.log("user logged in true");
+        (await this.sigupService.findUserByEmailId(emailId)).subscribe(
+          data => {
+            console.log("data outside = " + JSON.stringify(data));
+            if (data) {
+              userFound = true;
+              console.log("data=" + data.firstName);
+              this.userService.setUser(data);
+
+              this.interestService.findInterestforUser().subscribe(interests => {
+                this.interests = interests;
+                if (this.interests.userId != undefined) {
+                  this.authService.showProfileMenu = true;
+                  this.router.navigate(['portfolio/pobox']);
+                  this.userService.setInterests(interests);
+                  // this.router.navigate(['portfolio/myprofile']);
+                  // this.userService.setUser(data);
+                }
+                else {
+                  this.router.navigate(['interests']);
+                }
+                console.log("Interest=" + JSON.stringify(this.interests));
+              });
+            }
+            else {
+              // this.router.navigate(['signup']);
+              userFound = false;
+            }
+
+          }
+        );
+        if(userFound == false) {
+          console.log("Checking for Parent");
+          (await this.sigupService.findParenByEmailId(emailId)).subscribe( parentData => {
+            if (parentData) {
+              console.log("Parent found:" + parentData.email);
+              parentFound = true;
+              this.router.navigate(['payment']);
+            }
+            else {
+              parentFound = false;
+              this.router.navigate(['signup']);
+            }
+          });
+        }
+    }).catch((err) => console.log(err));
+
+  }
   routeAfterLogin() {
     this.zone.run(async () => {
       this.cd.detectChanges();
@@ -194,16 +212,18 @@ export class LoginComponent implements OnInit {
         .then((res) => {
           console.log(res);
           //this.router.navigate(['interests']);
-            this.routeAfterLogin();
+            // this.routeAfterLogin();
+            this.routeAfterLoginWithEmail(res.user.providerData[0].email);
         })
         .catch((err) => console.log('error: ' + err));
     }
     else {
       this.authService.signInRegular(this.emailPasswordCredentials.email, this.emailPasswordCredentials.password)
         .then((res) => {
-          console.log(res);
+          console.log("Data from signInRegular=" + res.user.providerData[0].email);
           //this.router.navigate(['interests']);
-          this.routeAfterLogin();
+          // this.routeAfterLogin();
+          this.routeAfterLoginWithEmail(res.user.providerData[0].email);
         })
         .catch((err) => console.log('error: ' + err));
     }

@@ -33,8 +33,9 @@ import { PoboxService } from '@src/app/pobox/pobox.service';
 import { POBoxDetailsService } from '@src/app/poboxdetails/pobox-details.service';
 import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurtunity.component';
 import { PaymentComponent } from '@src/app/payment/payment.component';
-import { MustMatchDirective } from './login/must-match.directive';
+import { MustMatchDirective } from '@src/app/login/must-match.directive';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ParentComponent } from '@src/app/parent/parent.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -55,6 +56,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     SavedoppurtunityComponent,
     PaymentComponent,
     MustMatchDirective,
+    ParentComponent,
   ],
   imports: [
     BrowserModule,
