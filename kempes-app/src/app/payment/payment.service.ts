@@ -13,11 +13,11 @@ import { ParentUser } from "../parent/ParentUser";
 })
 export class PaymentService {
 
-  url: string = 'http://localhost:8080/api/payments';
-  // url: string = 'http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/api/payments';
+  //url: string = 'http://localhost:8080/api/payments';
+  url: string = 'http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/api/payments';
 
-  parentURL: string = 'http://localhost:8080/api/parent';
-  // parentURL: string = 'http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/api/parent';
+  //parentURL: string = 'http://localhost:8080/api/parent';
+  parentURL: string = 'http://ec2-18-218-102-11.us-east-2.compute.amazonaws.com:8080/api/parent';
   
   constructor(private http: HttpClient) {
   }
