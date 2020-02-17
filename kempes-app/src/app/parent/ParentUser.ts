@@ -6,6 +6,7 @@ export class ParentUser {
     email: string;
     phoneNumber: string;
     emailSent: boolean
-
+    subcriptionCustId: string;
+    
     constructor() {}
 }

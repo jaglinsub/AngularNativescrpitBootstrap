@@ -1,0 +1,108 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.fieldset {
+    margin: 0 5px 1rem;
+    padding: 0;
+    border-style: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.fieldsetb {
+    margin: 0 15px 0rem;
+    padding: 0;
+    border-style: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.row {
+    margin: 0rem;
+}
+
+.field {
+    /* padding: 10px 20px 11px; */
+    padding: 0;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    border-radius: 0.25rem;
+}
+
+.filedCenter {
+    justify-content: center;
+}
+
+#WelcometoKempesLog {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    line-height: 40px;
+    margin-top: 10px;
+    text-align: left;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(23, 23, 23, 1);
+}
+
+#Filloutthisform {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    line-height: 40px;
+    margin-top: -3px;
+    text-align: center;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(118, 118, 118, 1);
+}
+
+.btnsubmit {
+    margin: 0;
+    margin-bottom: 0rem;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    background-color: rgba(68, 221, 216, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.alertMsg {
+    position: relative;
+    padding: 0.25rem 0rem;
+    /* margin-bottom: 1rem; */
+    border: none;
+}
+
+.alert-dangerMsg {
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(218, 38, 37, 1);
+}
+
+form.submitted .ng-invalid {
+    border: 2px solid rgba(218, 38, 37, 1);
+}

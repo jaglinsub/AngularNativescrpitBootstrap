@@ -17,6 +17,7 @@ import { PoboxdetailsComponent } from '@src/app/poboxdetails/poboxdetails.compon
 import { SavedoppurtunityComponent } from '@src/app/savedoppurtunity/savedoppurtunity.component';
 import { PaymentComponent } from '@src/app/payment/payment.component';
 import { ParentComponent } from '@src/app/parent/parent.component';
+import { EmailModelComponent } from '@src/app/email-model/email-model.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -42,6 +43,7 @@ import { ParentComponent } from '@src/app/parent/parent.component';
     SavedoppurtunityComponent,
     PaymentComponent,
     ParentComponent,
+    EmailModelComponent,
   ],
   imports: [
     NativeScriptModule,

@@ -44,12 +44,36 @@
     justify-content: space-between;
 }
 
+.fieldsetb {
+    margin: 0 15px 0rem;
+    padding: 0;
+    border-style: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
 .field-group {
     margin-bottom: 1rem;
-  }
+}
 
 .row {
     margin: 0rem;
+}
+
+.filedCenter {
+    justify-content: center;
+}
+
+.field.half-width {
+    width: calc(50% - (5px / 2));
+}
+
+.field.third-width {
+    width: calc(33% - (5px / 3));
 }
 
 .example.example3 .field {
@@ -213,7 +237,7 @@ label {
     transform: none;
 }
 
-.error.hide, .errorcardNumber.hide,  .errorcardExpiry.hide, .errorcardCvc.hide {
+.error.hide, .errorcardNumber.hide, .errorcardExpiry.hide, .errorcardCvc.hide {
     opacity: 0;
     transform: none;
 }
@@ -223,20 +247,241 @@ label {
     padding: 0.25rem 0rem;
     /* margin-bottom: 1rem; */
     border: none;
-  }
+}
+
+.alert {
+    position: relative;
+    padding: 1rem 0rem;
+    /* margin-bottom: 1rem; */
+    border: none;
+}
 
 .alert-danger1 {
     font-family: proxima-nova;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
-    color: rgba(218,38,37,1);
-  }
+    color: rgba(218, 38, 37, 1);
+}
 
-  input.ng-invalid  {
+profileForm.submitted input.ng-invalid {
     border: 1px solid rgba(218, 38, 37, 1);
-  }
+}
 
-  input.ng-valid {
+form.submitted input.ng-invalid {
+    border: 1px solid rgba(218, 38, 37, 1);
+}
+
+input.ng-valid {
     border: 1px solid #ced4da;
-  }
+}
+
+#WelcometoKempesLog {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    color: rgba(2, 11, 62, 1);
+}
+
+#Filloutthisform {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: wrap;
+    text-align: center;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(118, 118, 118, 1);
+}
+
+.grplabels {
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(2, 11, 62, 1);
+}
+
+.lblNxtBillDate {
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(155, 155, 155, 1);
+}
+
+.lblNBDD {
+    text-align: center;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(32, 172, 167, 1);
+}
+
+input[type="radio"] {
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    -ms-appearance: checkbox;
+    /* not currently supported */
+    -o-appearance: checkbox;
+}
+
+.student-check-input:checked+.lblStudent {
+    background-color: rgba(213, 255, 254, 1);
+}
+
+.student-check-input+.lblStudent {
+    background-color: rgba(220, 220, 220, 1);
+}
+
+/* Card: Start */
+
+.card-input-element+.card-inner {
+    /* height: calc(36px + 2*1rem); */
+    /* color: var(--primary); */
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.card-input-element+.card-inner:hover {
+    cursor: pointer;
+    /* border-color: */
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.card-input-element:checked+.card-inner {
+    /* border: 2px solid var(--primary); */
+    -webkit-transition: border .3s;
+    -o-transition: border .3s;
+    transition: border .3s;
+    border: 1px solid rgba(68, 221, 216, 1);
+    border-radius: 5px;
+}
+
+.card-input-element:checked+.card-inner::after {
+    /* content: '\e5ca'; */
+    color: #AFB8EA;
+    font-family: 'Material Icons';
+    font-size: 24px;
+    -webkit-animation-name: fadeInCheckbox;
+    animation-name: fadeInCheckbox;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(68, 221, 216, 1);
+    border-radius: 5px;
+}
+
+@-webkit-keyframes fadeInCheckbox {
+    from {
+        opacity: 0;
+        -webkit-transform: rotateZ(-20deg);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: rotateZ(0deg);
+    }
+}
+
+@keyframes fadeInCheckbox {
+    from {
+        opacity: 0;
+        transform: rotateZ(-20deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateZ(0deg);
+    }
+}
+
+.lblCardTitle {
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(23, 23, 23, 1);
+}
+
+.lblCardText {
+    overflow: visible;
+    white-space: nowrap;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgba(68, 221, 216, 1);
+}
+
+.lblCardMo {
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(155, 155, 155, 1);
+}
+
+.lblCardTrail {
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(155, 155, 155, 1);
+}
+
+/* Card: End */
+
+.lblProfileValue {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(23, 23, 23, 1);
+}
+
+#btnEditProfile {
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(255,255,255,1);
+    background-color: rgba(191, 201, 201);
+    border: none;
+}
+
+#btnEditPayment {
+    font-family: proxima-nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(255,255,255,1);
+    background-color: rgba(191, 201, 201);
+    border: none;
+}

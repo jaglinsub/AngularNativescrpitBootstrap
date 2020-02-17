@@ -15,6 +15,9 @@ export class User {
     expYearofGrad: string;
     receiveUpdates: boolean
     parentUser: ParentUser;
+    subscriptionId: string;
+    subscriptionPlanId: string;
+    subscriptionPlanName: string;
 
     constructor() {}
     

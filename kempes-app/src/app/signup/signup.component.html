@@ -107,14 +107,14 @@
                         <div class="fieldset">
                             <label for="email">Parent Email</label>
                             <input type="email" class="form-control" [(ngModel)]="modelPerson.parentUser.email" name="email"
-                                placeholder="Email" maxlength="45" required [pattern]="emailPattern"
+                                placeholder="Email" maxlength="45" [pattern]="emailPattern"
                                 #emailValidator="ngModel">
                             <div *ngIf="emailValidator.invalid && !isValidFormSubmitted"
                                 class="alertMsg alert-dangerMsg">
-                                <div *ngIf="emailValidator.errors.required">
+                                <!-- <div *ngIf="emailValidator.errors.required">
                                     <i class="fas fa-exclamation-circle"></i>
                                     Please enter an email.
-                                </div>
+                                </div> -->
                                 <div *ngIf="emailValidator.errors.pattern">
                                     <i class="fas fa-exclamation-circle"></i>
                                     Please enter a valid email.

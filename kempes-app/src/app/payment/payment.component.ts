@@ -2,6 +2,10 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { PaymentDetails } from './paymentDetails';
 import { PaymentService } from './payment.service';
 import { IntentSecrets } from './IntentSecrets';
+import { UserServiceService } from '../services/user-service.service';
+import { ParentUser } from '../parent/ParentUser';
+import { User } from '../signup/User';
+import { PaymentPlans } from './PaymentPlans';
 
 declare var Stripe: any;
 declare var formComponent: any;
@@ -19,21 +23,83 @@ export class PaymentComponent implements OnInit {
   message: string;
   intentSecret: IntentSecrets;
   paymentMethod: string;
+  parentUser = new ParentUser();
+  users: User[];
+  paymentPlans: PaymentPlans[];
+  isProfileFormSubmitted: boolean;
+  userSelected: boolean;
+  planSelected: boolean = false;
+  editProfile: boolean;
+  editPayment; boolean = false;
+  isPaymentMethodExists: boolean = false;
 
-  constructor(private _zone: NgZone, private paymentService: PaymentService) {
+  radioSelected:any;
+  enum_details = [
+    {name: 'pardeep'},
+    {name: 'Jain'},
+    {name: 'Angular'},
+  ]
+
+  constructor(private _zone: NgZone, private paymentService: PaymentService, private userService: UserServiceService) {
 
   }
   ngOnInit() {
 
+    this.isProfileFormSubmitted = false;
+    this.userService.parentUser$.subscribe((parentData) => {
+      console.log("Parenr User Data @ payment ngonInit=" + JSON.stringify(parentData));
+      this.parentUser = parentData;
+    });
+
+    this.paymentService.getStudents(this.parentUser.id).subscribe(studentsList => {
+      this.users = studentsList;
+      if (this.users.length == 1) {
+        this.paymentDetails.studentId = this.users[0].id;
+        this.paymentDetails.planId = this.users[0].subscriptionPlanId;
+        this.paymentDetails.planName = this.users[0].subscriptionPlanName;
+        this.userSelected = true;
+        if(this.paymentDetails.planId) {
+          this.planSelected = true;
+        }
+        else {
+          this.planSelected = false;
+        }
+        this.getSubscriptionforSelUser(this.users[0]);
+      }
+      else {
+        this.userSelected = false;
+      }
+      
+    })
+
+    this.paymentService.getPaymentPlans().subscribe(paymentPlansList => {
+      this.paymentPlans = paymentPlansList;
+    })
+
+    let user1 = new User();
+    user1.firstName = "Jagan 1";
+    user1.lastName = "Last 1";
+
+    let user2 = new User();
+    user2.firstName = "Jagan 2";
+    user2.lastName = "Last 2";
+    this.users = [];
+    this.users.push(user1);
+    this.users.push(user2);
+
     this.paymentDetails = new PaymentDetails();
+    this.paymentDetails.parentId = this.parentUser.id;
+
     this.submitted = false;
     // this.ngOnInit_working();
+    console.log("isPaymentMethodExists=" + this.isPaymentMethodExists);
     this.loadStripeElements();
     formComponent = this;
   }
 
   loadStripeElements() {
 
+    console.log("In loadStripeElements");
     // Your Stripe public key
     const stripe = Stripe('pk_test_yj7jPsVkZC2ylVEIryi8I2iE006JQULb9F');
 
@@ -47,16 +113,6 @@ export class PaymentComponent implements OnInit {
 
     var elementStyles = {
       base: {
-        // color: '#fff',
-        // fontWeight: 600,
-        // fontFamily: 'Quicksand, Open Sans, Segoe UI, sans-serif',
-        // fontSize: '16px',
-        // fontSmoothing: 'antialiased',
-
-        // ':focus': {
-        //   color: '#424770',
-        // },
-
         '::placeholder': {
           color: '#9BACC8',
         },
@@ -66,13 +122,6 @@ export class PaymentComponent implements OnInit {
         },
       },
       invalid: {
-        // color: '#fff',
-        // ':focus': {
-        //   color: '#FA755A',
-        // },
-        // '::placeholder': {
-        //   color: '#FFCCA5',
-        // },
       },
     };
 
@@ -102,16 +151,41 @@ export class PaymentComponent implements OnInit {
 
 
     registerElements([cardNumber, cardExpiry, cardCvc], 'example3');
-    // (cardCvc as HTMLInputElement).setAttribute("maxlength", "45");
 
     // Listen for form submission, process the form with Stripe,
     // and get the 
     const paymentForm = document.getElementById('payment-form');
     paymentForm.addEventListener('submit', event => {
+      console.log("In loadStripeElements::submit");
       event.preventDefault();
-      
-      var form = document.getElementById('payment-form');
 
+      var form = document.getElementById('payment-form');
+      var cnt = 0;
+      function checkRadio() {
+        
+        Array.prototype.forEach.call(
+          form.querySelectorAll(
+            ".student-check-input"
+          ),
+          function (input) {
+            if(input.checked) {
+              console.log("Checked");
+              cnt++;
+            }
+            else {
+              console.log("UnChecked");
+            }
+          }
+        );
+        return;
+      }
+
+      checkRadio();
+      console.log("Checked count=" + cnt);
+      if(cnt == 0) {
+        // formComponent.setSubmitted(false);
+        return;
+      }
       function enableInputs() {
         Array.prototype.forEach.call(
           form.querySelectorAll(
@@ -146,38 +220,41 @@ export class PaymentComponent implements OnInit {
       }
 
       // Trigger HTML5 validation UI on the form if any of the inputs fail
-    // validation.
-    var plainInputsValid = true;
-    Array.prototype.forEach.call(form.querySelectorAll('input'), function(
-      input
-    ) {
-      if (input.checkValidity && !input.checkValidity()) {
-        plainInputsValid = false;
+      // validation.
+      var plainInputsValid = true;
+      Array.prototype.forEach.call(form.querySelectorAll('input'), function (
+        input
+      ) {
+        if (input.checkValidity && !input.checkValidity()) {
+          plainInputsValid = false;
+          return;
+        }
+      });
+      if (!plainInputsValid) {
+        triggerBrowserValidation();
         return;
       }
-    });
-    if (!plainInputsValid) {
-      triggerBrowserValidation();
-      return;
-    }
 
-    // Disable all inputs.
-    disableInputs();
+      // Disable all inputs.
+      disableInputs();
 
+      if (this.parentUser) {
+        this.paymentDetails.name = this.parentUser.firstName + " " + this.parentUser.lastName;
+      }
 
-    var name = this.paymentDetails.name;
-    // var address1 = form.querySelector('#' + exampleName + '-address');
-    // var city = form.querySelector('#' + exampleName + '-city');
-    // var state = form.querySelector('#' + exampleName + '-state');
-    var zip = this.paymentDetails.zipCode;
+      var name = this.paymentDetails.name;
+      // var address1 = form.querySelector('#' + exampleName + '-address');
+      // var city = form.querySelector('#' + exampleName + '-city');
+      // var state = form.querySelector('#' + exampleName + '-state');
+      var zip = this.paymentDetails.zipCode;
 
-    var additionalData = {
-      name: name ? name : undefined,
-      // address_line1: address1 ? address1.value : undefined,
-      // address_city: city ? city.value : undefined,
-      // address_state: state ? state.value : undefined,
-      address_zip: zip ? zip : undefined,
-    };
+      var additionalData = {
+        name: name ? name : undefined,
+        // address_line1: address1 ? address1.value : undefined,
+        // address_city: city ? city.value : undefined,
+        // address_state: state ? state.value : undefined,
+        address_zip: zip ? zip : undefined,
+      };
 
       stripe.createToken(cardNumber, additionalData).then(result => {
         if (result.error) {
@@ -208,9 +285,9 @@ export class PaymentComponent implements OnInit {
                       postal_code: this.paymentDetails.zipCode
                     },
                     // email: 'jaglinsub@gmail.com',
-                    email: this.paymentDetails.email,
-                    name: this.paymentDetails.name,
-                    phone: this.paymentDetails.phone
+                    email: this.parentUser.email,
+                    name: this.parentUser.firstName + " " + this.parentUser.lastName,
+                    phone: this.parentUser.phoneNumber
                   },
                 },
               },
@@ -224,9 +301,26 @@ export class PaymentComponent implements OnInit {
               console.log("setupIntent.payment_method=" + setupIntent.payment_method);
               this.paymentDetails.paymentMethod = setupIntent.payment_method;
 
-              this.paymentService.createSubscription(this.paymentDetails).subscribe(data => {
-                console.log("Subscription data=" + JSON.stringify(data));
-              });
+              this.paymentDetails.email = this.parentUser.email;
+              this.paymentDetails.name = this.parentUser.firstName + " " + this.parentUser.lastName;
+              this.paymentDetails.phone = this.parentUser.phoneNumber;
+
+              if(this.editPayment) {
+                this.paymentService.updateCard(this.paymentDetails).subscribe(data => {
+                  console.log("Subscription data=" + JSON.stringify(data));
+                  this.isPaymentMethodExists = true;
+                  this.editPayment = false;
+                });
+              }
+              else {
+                this.paymentService.createSubscription(this.paymentDetails).subscribe(subsData => {
+                  console.log("Subscription data=" + JSON.stringify(subsData));
+                  this.isPaymentMethodExists = true;
+                  let billingCycleAnchor = new Date(subsData.billingCycleAnchor).toLocaleDateString();
+                  this.paymentDetails.nextBillDate = billingCycleAnchor;
+                });
+              }
+              
             }
 
           });
@@ -235,6 +329,7 @@ export class PaymentComponent implements OnInit {
     });
 
     function registerElements(elements, exampleName) {
+      console.log("In registerElements");
       var form = document.getElementById('payment-form');
       var errorcardNumber = form.querySelector('.errorcardNumber');
       var errorcardExpiry = form.querySelector('.errorcardExpiry');
@@ -252,6 +347,7 @@ export class PaymentComponent implements OnInit {
           console.log("onBlur=" + event.value);
         });
         element.on('change', function (event) {
+          console.log("In registerElements::change");
           var errorElement = form.querySelector('.error' + event.elementType);
           var errorMessageElement = document.getElementById('message' + event.elementType);
           if (event.error) {
@@ -265,7 +361,7 @@ export class PaymentComponent implements OnInit {
             formComponent.setSubmitted(false);
             // (document.getElementById('btnSubmit') as HTMLInputElement).disabled = true;
           }
-          else if  (event.empty) {
+          else if (event.empty) {
             console.log("Message on empty");
             formComponent.setSubmitted(false);
           }
@@ -288,13 +384,13 @@ export class PaymentComponent implements OnInit {
 
               errorMessageElement.innerText = null;
               (errorElement as HTMLElement).style.display = 'none';
-              
+
 
               var plainInputsValid = true;
-              Array.prototype.forEach.call(form.querySelectorAll('input'), function(
+              Array.prototype.forEach.call(form.querySelectorAll('input'), function (
                 input
               ) {
-                console.log("Message on all inputs" + input.value);
+                console.log("Message on all inputs=" + input.checkValidity + " :: " + input.checkValidity());
                 if (input.checkValidity && !input.checkValidity()) {
                   console.log("Message on all inputs error ");
                   plainInputsValid = false;
@@ -308,6 +404,16 @@ export class PaymentComponent implements OnInit {
                 return;
               }
               else {
+                if(!formComponent.userSelected) {
+                  console.log("User is not selected");
+                  formComponent.setSubmitted(false);
+                  return;
+                }
+                if(!formComponent.planSelected) {
+                  console.log("Plan is not selected");
+                  formComponent.setSubmitted(false);
+                  return;
+                }
                 formComponent.setSubmitted(true);
               }
             }
@@ -321,7 +427,9 @@ export class PaymentComponent implements OnInit {
   setSubmitted(value: boolean) {
     this.submitted = value;
     console.log("Submitted=" + this.submitted);
+
   }
+
   ngOnInit_working() {
     // Your Stripe public key
     const stripe = Stripe('pk_test_yj7jPsVkZC2ylVEIryi8I2iE006JQULb9F');
@@ -395,7 +503,7 @@ export class PaymentComponent implements OnInit {
     }
   }
 
-  pay(form, valid) {
+  pay121(form, valid) {
 
     if (!window['Stripe']) {
       alert('Oops! Stripe did not initialize properly.');
@@ -444,4 +552,85 @@ export class PaymentComponent implements OnInit {
       }
     });
   }
+
+  onPlanItemChange(selPlan: PaymentPlans) {
+    if (selPlan) {
+      console.log("Selected Plan=" + selPlan.nickname + " :: Selected Plan Id=" + selPlan.id);
+      this.paymentDetails.planId = selPlan.id;
+      this.paymentDetails.planName = selPlan.nickname;
+      if(this.paymentDetails.planId) {
+        this.planSelected = true;
+      }
+      else {
+        this.planSelected = false;
+      }
+    }
+  }
+
+  getSubscriptionforSelUser(selUser: User) {
+    if(selUser) {
+      let subcriptionId = selUser.subscriptionId;
+      if(subcriptionId) {
+        this.paymentService.getSubscription(subcriptionId).subscribe(subsData => {
+          let billingCycleAnchor = new Date(subsData.billingCycleAnchor).toLocaleDateString();
+          this.paymentDetails.nextBillDate = billingCycleAnchor;
+          console.log("Next Bill Date in GMT=" + subsData.billingCycleAnchor);
+          console.log("Next Bill Date in Locale=" + this.paymentDetails.nextBillDate);
+          
+        });
+        this.isPaymentMethodExists = true;
+      }
+      else {
+        this.isPaymentMethodExists = false;
+        // this.loadStripeElements();
+      }
+    }    
+  }
+
+  onUserItemChange(selUser: User) {
+    if (selUser) {
+      console.log("Selected User=" + selUser.firstName + " :: Selected User Id=" + selUser.id +
+        " :: Selected subscriptionPlanId=" + selUser.subscriptionPlanId);
+      this.paymentDetails.studentId = selUser.id;
+      this.paymentDetails.planId = selUser.subscriptionPlanId
+      this.paymentDetails.planName = selUser.subscriptionPlanName;
+      // this.radioSelected = selUser.id;
+      this.getSubscriptionforSelUser(selUser);
+      if(this.paymentDetails.planId) {
+        this.planSelected = true;
+      }
+      else {
+        this.planSelected = false;
+      }
+    }
+    this.userSelected = true;
+  }
+
+  onProfileSubmit(profileForm) {
+    this.isProfileFormSubmitted = false;
+		if (profileForm.valid) {
+			this.isProfileFormSubmitted = true;
+		} else {
+			return;
+		}
+    this.paymentService.createParent(this.parentUser).subscribe(parUser => {
+      this.userService.setParentUser(parUser);
+    });
+    this.editProfile = false;
+  }
+
+  onEditProfile() {
+    this.editProfile = true;
+  }
+
+  onEditPayment() {
+    this.editPayment = true;
+  }
+
 }
+
+
+// var $:any;
+//     $('#sel-bs').materialSelect({
+//       defaultMaterialInput: true
+//     });

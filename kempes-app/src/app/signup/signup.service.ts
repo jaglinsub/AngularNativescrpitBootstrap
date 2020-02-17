@@ -92,5 +92,22 @@ export class SignupService {
     }
   }
 
+  async findUserById(id: string): Promise<Observable<User>> {
+    
+    if (id) {
+      let url = this.url + "/";
+
+      const options = id ? {
+        params: new HttpParams().set('id', await id)
+      } : {};
+      console.log("id=" + id);
+      return this.http.get<User>(url, options);
+    }
+    else {
+      console.log("Id is blank");
+      return new Observable(user => { new User() } );
+    }
+  }
+
 }
 

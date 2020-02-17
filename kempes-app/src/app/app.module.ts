@@ -36,6 +36,8 @@ import { PaymentComponent } from '@src/app/payment/payment.component';
 import { MustMatchDirective } from '@src/app/login/must-match.directive';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ParentComponent } from '@src/app/parent/parent.component';
+import { EmailModelComponent } from '@src/app/email-model/email-model.component';
+import { EmailModelService } from '@src/app/email-model/email-model.service';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -57,6 +59,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     PaymentComponent,
     MustMatchDirective,
     ParentComponent,
+    EmailModelComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MDBBootstrapModule.forRoot(),
     NgxMaskModule.forRoot(options)
   ],
+  entryComponents: [ EmailModelComponent ],
   providers: [
     AuthGuard,
     AuthService,
@@ -79,7 +83,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     ProfileService,
     CurrentPointsService,
     PoboxService,
-    POBoxDetailsService
+    POBoxDetailsService,
+    EmailModelService
   ],
   bootstrap: [AppComponent]
 })

@@ -19,7 +19,7 @@
               <label for="email">Email</label>
               <input type="email" class="form-control" name="email" placeholder="Email"
                 [(ngModel)]="emailPasswordCredentials.email" maxlength="45" required [pattern]="emailPattern"
-                #emailValidator="ngModel">
+                #emailValidator="ngModel" [disabled]="emailFromToken">
               <div *ngIf="emailValidator.invalid && (emailValidator.dirty || emailValidator.touched)"
                 class="alert1 alert-danger1">
                 <div *ngIf="emailValidator.errors.required">

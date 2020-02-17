@@ -1,0 +1,52 @@
+<div class="modal-content">
+    <div class="modal-header" style="border: none;">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 mr-auto ml-auto">
+                    <div class="fieldset mb-5">
+                        <div class="col-md-12 field-group p-0">
+                            <div class="fieldset filedCenter" id="WelcometoKempesLog">
+                                <span>Enter Your Parents Email</span>
+                            </div>
+                            <div class="fieldset filedCenter" id="Filloutthisform">
+                                <span>In Order to keep the ball rolling after your free trail</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="parentEmail-form" name="parentEmail-form" #parentEmailForm="ngForm" (ngSubmit)="onEmailModelSubmit(parentEmailForm)"
+                            [ngClass]="{ submitted: isValidFormSubmitted}" novalidate>
+                    <div class="fieldsetb mb-3">
+                        
+                            <input type="email" class="form-control" name="email" placeholder="Email"
+                                [(ngModel)]="email" maxlength="45" required [pattern]="emailPattern"
+                                #emailValidator="ngModel">
+                            <div *ngIf="emailValidator.invalid && isValidFormSubmitted"
+                                class="alertMsg alert-dangerMsg">
+                                <div *ngIf="emailValidator.errors.required">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter an email.
+                                </div>
+                                <div *ngIf="emailValidator.errors.pattern">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    Please enter a valid email.
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+                    <div class="fieldsetb mb-3" style="justify-content:flex-end;">
+                        <button class="btn btn-primary btnsubmit" type="submit">Send Email
+                            Link</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
